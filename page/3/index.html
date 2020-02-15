@@ -1,0 +1,3088 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Talk is not cheap. Talk can be powerful.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hogan&#39;Blog">
+<meta property="og:url" content="http://forhcl.github.io/page/3/index.html">
+<meta property="og:site_name" content="Hogan&#39;Blog">
+<meta property="og:description" content="Talk is not cheap. Talk can be powerful.">
+<meta property="article:author" content="Hogan Lee">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://forhcl.github.io/page/3/"/>
+
+
+
+
+
+  <title>Hogan'Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/09/ElasticSearch%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/09/ElasticSearch%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2/" itemprop="url">ElasticSearch全文搜索</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T16:31:21+08:00">
+                2019-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="全文搜索"><a href="#全文搜索" class="headerlink" title="_全文搜索_"></a>_<span style="color:SeaGreen">全文搜索</span>_</h2><h5 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a><em>数据结构</em></h5><ul>
+<li>结构化：指具有固定格式或有限长度的数据，如数据库，元数据等。</li>
+<li>非结构化：指不定长或无固定格式的数据，如邮件，word文档等。</li>
+</ul>
+<h6 id="非结构化数据的检索"><a href="#非结构化数据的检索" class="headerlink" title="非结构化数据的检索"></a><em>非结构化数据的检索</em></h6><ul>
+<li><p>顺序扫描法（Serial Scanning）</p>
+</li>
+<li><p>全文搜索（Full-text Search）：全文搜索是一种将文件中所有文本与搜索项匹配的文字资料检索的方法。</p>
+<ul>
+<li>全文搜索实现原理</li>
+</ul>
+<p><img src="ElasticSearch%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2/%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" alt=""></p>
+<ul>
+<li>全文搜索实现技术（基于Java的开源实现）<ul>
+<li>Lucene</li>
+<li>ElasticSearch</li>
+<li>Solr</li>
+</ul>
+</li>
+</ul>
+<p>将非结构化数据转换成结构化数据，建立索引后进行搜索</p>
+</li>
+</ul>
+<h3 id="ElasticSearch简介"><a href="#ElasticSearch简介" class="headerlink" title="ElasticSearch简介"></a><em>ElasticSearch简介</em></h3><h5 id="ElasticSearch是什么？"><a href="#ElasticSearch是什么？" class="headerlink" title="ElasticSearch是什么？"></a><em>ElasticSearch是什么？</em></h5><ul>
+<li>高度可扩展的开源全文搜索和分析引擎</li>
+<li>快速地、近实时地对大数据进行存储、搜索和分析</li>
+<li>用来支撑有复杂的数据搜索需求的企业级应用</li>
+</ul>
+<h5 id="ElasticSearch特点"><a href="#ElasticSearch特点" class="headerlink" title="ElasticSearch特点"></a><em>ElasticSearch特点</em></h5><ul>
+<li>分布式</li>
+<li>高可用</li>
+<li>多类型</li>
+<li>多API  支持HTTPRESTful</li>
+<li>面向文档</li>
+<li>异步写入</li>
+<li>近实时</li>
+<li>基于Lucene</li>
+<li>Apache协议</li>
+</ul>
+<h5 id="ElasticSearch核心概念"><a href="#ElasticSearch核心概念" class="headerlink" title="ElasticSearch核心概念"></a><em>ElasticSearch核心概念</em></h5><ul>
+<li>近实时</li>
+<li>集群</li>
+<li>节点</li>
+<li>索引</li>
+<li>类型</li>
+<li>文档</li>
+<li>分片</li>
+<li>副本</li>
+</ul>
+<h3 id="Elasticsearch与Spring-Boot集成"><a href="#Elasticsearch与Spring-Boot集成" class="headerlink" title="Elasticsearch与Spring Boot集成"></a><em>Elasticsearch与Spring Boot集成</em></h3><p>配置环境</p>
+<ul>
+<li><p>Elasticsearch</p>
+</li>
+<li><p>Spring Data Elasticsearch（Spring对Elasticsearch的支持）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 添加Spring Data Elasticsearch的依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-elasticsearch<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JNA 4.3.0（用来访问操作系统原生的一些应用）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 添加JNA的依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>net.java.dev.jna<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jna<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/09/bootstrap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/09/bootstrap/" itemprop="url">bootstrap</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T14:28:06+08:00">
+                2019-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bootstrap/" itemprop="url" rel="index">
+                    <span itemprop="name">Bootstrap</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="集成Bootstrap"><a href="#集成Bootstrap" class="headerlink" title="集成Bootstrap"></a><em>集成Bootstrap</em></h3><ul>
+<li><p>Bootstrap简介、核心概念</p>
+<ul>
+<li><p>基于HTML、CSS、JavaScript的前端框架</p>
+</li>
+<li><p>响应式布局</p>
+</li>
+<li><p>移动设备优先</p>
+</li>
+<li><p>遵循html5规范(如果不是html5可能会出现一系列的问题)</p>
+</li>
+<li><p>响应式meta标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,shrink-to-fit=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Normalize.css</p>
+<ul>
+<li>使用Normalize来建立跨浏览器的一致性</li>
+<li>Reboot</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Bootstrap网格系统</p>
+<ul>
+<li><p>基础的CSS是移动优先。优先设计更小的宽度</p>
+</li>
+<li><p>媒体查询。针对与平板电脑、台式电脑</p>
+</li>
+<li><p>渐进增强。随着屏幕大小的增加而增加元素。</p>
+</li>
+<li><p>响应式：viewport尺寸的增加，系统会自动分为最多12列，根据屏幕宽度进行响应。</p>
+<p><img src="bootstrap/bootstrap%E7%BD%91%E6%A0%BC%E9%80%89%E9%A1%B9.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>Bootstrap网格示例</p>
+<p>移动设备及桌面设备<code>.col-xs-*</code>、<code>.col-md-*</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Stack the columns on mobile one full-width and the other half-width --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"raw"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-12 col-md-8"</span>&gt;</span></span><br><span class="line">        .col-xs-12 .col-md-8</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-4"</span>&gt;</span></span><br><span class="line">        .col-xs-6 .col-md-4</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li>Bootstrap与Spring Boot集成</li>
+<li>Bootstrap实战</li>
+</ul>
+<p>剧情：引入样式表，套样式。</p>
+<h3 id="Bootstrap与Spring-Boot集成"><a href="#Bootstrap与Spring-Boot集成" class="headerlink" title="Bootstrap与Spring Boot集成"></a><em>Bootstrap与Spring Boot集成</em></h3><h5 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a><em>配置环境</em></h5><ul>
+<li><p>Tether 1.4.0：<a href="http://tether.io/" target="_blank" rel="noopener">http://tether.io/</a></p>
+<p>Bootstrap中的一些样式依赖于Tether来实现的</p>
+</li>
+<li><p>Bootstrap v4.0.0-alpha.6：<a href="https://v4-alpha.getbootstrap.com" target="_blank" rel="noopener">https://v4-alpha.getbootstrap.com</a></p>
+</li>
+<li><p>JQuery 3.1.1:<a href="http://jquery.com/download/" target="_blank" rel="noopener">http://jquery.com/download/</a></p>
+</li>
+</ul>
+<p>常用前端框架与Spring Boot集成</p>
+<ul>
+<li>Font Awesome 4.7.0：<a href="http://fontawesome.io" target="_blank" rel="noopener">http://fontawesome.io</a> 图标库</li>
+<li>NProgress 0.2.0:<a href="http://ricostacruz.com/nprogress/" target="_blank" rel="noopener">http://ricostacruz.com/nprogress/</a> 进度条</li>
+<li>Thinker-md：<a href="http://git.oschina.net/benhail/thinker-md" target="_blank" rel="noopener">http://git.oschina.net/benhail/thinker-md</a> 使编辑器支持MarkDown语法</li>
+<li>JQuery Tags Input 1.3.6：<a href="http://xoxco.com/projects/code/tagsinput/" target="_blank" rel="noopener">http://xoxco.com/projects/code/tagsinput/</a></li>
+<li>Bootstrap Chosen 1.0.3：<a href="https://github.com/haubek/bootstrap4c-chosen" target="_blank" rel="noopener">https://github.com/haubek/bootstrap4c-chosen</a></li>
+<li>toastr 2.1.1：<a href="http://www.toastrjs.com" target="_blank" rel="noopener">http://www.toastrjs.com</a> 响应处理如出错警示</li>
+</ul>
+<p>下载下来放到static包里面，</p>
+<p>css一般在head中引入，js在body的底部进行引入，js较大最后加载对性能优化较好</p>
+<p>css放在header中，js放在footer里面</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/09/SpringDataJPA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/09/SpringDataJPA/" itemprop="url">SpringDataJPA</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T09:17:20+08:00">
+                2019-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring-Data-JPA/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Data JPA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a><em>数据持久化</em></h3><ul>
+<li>JPA简介<ul>
+<li>JPA（Java Persistence API）是用于管理Java EE和Java SE环境中的持久化，以及对象/关系映射的Java API</li>
+<li>最新规范为“JSR 338”</li>
+<li>实现：EclipseLink、Hibernate、Apache OpenJPA</li>
+</ul>
+</li>
+<li>Spring Data JPA用法介绍</li>
+<li>Spring Data JPA、Hibernate与Spring Boot集成</li>
+<li>数据持久化实战</li>
+</ul>
+<h5 id="JPA核心概念"><a href="#JPA核心概念" class="headerlink" title="JPA核心概念"></a><em>JPA核心概念</em></h5><p><strong>实体</strong></p>
+<ul>
+<li>实体表示关系数据库中的表</li>
+<li>每个实体实例对应与该表中的行</li>
+<li>类必须用javax.persistence.Entity注解</li>
+<li>类必须有一个public或protected的无参数的构造函数</li>
+<li>实体实例被当作值以分离对象方式进行传递（例如通过会话bean的远程业务接口），则该类必须实现Serializable接口</li>
+<li>唯一的对象标识符：简单主键（javax.persistence.id)、复合主键（javax.persistence.Embeddedld和javax.persistence.IdClass)</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/06/gradle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/06/gradle/" itemprop="url">gradle</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T16:49:27+08:00">
+                2019-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="新一代构建工具Gradle"><a href="#新一代构建工具Gradle" class="headerlink" title="新一代构建工具Gradle"></a>新一代构建工具Gradle</h2><h3 id="1-Gradle是什么？"><a href="#1-Gradle是什么？" class="headerlink" title="1 Gradle是什么？"></a><em>1 Gradle是什么？</em></h3><p>&emsp;&emsp;一个开源的<span style="color:red">项目自动化构建工具</span>，建立在 <code>Apache Ant</code> 和 <code>Apache Maven</code> 概念的基础上，并引入了基于 <code>Groovy</code> 的特定领域语言（DSL），而不在使用XML形式管理构建脚本，能具有更高的灵活性和可拓展性。</p>
+<h5 id="1-1-Gradle安装"><a href="#1-1-Gradle安装" class="headerlink" title="1.1 Gradle安装"></a><em>1.1 Gradle安装</em></h5><ul>
+<li>确保电脑上已经安装JDK，可以通过 <code>java -version</code> 命令进行确认。</li>
+<li>从Gradle官网下载Gradle，<a href="http://gradle.org" target="_blank" rel="noopener">http://gradle.org</a></li>
+<li>配置环境变量，<span style="color:red">GRADLE_HOME</span></li>
+<li>添加到Path，<span style="color:red">%GRADLE_HOME%\bin;</span></li>
+<li>验证是否安装成功，<span style="color:red">gradle -v</span></li>
+</ul>
+<h3 id="2-Groovy是什么？"><a href="#2-Groovy是什么？" class="headerlink" title="2 Groovy是什么？"></a><em>2 Groovy是什么？</em></h3><p>&emsp;&emsp;<code>Groovy</code> 是用于 <code>Java</code> 虚拟机的一种敏捷的动态语言，它是一种成熟的面向对象编程语言，既可以用于面向对象编程，又可以用作纯粹的脚本语言。使用该种语言不必编写过多的代码，同时又具有闭包和动态语言中的其他特性。</p>
+<p>与 <code>Java</code> 比较</p>
+<ul>
+<li><p><code>Groovy</code> 完全兼容 <code>Java</code> 的语法</p>
+</li>
+<li><p>分号是可选的</p>
+</li>
+<li><p>类、方法默认是 <code>public</code> 的，没有 <code>default</code> 这种访问权限</p>
+</li>
+<li><p>编译器给属性自动添加getter/setter方法</p>
+</li>
+<li><p>属性可以直接用点号获取</p>
+</li>
+<li><p>最后一个表达式的值会被作为返回值</p>
+</li>
+<li><p>==等同于equals()，不会抛空指针异常</p>
+</li>
+<li><p>assert语句</p>
+</li>
+<li><p>弱类型 如def 变量。会自动推断</p>
+</li>
+<li><p>可选的括号</p>
+</li>
+<li><p>字符串</p>
+<p>单引号：仅仅是字符串</p>
+<p>双引号：可以通过${}插入变量</p>
+<p>三引号：可以换行</p>
+</li>
+<li><p>集合API</p>
+</li>
+<li><p>闭包</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/06/Spring-Security/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/06/Spring-Security/" itemprop="url">Spring Security</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T12:46:15+08:00">
+                2019-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring-Security/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Security</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>SpringSecurity官方文档笔记：</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/06/JSP%E7%BB%88%E7%BB%93%E8%80%85%E2%80%94%E2%80%94Thymeleaf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/06/JSP%E7%BB%88%E7%BB%93%E8%80%85%E2%80%94%E2%80%94Thymeleaf/" itemprop="url">JSP终结者——Thymeleaf</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T09:32:40+08:00">
+                2019-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>理解Thymeleaf的概念、用法</p>
+<ul>
+<li>Java模板引擎。能够处理HTML、XML、JavaScript、CSS甚至纯文本。类似JSP、Freemarker</li>
+<li>自然模板。原型即页面</li>
+<li>语法优雅简单。OGNL、SpringEL表达式</li>
+<li>遵从Web标准。支持HTML5</li>
+</ul>
+<h6 id="Thymeleaf标准方言"><a href="#Thymeleaf标准方言" class="headerlink" title="Thymeleaf标准方言"></a><em>Thymeleaf标准方言</em></h6><ol>
+<li><code>&lt;span th:text=&quot;……&quot;&gt;</code>    </li>
+<li><code>&lt;span data-th-text=&quot;……&quot;&gt;</code>    data前缀用于自定义属性，可以省去引入命名空间</li>
+</ol>
+<p>&emsp;&emsp;Both notations are completely equivalent and interchangeable, but for the sake of simplicity and compactness of the code samples, this tutorial will use the <em>namespace notation</em> (<code>th:*</code>). Also, the <code>th:*</code>notation is more general and allowed in every Thymeleaf template mode (<code>XML</code>, <code>TEXT</code>…) whereas the <code>data-</code>notation is only allowed in <code>HTML</code> mode.</p>
+<h6 id="Thymeleaf命名空间的引入"><a href="#Thymeleaf命名空间的引入" class="headerlink" title="Thymeleaf命名空间的引入"></a><em>Thymeleaf命名空间的引入</em></h6><p><code>&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</code></p>
+</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">"$&#123;name&#125;"</span>&gt;</span></span><br><span class="line">    fskfh</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行时，text标签中的内容会覆盖掉p容器标签包含的内容</p>
+<p><img src="JSP%E7%BB%88%E7%BB%93%E8%80%85%E2%80%94%E2%80%94Thymeleaf/%E6%A0%87%E5%87%86%E6%96%B9%E8%A8%80.png" alt=""></p>
+<h5 id="变量表达式"><a href="#变量表达式" class="headerlink" title="变量表达式"></a><em>变量表达式</em></h5><p><strong>语法：${…}</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.author.name&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="消息表达式"><a href="#消息表达式" class="headerlink" title="消息表达式"></a><em>消息表达式</em></h5><p><strong>语法：#{…}</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    …</span><br><span class="line">    <span class="comment">&lt;!-- 消息的一个key --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span> <span class="attr">th:text</span>=<span class="string">"#&#123;header.address.city&#125;"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span> <span class="attr">th:text</span>=<span class="string">"#&#123;header.address.country&#125;"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    …</span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>也称为文本外部化、国际化或i18n</li>
+</ul>
+<h5 id="选择表达式"><a href="#选择表达式" class="headerlink" title="选择表达式"></a><em>选择表达式</em></h5><p><strong>语法：*{…}</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:object</span>=<span class="string">"$&#123;book&#125;"</span>&gt;</span></span><br><span class="line">    …</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"*&#123;title&#125;"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    …</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>与变量表达式区别：它们是在当前选择的对象而不是整个上下文变量影身上执行</li>
+</ul>
+<h5 id="链接表达式"><a href="#链接表达式" class="headerlink" title="链接表达式"></a><em>链接表达式</em></h5><p><strong>语法：@{…}</strong></p>
+<p>链接表达式可以是相对的，在这种情况下，应用程序上下文将不会作为URL的前提</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">"@&#123;../documents/report&#125;"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以是服务器相对（同样，没有应用程序上下文前提）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">"@&#123;~/contents/main&#125;"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>和协议相对（就像绝对URL，但浏览器将使用在显示的页面中使用的相同的HTTP或HTTPS协议）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">"@&#123;//static.mycompany.com/res/initial&#125;"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，Link表达式可以是绝对的</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">"http://www.mucompany.com/main"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="分段表达式"><a href="#分段表达式" class="headerlink" title="分段表达式"></a><em>分段表达式</em></h5><p><strong>语法：th:insert或th:replace</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:fragment</span>=<span class="string">"copy"</span>&gt;</span></span><br><span class="line">            <span class="symbol">&amp;copy;</span>2017<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.mucompany.com/main"</span>&gt;</span>ddd<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其他地方通过分段表达式实现重用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:insert</span>=<span class="string">"~&#123;footer::copy&#125;"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="字面量-文字"><a href="#字面量-文字" class="headerlink" title="字面量(文字)"></a><em>字面量(文字)</em></h5><p><strong>文本:</strong>文本文字只是在<span style="color:red">单引号</span>之间指定的字符串。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Now you are looking at a <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"'working web applicatio'"</span>&gt;</span>template file<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="Thymeleaf解析器级别的注释块"><a href="#Thymeleaf解析器级别的注释块" class="headerlink" title="Thymeleaf解析器级别的注释块"></a><em>Thymeleaf解析器级别的注释块</em></h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--/*--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">th:text</span>=<span class="string">"'加油'"</span>&gt;</span>ddddd<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--*/--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意<code>&lt;!--/*--&gt;</code>或<code>&lt;!--*/--&gt;</code>里面不能存在空格，如果用于注释文本</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--/* This code will be removed at Thymeleaf parsing time! */--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种注释文本的情况感觉不如用html自带的<code>&lt;!-- --&gt;</code>,感觉有些鸡肋。</p>
+<h6 id="原型注释块与th-block标签"><a href="#原型注释块与th-block标签" class="headerlink" title="原型注释块与th:block标签"></a><em>原型注释块与th:block标签</em></h6><p>&emsp;&emsp;<code>th:block</code>是一个纯粹的属性容器，允许模板开发人员指定他们想要的任何属性，自身没有语义。与原型注释块<code>&lt;!--/*/</code>和<code>/*/--&gt;</code>标记结合时，可用于处理<code>&lt;table&gt;</code>标签中不能包含<code>&lt;div&gt;</code>标签的场景。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--/*/ &lt;th:block th:each="user : $&#123;users&#125;"&gt; /*/--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.login&#125;"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.name&#125;"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.address&#125;"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--/*/ &lt;/th:block&gt; /*/--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>Thymeleaf与Spring Boot集成</p>
+<p>修改pom.xml,引入依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>基本设置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">thymeleaf:</span></span><br><span class="line">    <span class="comment"># 设置Thymeleaf的编码格式</span></span><br><span class="line">    <span class="attr">encoding:</span> <span class="string">UTF-8</span></span><br><span class="line">    <span class="comment"># 热部署静态文件</span></span><br><span class="line">    <span class="attr">cache:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># 使用HTML5标准</span></span><br><span class="line">    <span class="attr">mode:</span> <span class="string">HTML5</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Thymeleaf实战</p>
+</li>
+</ul>
+<p>简单用户管理：增删改查</p>
+<p>API设计</p>
+<ul>
+<li>GET/user：返回用于展现用户列表的list.html页面</li>
+<li>GET/user/{id}：返回用于展现用户的view.html页面</li>
+<li>GET/users/form：返回用于新增或者修改用户的form.html</li>
+<li>POST/users：新增或者修改用户，成功重定向到list.html页面</li>
+<li>GET/users/delete/{id}：根据id删除相应的用户数据，成功后重定向到list.html页面</li>
+<li>GET/users/modify/{id}：根据id获取相应用户的用户数据，并返回form.html页面用来执行修改</li>
+</ul>
+<p>后台编码</p>
+<ul>
+<li>实体User</li>
+<li>资源库UserRepository</li>
+<li>控制器UserController</li>
+</ul>
+<p>dao层要定义一个接口，然后面向接口编程 </p>
+<p>前端编码：</p>
+<ul>
+<li>list.html：用于展现用户列表</li>
+<li>form.html：用于新增或者修改用户资料</li>
+<li>view.html：用户查看某个用户的资料</li>
+<li>header.html:共用的头部页面</li>
+<li>footer.html：共用的底部页面</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/05/SpringBoot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/05/SpringBoot/" itemprop="url">SpringBoot</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T16:32:46+08:00">
+                2019-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>介绍Spring Boot</p>
+<ul>
+<li>为所有Spring开发提供一个更快更广泛的入门体验</li>
+<li>开箱即用，不合适时也可以快速抛弃</li>
+<li>提供一系列大型项目常用的非功能性特征</li>
+<li>零配置（不需要XML配置，遵循“约定大于配置”）</li>
+</ul>
+<p>抛弃了传统JavaEE 项目繁琐的配置、学习过程，让企业级应用开发过程变得so easy！</p>
+<p><img src="SpringBoot/Spring%E5%BA%94%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png" alt=""></p>
+<p>让Spring应用开发变得简单粗暴，将之前的框架进行完美整合。</p>
+<p>![](SpringBoot/Spring Boot应用开发流程.png)</p>
+<p>Spring Boot核心特性</p>
+<ul>
+<li>极低的学习成本</li>
+<li>可独立运行的Spring项目，最后web项目打成jar包，SpringBoot在构建过程将tomcat内嵌了</li>
+<li>“习惯优于配置”，极大的提高了开发效率。</li>
+<li>极简的组件依赖，自动发现与自动装配</li>
+<li>提供运行时的应用监控</li>
+<li>与分布式架构和云计算的天然集成</li>
+</ul>
+</li>
+<li><p>掌握Spring Boot应用的构建方法</p>
+</li>
+<li><p>讲解SpringBoot执行流程和配置选项</p>
+</li>
+</ol>
+<ul>
+<li><p>Spring Boot约定的目录结构（项目初期构建好）</p>
+<table>
+<thead>
+<tr>
+<th>/src/main</th>
+<th>项目根目录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/java</td>
+<td>Java源代码目录</td>
+</tr>
+<tr>
+<td>/resources</td>
+<td>资源目录</td>
+</tr>
+<tr>
+<td>/resources/static</td>
+<td>静态资源目录</td>
+</tr>
+<tr>
+<td>/resources/templates</td>
+<td>表示层页面目录</td>
+</tr>
+<tr>
+<td>/resources/application.properties</td>
+<td>Spring Boot核心配置文件</td>
+</tr>
+<tr>
+<td>/test</td>
+<td>测试文件目录</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Spring boot的基础引用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;<code>spring-boot-starter-parent</code> 本身不提供依赖关系，而是提供一些配置的默认值。</p>
+</li>
+<li><p>真正的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将所有资源打包为一个可独立运行的jar包</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>SpringBoot和Spring MVC的开发方式基本是一样的。如何启动SpringBoot呢？我们还需要编写一个入口类，一般情况下，入口类名字（项目名+Application）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="comment">//这个注解说明这是一个SpringBoot应用的入口类，当然也可以使用@EnableAutoConfiguration 这个注解告诉Spring Boot根据你添加的jar依赖关系“猜测”你想要如何配置Spring</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySpringBootApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//启动SpringBoot应用,将入口类作为参数传递进去</span></span><br><span class="line">  SpringApplication.run(MySpringBootApplication<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>右键入口类，run</p>
+<p>浏览器输入<a href="http://localhost:8080/out" target="_blank" rel="noopener">http://localhost:8080/out</a>检验</p>
+</li>
+</ul>
+<h3 id="Spring-Initialzr构建Spring-Boot应用（超级赞）"><a href="#Spring-Initialzr构建Spring-Boot应用（超级赞）" class="headerlink" title="Spring Initialzr构建Spring Boot应用（超级赞）"></a>Spring Initialzr构建Spring Boot应用（超级赞）</h3><p>从一开始就选择Initialzr，然后该填的填一路next。</p>
+<ol>
+<li>自动生成SpringBoot目录结构</li>
+<li>自动生成根包+入口类</li>
+</ol>
+<h3 id="Spring-Boot入口类"><a href="#Spring-Boot入口类" class="headerlink" title="Spring Boot入口类"></a><em>Spring Boot入口类</em></h3><ul>
+<li>入口类命名通常以*Application结尾</li>
+<li>入口类上增加@SpringBootApplication注解</li>
+<li>利用SpringApplication.run()方法启动应用</li>
+</ul>
+<h3 id="Spring-Boot启动流程"><a href="#Spring-Boot启动流程" class="headerlink" title="Spring Boot启动流程"></a><em>Spring Boot启动流程</em></h3><p><img src="SpringBoot/SpringBoot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B.png" alt=""></p>
+<h3 id="Spring-Boot内置配置选项"><a href="#Spring-Boot内置配置选项" class="headerlink" title="Spring Boot内置配置选项"></a><em>Spring Boot内置配置选项</em></h3><p>在Application.properties中配置</p>
+<p>日志级别：debug-&gt;info-&gt;warn-&gt;error-&gt;fatal</p>
+<p>Spring boot启动后的默认级别为info</p>
+<h3 id="Spring-Boot支持两种配置文件"><a href="#Spring-Boot支持两种配置文件" class="headerlink" title="Spring Boot支持两种配置文件"></a><em>Spring Boot支持两种配置文件</em></h3><ul>
+<li>属性文件：application.properties</li>
+<li>YAML格式：application.yml</li>
+</ul>
+<p>YAML的语法</p>
+<p>​    YAML是一种简洁的非标记语言。YAML以数据为中心，使用空白，缩进，分行组织数据，从而使得表示更加简洁易读。相比properties更具可读性</p>
+<p>​    YAML语法格式</p>
+<ul>
+<li>标准格式：key:(空格)value</li>
+<li>使用空格代表层级关系，以”:”结束</li>
+</ul>
+<h3 id="Spring-Boot自定义配置项"><a href="#Spring-Boot自定义配置项" class="headerlink" title="Spring Boot自定义配置项"></a><em>Spring Boot自定义配置项</em></h3><p>&emsp;&emsp;Spring Boot允许我们自定义应用配置项，在程序运行时允许动态加载，这为程序提供了良好的可维护性。</p>
+<p>外化文本是从模板文件中提取模板代码的片段，以便它们可以保存在单独的文件（通常是<code>.properties</code>文件）中，并且可以使用其他语言编写的等效文本（称为国际化或简称为<em>i18n</em>）轻松替换它们。外化的文本片段通常称为<em>“消息”</em>。</p>
+<p>消息总是有一个标识它们的键，而Thymeleaf允许您指定文本应该与具有以下<code>#{...}</code>语法的特定消息相对应：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mall:</span></span><br><span class="line"> <span class="attr">config:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">博客</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">这是我的个人博客</span></span><br><span class="line">  <span class="attr">hot-sales:</span> <span class="number">20</span></span><br><span class="line">  <span class="attr">show-advert:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>使用自定义配置项</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;mall.config.name&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;mall.config.description&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String description;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;mall.config.hot-sales&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer hotSales;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;mall.config.show-advert&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> Boolean showAdvert;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/out"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">out</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"name:%s,description:%s,hot-sales:%s,show-advert:%s"</span>,name,description,hotSales,showAdvert);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="环境配置文件"><a href="#环境配置文件" class="headerlink" title="环境配置文件"></a><em>环境配置文件</em></h3><ul>
+<li><p>Spring Boot可针对不同的环境提供不同的Profile文件</p>
+</li>
+<li><p>Profile文件的默认命名格式为application-{env}.yml</p>
+</li>
+<li><p>使用spring.profile.active选项来指定不同的profile</p>
+<p>对于多环境开发和协同开发极为重要</p>
+</li>
+</ul>
+<h3 id="打包与运行"><a href="#打包与运行" class="headerlink" title="打包与运行"></a><em>打包与运行</em></h3><ul>
+<li><p>利用Maven的package命令，生成可独立运行的jar包。（Maven实战中要说到）</p>
+<p>mvn package</p>
+</li>
+<li><p>利用java -jar xxx.jar 命令启动Spring Boot应用</p>
+</li>
+<li><p>Jar包可自动加载同目录的application配置文件</p>
+<p>打包后配置文件也在里面了，我们要指定profile不可能把它解压再修改吧，所以SpringBoot提供了自动解析Jar包同目录配置文件的功能。</p>
+</li>
+</ul>
+<p>三种运行方式</p>
+<ul>
+<li>使用<code>java -jar</code>命令运行可执行jar包，同时可以使用<code>jar tvf</code>命令查看可执行jar包内的目录结构。</li>
+<li>以“java application”运行</li>
+<li>构建工具，如maven的启动命令<code>mvn spring-boot:run</code></li>
+</ul>
+<hr>
+<p>@RestController：@Responsebody和@Controller注解的组合</p>
+<hr>
+<h3 id="Spring-Boot官方文档阅读笔记"><a href="#Spring-Boot官方文档阅读笔记" class="headerlink" title="Spring Boot官方文档阅读笔记"></a><em>Spring Boot官方文档阅读笔记</em></h3><h6 id="通过以下命令检查电脑上的-Java-安装情况"><a href="#通过以下命令检查电脑上的-Java-安装情况" class="headerlink" title="通过以下命令检查电脑上的 Java 安装情况"></a><em>通过以下命令检查电脑上的 <code>Java</code> 安装情况</em></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-Getting-Started"><a href="#1-Getting-Started" class="headerlink" title="1 Getting Started"></a><em>1 Getting Started</em></h3><p>&emsp;&emsp;The <code>spring-boot-starter-parent</code> is a special starter that peovides useful Maven defaults. The <code>mvn dependency:tree</code> command prints a tree representation of your project dependencies. You can see that <code>spring-boot-starter-parent</code> provides no dependencies by itself. To add the necessary dependencies, edit your <code>pom.xml</code> and add the <code>spring-boot-starter-web</code> dependency immediately below the <code>parent</code>section:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>spring-boot-starter-web</code> including the embed tomcat web server. </p>
+<p>内嵌Servlet容器</p>
+<p>maven项目依赖的生命周期怎么划分的</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/07/26/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" itemprop="url">栈和队列</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T17:32:59+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="栈-Stack"><a href="#栈-Stack" class="headerlink" title="栈 Stack"></a>栈 Stack</h1><ul>
+<li><p>栈也是一种线性结构</p>
+</li>
+<li><p>相比数组，栈对应的操作是数组的子集</p>
+</li>
+<li><p>只能从一端添加元素，也只能从同一端取出元素</p>
+</li>
+<li><p>这一端称为栈顶<img src="%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E6%A0%88.png" alt="栈"></p>
+
+
+</li>
+</ul>
+<p>栈是一种后进先出的数据结构Last In First Out（LIFO）</p>
+<p>在计算机的世界里，栈拥有着不可思议的作用</p>
+<p><strong>栈的应用</strong></p>
+<ul>
+<li><p>无处不在的Undo:<code>ctrl+z</code>、Redo:<code>ctrl+y</code></p>
+</li>
+<li><p>程序调用的系统栈，在方法里面调用其他的方法</p>
+<p>另外，栈还用来存放线程的调用栈帧，那么什么是栈帧呢？如下代码，当我们调用 test() 方法时，就会把<span style="color:red">当前方法的一些信息封装为栈帧</span>(如方法中断执行到跳转其它方法的位置)压入到栈顶，栈顶的栈帧就是活跃的 test 方法。当执行到 say() 方法时就会在栈顶新加一个关于 say() 方法的栈帧，这时候 say() 方法所在栈帧就是活跃栈帧。当 say() 方法执行完毕后，say() 方法所在的栈顶帧就会出栈，这时候栈顶活跃帧就是 test 方法的了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">6</span>;</span><br><span class="line">    say();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>栈的基本实现</strong>(实际底层有多种实现方式)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> stack;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-07-26 18:17</span></span><br><span class="line"><span class="comment"> * 栈</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Stack</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 入栈</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(E e)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 出栈</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">E <span class="title">pop</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 取栈顶元素</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">E <span class="title">peek</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 查看栈里面元素个数</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断栈是否为空</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/07/26/RESTful%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/RESTful%E5%85%A5%E9%97%A8/" itemprop="url">RESTful入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T16:04:51+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RESTful/" itemprop="url" rel="index">
+                    <span itemprop="name">RESTful</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="RESTful"><a href="#RESTful" class="headerlink" title="RESTful"></a>RESTful</h2><h3 id="什么是RESTful？"><a href="#什么是RESTful？" class="headerlink" title="什么是RESTful？"></a>什么是RESTful？</h3><p>REST：Representational State Teansfer(表达性状态转移)</p>
+<p>REST并不是一种创新技术，它指的是一组架构约束条件和原则</p>
+<p>符合REST的约束条件和原则的架构，就称它为RESTful架构。</p>
+<h3 id="RESTful核心内容"><a href="#RESTful核心内容" class="headerlink" title="RESTful核心内容"></a>RESTful核心内容</h3><ol>
+<li>资源与URI(资源的地址)</li>
+<li>资源的表述——JSON、XML等</li>
+<li>状态转移</li>
+</ol>
+<h3 id="RESTful架构特点"><a href="#RESTful架构特点" class="headerlink" title="RESTful架构特点"></a>RESTful架构特点</h3><ol>
+<li>统一了客户端访问资源的接口</li>
+<li>url更加简洁，易于理解，便于扩展</li>
+<li>有利于不同系统之间的资源共享</li>
+</ol>
+<h4 id="RESTful开发风格"><a href="#RESTful开发风格" class="headerlink" title="RESTful开发风格"></a>RESTful开发风格</h4><p>查询课程：<code>http://localhost:8080/course/id method=&#39;get&#39;</code></p>
+<p>添加课程: <code>http://localhost:8080/course methos=&#39;post&#39;</code></p>
+<p>删除课程: <code>http://localhost:8080/course/id methos=&#39;delete&#39;</code></p>
+<p>修改课程: <code>http://localhost:8080/course/id method=&#39;put&#39;</code></p>
+<ol>
+<li><p><strong>用URL描述资源。</strong></p>
+</li>
+<li><p><strong>使用HTTP方法（GET、POST、DELETE、PUT、PATCH等）描述行为。</strong></p>
+<p><strong>使用HTTP状态码来表示不同的结果（后台可以通过@ResponseStatus指定自定义异常处理方法的响应状态码、Spring也内置了一些场景的状态码）。</strong></p>
+</li>
+<li><p><strong>使用JSON交互数据，资源表述。（不一定是JSON，XML等也可以，但是JSON较流行）。</strong></p>
+</li>
+<li><p><strong>RESTful只是一种风格，并不是强制的标准。</strong></p>
+</li>
+</ol>
+
+
+<p>RESTful支持处理GET、POST、PUT、DELETE、PATCH</p>
+<p>问题：默认是能处理GET、POST请求的，而PUT和DELETE请求是不能够处理的，通过特殊的方式将POST请求转换为PUT请求或者DELETE请求。</p>
+<p>首先在web.xml中配置一个过滤器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- REST风格代码开发过滤器  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>hiddenHttpMethodFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.springframework.web.filter.HiddenHttpMethodFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>hiddenHttpMethodFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>使用Spring MVC开发Restful API.(用户增删改查TDD)</p>
+<ul>
+<li><p>编写第一个Restful API</p>
+<ul>
+<li><p><strong>编写针对RestfulAPI的测试用例（自己再去学MockMVC吧，链式编程一脸懵）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">SpringBootTest</span></span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">UserControllerTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> WebApplicationContext wac;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span>&#123;</span><br><span class="line">        mockMvc= MockMvcBuilders.webAppContextSetup(wac).build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">whenQuerySuccess</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String result=mockMvc.perform(MockMvcRequestBuilders.get(<span class="string">"/user"</span>)</span><br><span class="line">                .param(<span class="string">"username"</span>,<span class="string">"xiaoming"</span>)</span><br><span class="line">                .contentType(MediaType.APPLICATION_JSON_UTF8))</span><br><span class="line">                .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">                .andExpect(MockMvcResultMatchers.jsonPath(<span class="string">"$.length()"</span>).value(<span class="number">3</span>))</span><br><span class="line">                .andReturn().getResponse().getContentAsString();</span><br><span class="line">        System.out.println(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用注解声明RestfulAPI</p>
+<p><code>@RestController</code> 标明此Controller提供RestAPI</p>
+<p><code>@RequestMapping</code>及其变体。映射http请求url到java方法</p>
+<p><code>@RequestParam</code> 映射请求参数到java方法的参数中</p>
+<p><code>@PageableDefault</code> 指定分页参数的默认值 这个是SpringData的，我自己一般使用PageHelper插件</p>
+</li>
+<li><p>在RestfulAPI中传递参数</p>
+</li>
+</ul>
+</li>
+<li><p>编写用户详情服务</p>
+<ul>
+<li><p>相关注解</p>
+<p><code>@PathVariable</code> 映射url片段到java方法的参数（路径参数）</p>
+<ol>
+<li><p>在url声明中使用正则表达式，对路径参数的格式作限定</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/user/&#123;id:\\d+&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">getInfo</span><span class="params">(@PathVariable(value = <span class="string">"id"</span>)</span>String id)</span>&#123;</span><br><span class="line">    System.out.println(id);</span><br><span class="line">    User user=<span class="keyword">new</span> User();</span><br><span class="line">    user.setUsername(<span class="string">"tom"</span>);</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实际业务场景可以根据需求撰写更加复杂的正则表达式</p>
+</li>
+</ol>
+<p><code>@JsonView</code> 控制json输出内容。额，这个类似于Jackson的<code>@JsonIgnore</code>注解，但是Jackson的<code>@JsonIgnore</code>注解是一直不显示某一个属性，但是我想的是我想让他显示就显示，不想让他显示就不显示。</p>
+<ol>
+<li><p>使用接口来声明多个视图</p>
+</li>
+<li><p>在值对象的get方法上指定视图</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonView;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-15 21:10</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@JsonView</span>(UserSimpleView<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">    <span class="title">public</span> <span class="title">String</span> <span class="title">getUsername</span>() </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span><span class="params">(String username)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@JsonView</span>(UserDetailView<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">    <span class="title">public</span> <span class="title">String</span> <span class="title">getPassword</span>() </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserSimpleView</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//注意：这里继承了UserSimpleView，表示不仅会显示自己的password还会显示simpleview</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserDetailView</span> <span class="keyword">extends</span> <span class="title">UserSimpleView</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在Controller方法上指定视图</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonView;</span><br><span class="line">    <span class="keyword">import</span> com.imooc.dto.User;</span><br><span class="line">    <span class="keyword">import</span> org.springframework.web.bind.annotation.*; </span><br><span class="line">    <span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line">    <span class="keyword">import</span> java.util.List;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@create</span> 2019-11-15 21:03</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RestController</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">        <span class="meta">@RequestMapping</span>(value = <span class="string">"/user"</span>,method = RequestMethod.GET)</span><br><span class="line">        <span class="meta">@JsonView</span>(User.UserSimpleView<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">        <span class="title">public</span> <span class="title">List</span>&lt;<span class="title">User</span>&gt; <span class="title">query</span>(@<span class="title">RequestParam</span>(<span class="title">defaultValue</span> </span>= <span class="string">"xiao"</span>) String username)&#123;</span><br><span class="line">            System.out.println(username);</span><br><span class="line">            List&lt;User&gt; users=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            users.add(<span class="keyword">new</span> User());</span><br><span class="line">            users.add(<span class="keyword">new</span> User());</span><br><span class="line">            users.add(<span class="keyword">new</span> User());</span><br><span class="line">            <span class="keyword">return</span> users;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="meta">@RequestMapping</span>(value = <span class="string">"/user/&#123;id:\\d+&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">        <span class="meta">@JsonView</span>(User.UserDetailView<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">        <span class="title">public</span> <span class="title">User</span> <span class="title">getInfo</span>(@<span class="title">PathVariable</span>(<span class="title">value</span> </span>= <span class="string">"id"</span>)String id)&#123;</span><br><span class="line">            System.out.println(id);</span><br><span class="line">            User user=<span class="keyword">new</span> User();</span><br><span class="line">            user.setUsername(<span class="string">"tom"</span>);</span><br><span class="line">            <span class="keyword">return</span> user;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>处理创建请求</p>
+<ul>
+<li><p>相关注解</p>
+<p><code>@RequestBody</code> 映射请求体到java方法的参数。</p>
+<ol>
+<li>状态码：405请求的method后台不支持(存在url一致但是method方法不一样的处理器方法)</li>
+</ol>
+<p>日期类型参数</p>
+<p>&emsp;&emsp;类型转换器，”YY-mm-HH”之类的并不适用与前后端分离的app；前后端分离的app可能会有多个前端，每个前端可能对日期的显示格式不一样。传不带格式的时间戳，然后前台再对它进行处理，通过时间戳可以很方便的在前台和后台的时间戳和日期格式进行转换。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">@PostMapping</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> User <span class="title">create</span><span class="params">(@RequestBody User user)</span></span>&#123;</span><br><span class="line">       System.out.println(user);</span><br><span class="line">       user.setId(<span class="string">"1"</span>);</span><br><span class="line">       <span class="keyword">return</span> user;</span><br><span class="line">    </span><br><span class="line">   &#125;</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">whenCreateSuccess</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">       Date date=<span class="keyword">new</span> Date();</span><br><span class="line">       <span class="comment">//日期格式的对象的时间戳</span></span><br><span class="line">       System.out.println(date.getTime());</span><br><span class="line">    </span><br><span class="line">       <span class="comment">//JSON格式的字符串，作为post请求的内容</span></span><br><span class="line">       String content=<span class="string">"&#123;\"username\":\"tom\",\"password\":null,\"birthday\":"</span>+date.getTime()+<span class="string">"&#125;"</span>;</span><br><span class="line">       String resuslt=mockMvc.perform(MockMvcRequestBuilders.post(<span class="string">"/user"</span>)</span><br><span class="line">               .contentType(MediaType.APPLICATION_JSON_UTF8)</span><br><span class="line">               .content(content))</span><br><span class="line">               .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">               .andExpect(MockMvcResultMatchers.jsonPath(<span class="string">"$.id"</span>).value(<span class="string">"1"</span>))</span><br><span class="line">               .andReturn().getResponse().getContentAsString();</span><br><span class="line">       System.out.println(resuslt);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+
+<p><code>@Vaild</code>注解和<code>BindingResult</code>验证请求参数的合法性并处理校验结果</p>
+<ol>
+<li><p>状态码400：请求的格式错误（如参数校验出现错误）</p>
+</li>
+<li><p><code>@Vaild</code>校验出错就会直接抛出异常，进不到处理器方法中。但是有的时候我们既要校验，又要对校验的结果进行日志记录，单单<code>@Vaild</code>就实现不了了。这时候就要和<code>BindingResult</code>配合使用了，如果校验有错误就会把错误放到<code>BindingResult</code>中，然后继续执行处理器方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">create</span><span class="params">(@RequestBody @Valid User user, BindingResult errors)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(errors.hasErrors())&#123;</span><br><span class="line">        <span class="comment">//lambda表达式</span></span><br><span class="line">        errors.getAllErrors().stream().forEach(error-&gt; System.out.println(error.getDefaultMessage()));</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(user);</span><br><span class="line">    user.setId(<span class="string">"1"</span>);</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>开发用户信息修改和删除服务</p>
+<ul>
+<li><p>数据校验</p>
+<p>常用的验证注解</p>
+<ol>
+<li><p>@NotNull:用在基本数据类型上，不能为Null，但可以为空字符串</p>
+</li>
+<li><p>@NotEmpty:用在集合类上，不能为null，并且长度必须大于0</p>
+</li>
+<li><p>@NotBlank:只能作用在String上，不能为Null，而且调用trim()后，长度必须大于0</p>
+</li>
+<li><p>@NonNull：在方法或构造函数的参数上使用，生成一个空值检查语句</p>
+
+
+
+
+</li>
+</ol>
+<p>每一个校验注解都有一个message，可以用于自定义错误消息</p>
+<p>自定义校验注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自定义校验注解</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-21 10:23</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//这个注解可以被用在什么地方</span></span><br><span class="line"><span class="meta">@Target</span>(&#123;ElementType.FIELD,ElementType.METHOD&#125;)</span><br><span class="line"><span class="comment">//运行时注解</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="comment">//指定校验逻辑所在的类</span></span><br><span class="line"><span class="meta">@Constraint</span>(validatedBy = MyConstraintVaildator<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> @<span class="title">interface</span> <span class="title">MyConstraint</span> </span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">message</span><span class="params">()</span> <span class="keyword">default</span> "</span>&#123;org.hibernate.validator.constraints.NotBlank.message&#125;<span class="string">";</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Class&lt;?&gt;[] groups() default &#123;&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Class&lt;? extends Payload&gt;[] payload() default &#123;&#125;;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/**</span></span><br><span class="line"><span class="string"> * @author Hogan_Lee</span></span><br><span class="line"><span class="string"> * @create 2019-11-21 10:27</span></span><br><span class="line"><span class="string"> */</span></span><br><span class="line"><span class="string">//Spring容器能够自动找到这个类，因为实现了~  所以不用我们写@component</span></span><br><span class="line"><span class="string">//两个泛型，其中String说明注解只能放在String类型的域上面</span></span><br><span class="line"><span class="string">public class MyConstraintVaildator implements ConstraintValidator&lt;MyConstraint,String&gt; &#123;</span></span><br><span class="line"><span class="string">    @Override</span></span><br><span class="line"><span class="string">    public void initialize(MyConstraint myConstraint) &#123;</span></span><br><span class="line"><span class="string">        System.out.println("</span>init<span class="string">");</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    //返回值代表检验的结果</span></span><br><span class="line"><span class="string">    @Override</span></span><br><span class="line"><span class="string">    public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) &#123;</span></span><br><span class="line"><span class="string">        System.out.println(s);</span></span><br><span class="line"><span class="string">        return false;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>数据校验失败状态码是400</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="RESTful-API-错误处理"><a href="#RESTful-API-错误处理" class="headerlink" title="RESTful API 错误处理"></a>RESTful API 错误处理</h4><ul>
+<li><p>Spring Boot 中默认的错误处理机制</p>
+<p>额，默认的异常处理机制也很好用！！</p>
+<p>Spring Boot自定义错误页面的存放位置！好像只有2.0以下的是这个样子，尝试了2.0以上的不可以</p>
+
+
+<p><img src="RESTful%E5%85%A5%E9%97%A8/%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2.png" alt=""></p>
+</li>
+<li><p>自定义异常处理</p>
+</li>
+</ul>
+<h4 id="RESTful-API的拦截"><a href="#RESTful-API的拦截" class="headerlink" title="RESTful API的拦截"></a>RESTful API的拦截</h4><p>需求：记录所有服务的处理时间</p>
+<ol>
+<li><p><strong>过滤器（Filter）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.web.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.*;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-03 14:09</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//加上@Compont之后就生效了，拦截所有的请求</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimeFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"time filter init"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//doFilter执行整个处理方法的逻辑</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"time filter start"</span>);</span><br><span class="line">        <span class="keyword">long</span> start=<span class="keyword">new</span> Date().getTime();</span><br><span class="line">        <span class="comment">//服务处理</span></span><br><span class="line">        filterChain.doFilter(servletRequest,servletResponse);</span><br><span class="line">        System.out.println(<span class="string">"time filter:"</span>+(<span class="keyword">new</span> Date().getTime()-start));</span><br><span class="line">        System.out.println(<span class="string">"time filter finish"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"time filter destroy"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第三方的Filter加到自己的项目中，在配置类或启动类中加上以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">public FilterRegistrationBean timeFilter()&#123;</span><br><span class="line">    FilterRegistrationBean registrationBean&#x3D;new FilterRegistrationBean();</span><br><span class="line">    TimeFilter timeFilter&#x3D;new TimeFilter();</span><br><span class="line">    &#x2F;&#x2F;要使用的过滤器Bean</span><br><span class="line">    registrationBean.setFilter(timeFilter);</span><br><span class="line">    &#x2F;&#x2F;过滤器生效的路径</span><br><span class="line">    List&lt;String&gt; urls&#x3D;new ArrayList&lt;&gt;();</span><br><span class="line">    urls.add(&quot;&#x2F;*&quot;);</span><br><span class="line">    registrationBean.setUrlPatterns(urls);</span><br><span class="line">    return registrationBean;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><span style="color:red">采用J2EE规范来编写的，只能取得request和response两个对象；实际上是由哪个控制器的哪个处理器方法来处理的并不知道。</span></p>
+<p>额，如果有很多个过滤器要执行流程是怎么样子的？</p>
+</li>
+<li><p><strong>拦截器（Interceptor）</strong></p>
+<p>注意：PreHandler方法返回的布尔值决定了后面的方法是不是要执行！！！可以拦截处理器方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.web.interceptor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.method.HandlerMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.HandlerInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-03 14:35</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//注意这里单单加上@Component还是不生效的，还需要额外的配置</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimeInterceptor</span> <span class="keyword">implements</span> <span class="title">HandlerInterceptor</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"preHandler"</span>);</span><br><span class="line">        httpServletRequest.setAttribute(<span class="string">"startTime"</span>, <span class="keyword">new</span> Date().getTime());</span><br><span class="line">        <span class="comment">//相比拦截器多了一个对象</span></span><br><span class="line">        <span class="comment">//打印类命</span></span><br><span class="line">        System.out.println(((HandlerMethod) o).getBean().getClass().getName());</span><br><span class="line">        <span class="comment">//打印处理器方法名字</span></span><br><span class="line">        System.out.println(((HandlerMethod) o).getMethod().getName());</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postHandle</span><span class="params">(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"postHandler"</span>);</span><br><span class="line">        Long start = (Long) httpServletRequest.getAttribute(<span class="string">"startTime"</span>);</span><br><span class="line">        System.out.println(<span class="string">"time interception 耗时"</span> + (<span class="keyword">new</span> Date().getTime() - start));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//不管处理器方法是否抛出异常都会进入到afterCompletion方法中，抛出异常不会进入到postHandler方法</span></span><br><span class="line">    <span class="comment">//注意：控制器通知类比这个类先执行，异常会被控制器通知类偷走了</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterCompletion</span><span class="params">(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"AfterCompletion"</span>);</span><br><span class="line">        Long start = (Long) httpServletRequest.getAttribute(<span class="string">"startTime"</span>);</span><br><span class="line">        System.out.println(<span class="string">"time interception 耗时"</span> + (<span class="keyword">new</span> Date().getTime() - start));</span><br><span class="line">        System.out.println(<span class="string">"e is"</span> + e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>拦截器注册</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.imooc.web.interceptor.TimeInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.InterceptorRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-03 14:51</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> TimeInterceptor timeInterceptor;</span><br><span class="line">    <span class="comment">//拦截器注册器</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addInterceptor(timeInterceptor);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>切面（Aspect）</strong></p>
+</li>
+</ol>
+<p>使用Spring MVC处理其它web应用常见的需求和场景.</p>
+<ul>
+<li>如何处理静态资源和异常</li>
+<li>如何使用Spring MVC拦截器</li>
+<li>如何处理文件的上传下载</li>
+<li>如何进行请求的异步开发</li>
+</ul>
+<p>Restful API开发常用辅助框架</p>
+<p>除了查询，如更新，创建等要返回什么</p>
+<h2 id="文件的上传和下载"><a href="#文件的上传和下载" class="headerlink" title="文件的上传和下载"></a>文件的上传和下载</h2><h4 id="1、文件上传"><a href="#1、文件上传" class="headerlink" title="1、文件上传"></a>1、文件上传</h4><p>现在前端页面大部分都是单页应用，不会去刷新。不会有表单提交，上传文件的时候也是异步的，只会提交一个文件的路径上来。文件的上传往往都是单做的。</p>
+<p>文件上传单元测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">whenUploadSuccess</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String result=mockMvc.perform(MockMvcRequestBuilders.fileUpload(<span class="string">"/file"</span>)</span><br><span class="line">                                  <span class="comment">//第一个参数和控制器参数名称一致，第二个为file的值，第四个为文件内容的字节流</span></span><br><span class="line">            .file(<span class="keyword">new</span> MockMultipartFile(<span class="string">"file"</span>, <span class="string">"test.txt"</span>, <span class="string">"multipart/form-data"</span>, <span class="string">"hello upload"</span>.getBytes(<span class="string">"UTF-8"</span>))))</span><br><span class="line">            .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">            .andReturn().getResponse().getContentAsString();</span><br><span class="line">    System.out.println(result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>文件上传控制器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/file"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//人家上传过来至少要返回获取文件的路径给他</span></span><br><span class="line">    <span class="meta">@PostMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> FileInfo <span class="title">upload</span><span class="params">(MultipartFile file)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="comment">//文件保存的位置</span></span><br><span class="line">        String folder=<span class="string">"G:\\test\\imooc-security\\imooc-security-demo1\\src\\main\\java\\com\\imooc\\web\\controller"</span>;</span><br><span class="line">        File localFile=<span class="keyword">new</span> File(folder,<span class="keyword">new</span> Date().getTime()+<span class="string">".txt"</span>);</span><br><span class="line">        <span class="comment">//将传上来的文件写到自己新建的文件</span></span><br><span class="line">        file.transferTo(localFile);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> FileInfo(localFile.getAbsolutePath());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、文件下载"><a href="#2、文件下载" class="headerlink" title="2、文件下载"></a>2、文件下载</h4><p>文件下载控制器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">download</span><span class="params">(@PathVariable String id, HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">    <span class="comment">//try-with-resource</span></span><br><span class="line">    <span class="keyword">try</span>(</span><br><span class="line">            <span class="comment">//输入流</span></span><br><span class="line">            InputStream inputStream=<span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(folder,id+<span class="string">".txt"</span>));</span><br><span class="line">            <span class="comment">//输出流</span></span><br><span class="line">            OutputStream outputStream=response.getOutputStream()</span><br><span class="line">    )&#123;</span><br><span class="line">        response.setContentType(<span class="string">"application/x-download"</span>);</span><br><span class="line">        response.addHeader(<span class="string">"Content-Disposition"</span>,<span class="string">"attachment;filename=test.txt"</span>);</span><br><span class="line">        <span class="comment">//commons-io包，这个方法的作用是把输入流拷贝到输出流中</span></span><br><span class="line">        IOUtils.copy(inputStream,outputStream);</span><br><span class="line">        outputStream.flush();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>自动生成接口文档——与前端开发并行工作</p>
+<p>&emsp;&emsp;使用swagger自动生成html文档</p>
+<p>如果没有这个工具，需要同时维护自己的代码和文档，很繁琐。而swagger可以根据代码实时生成接口文档。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 扫描程序生成文档数据 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 生成最终的可视化界面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在配置类中添加@EnableSwagger2注解，启动后访问localhost:8060/swagger-ui.html.</p>
+<p>Swagger常用API描述注解：</p>
+<p>@APIOperation  方法描述</p>
+<p>@APIModelProperty  实体类属性描述</p>
+<p>@APIParam  方法参数没有封装成对象的属性</p>
+<p>&emsp;&emsp;使用WireMock快速伪造RESTful服务</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/07/26/JSP%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/JSP%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" itemprop="url">JSP常用标签</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T09:12:27+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;JSTL(JavaServer Pages Standard Tag Library)/JSP标准标签库是JSP提供的一个自定义标签库。使用JSTL有利于我们实现JSP页面中的<span style="color:red">代码复用</span>例如用于————的 <code>&lt;c:foreach&gt;&lt;/c:foreach&gt;</code> 标签。</p>
+<p>JSTL标签的可分为四大分类</p>
+<ul>
+<li>核心标签–最常用、最重要</li>
+<li>格式化标签</li>
+<li>SQL标签</li>
+<li>XML标签</li>
+</ul>
+<p>除此之外，还有JSTL函数也是比较常用的</p>
+<h4 id="JSTL的环境搭建"><a href="#JSTL的环境搭建" class="headerlink" title="JSTL的环境搭建"></a>JSTL的环境搭建</h4><p>&emsp;&emsp;JSTL标签和Server及JSP页面有着比较严格的版本对应关系，版本对应不正确很容易抛出异常。</p>
+<p>JSTL的jar包下载地址:<a href="https://mvnrepository.com/artifact/javax.servlet/jstl" target="_blank" rel="noopener">https://mvnrepository.com/artifact/javax.servlet/jstl</a></p>
+<p>拓展：引入jar包的三种方式：</p>
+<ol>
+<li>引入jar到WEB-INF/lib文件目录下，然后右键jar包，选择add as library；</li>
+<li><code>build path</code>引入jar包在文件系统中的一个外部链接；</li>
+<li>使用maven项目通过坐标进行引入进行引入。</li>
+</ol>
+<h4 id="JSTL的入门Demo"><a href="#JSTL的入门Demo" class="headerlink" title="JSTL的入门Demo"></a>JSTL的入门Demo</h4><p>为了使用JSTL，需要在JSP页面中对其进行声明:</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 如：引入JSTL的核心标签库 --&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>接下来我们就可以使用JSTL进行开发了，首先让我们按照惯例来输出一个Hello World!</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;$Title$&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;c:out value="Hello World!"&gt;&lt;/c:out&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="JSTL和EL表达式"><a href="#JSTL和EL表达式" class="headerlink" title="JSTL和EL表达式"></a>JSTL和EL表达式</h4><p>JSTL标签中对常量的值输出是较为简单的，但是对于变量的操作则要借助EL表达式(Expression Language)。</p>
+<h5 id="EL表达式的格式"><a href="#EL表达式的格式" class="headerlink" title="EL表达式的格式"></a>EL表达式的格式</h5><ul>
+<li><p>用美元符号“$”定界，内容包括在花括号“{}”中</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;${表达式}</p>
+</li>
+<li><p>“.”与”[]”运算符</p>
+<ul>
+<li><p>通常情况是通用的<code>${user.sex}</code>等同于<code>${user[&quot;sex&quot;]}</code></p>
+</li>
+<li><p>“[]”还可以用来进行集合元素中的定位<code>${booklist[0].price}</code></p>
+</li>
+<li><p>以下两种情况下”.”与”[]”之间存在区别</p>
+<ul>
+<li><p>包含特殊字符</p>
+<p>只能使用”[]”，如<code>${user[&quot;first-name&quot;]}</code></p>
+</li>
+<li><p>通过变量动态取值</p>
+<p>同样只能使用”[]”，如<code>${user[param]}</code>,其中param可以是name or sex or others</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="EL变量"><a href="#EL变量" class="headerlink" title="EL变量"></a>EL变量</h5><table>
+<thead>
+<tr>
+<th>JSP内置对象</th>
+<th>EL名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Page</td>
+<td>PageScope</td>
+</tr>
+<tr>
+<td>Request</td>
+<td>RequestScope</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>SessionScope</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>ApplicationScope</td>
+</tr>
+</tbody></table>
+<p>如果没有指定，则按照PageScope–&gt;RequestScope–&gt;SessionScope–&gt;ApplicationScope的顺序进行逐一查找。</p>
+<p><span style="color:red">&gt;如果找不到值为null，但是EL对其进行优化会输出空字符串。</span></p>
+<h5 id="EL的自动类型转换"><a href="#EL的自动类型转换" class="headerlink" title="EL的自动类型转换"></a>EL的自动类型转换</h5><p>JSP的getparameter()方法每次获得都是字符串，需要我们手动进行数据类型的转换，当时现在EL表达式可以进行自动数据类型的转换，常见与SpringMVC的数据绑定。</p>
+<h5 id="EL隐式对象"><a href="#EL隐式对象" class="headerlink" title="EL隐式对象"></a>EL隐式对象</h5><table>
+<thead>
+<tr>
+<th>隐式对象</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PageContext</td>
+<td>PageContext实例对应于当前页面的处理</td>
+</tr>
+<tr>
+<td>PageScope</td>
+<td>与页面作用域的名称和值相关联的Map类</td>
+</tr>
+<tr>
+<td>requestScope</td>
+<td>与请求作用域属性的名称和值相关联的Map类</td>
+</tr>
+<tr>
+<td>sessionScope</td>
+<td>与会话作用域属性的名称和值相关联的Map类</td>
+</tr>
+<tr>
+<td>applicationScope</td>
+<td>与应用程序作用域属性的名称和值相关联的Map类</td>
+</tr>
+<tr>
+<td>param</td>
+<td>按名称存储的请求参数的主要值的Map类</td>
+</tr>
+<tr>
+<td>paramValues</td>
+<td>按请求参数的所有值作为String数组存储的Map类</td>
+</tr>
+<tr>
+<td>Header</td>
+<td>按名称存储请求头主要值的Map类</td>
+</tr>
+<tr>
+<td>headerValue</td>
+<td>按请求头的所有值作为String数组存储的Map类</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>按名称存储请求附带的cookie的Map类</td>
+</tr>
+<tr>
+<td>intParam</td>
+<td>按名称存储Web应用程序上下文初始化参数的Map类</td>
+</tr>
+</tbody></table>
+<h5 id="EL运算符"><a href="#EL运算符" class="headerlink" title="EL运算符"></a>EL运算符</h5><ul>
+<li><p>运算符允许对数据和文字进行组合以及比较</p>
+</li>
+<li><p>EL运算符：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>算术运算符</td>
+<td>+、-、*、/(或div)和%(或mod)</td>
+</tr>
+<tr>
+<td>关系运算符</td>
+<td>==(或eq)、!=(或ne)、&lt;(或It)、&gt;(或gt)、&lt;=(或le)和&gt;=(或ge)</td>
+</tr>
+<tr>
+<td>逻辑运算符</td>
+<td>&amp;&amp;(或and)、||(或or)和!(或not)</td>
+</tr>
+<tr>
+<td>验证运算符</td>
+<td>empty</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="JSTL核心标签库"><a href="#JSTL核心标签库" class="headerlink" title="JSTL核心标签库"></a>JSTL核心标签库</h4><p>JSTL的核心标签库标签共13个，从功能上可以分为4类：</p>
+<ul>
+<li>表达式控制标签：out set remove catch</li>
+<li>流程控制标签：if choose when otherwise</li>
+<li>循环标签：forEach forTokens</li>
+<li>URL操作标签：import url redirect</li>
+</ul>
+<h5 id="out标签"><a href="#out标签" class="headerlink" title="out标签"></a>out标签</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;$Title$&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!-- 使用out标签输出常量 --&gt;</span><br><span class="line">&lt;c:out value="Hello World"&gt;&lt;/c:out&gt;&lt;br/&gt;</span><br><span class="line">&lt;!-- 使用out标签输出变量 --&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    session.setAttribute(<span class="string">"name"</span>, <span class="string">"小明"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;c:out value="$&#123;sessionScope.name&#125;"&gt;&lt;/c:out&gt;</span><br><span class="line">&lt;!-- 当变量不存在时输出默认值 --&gt;</span><br><span class="line">&lt;c:out value="$&#123;sex&#125;" default="男"&gt;&lt;/c:out&gt;</span><br><span class="line">&lt;!-- 当escapeXML为flase时，转义字符会进行转义，默认为<span class="keyword">true</span> --&gt;</span><br><span class="line">&lt;c:out value="2&amp;nbsp;2/n22" escapeXml="flase"&gt;&lt;/c:out&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="set标签"><a href="#set标签" class="headerlink" title="set标签"></a>set标签</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id="ds" class="user.User"&gt;&lt;/jsp:useBean&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;$Title$&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!-- 存值到scope当中 --&gt;</span><br><span class="line">&lt;!-- <span class="number">1</span>.值放到value中 --&gt;</span><br><span class="line">&lt;c:set value="today" var="day" scope="session"&gt;&lt;/c:set&gt;</span><br><span class="line">&lt;c:out value="$&#123;day&#125;"&gt;&lt;/c:out&gt;</span><br><span class="line">&lt;!-- 值放到容器标签当中 --&gt;</span><br><span class="line">&lt;c:set var="age" scope="session"&gt;12&lt;/c:set&gt;</span><br><span class="line">&lt;c:out value="$&#123;age&#125;"&gt;&lt;/c:out&gt;</span><br><span class="line">&lt;!-- 存值到JavaBean当中 --&gt;</span><br><span class="line">&lt;c:set target="$&#123;ds&#125;" value="as" property="name"&gt;&lt;/c:set&gt;</span><br><span class="line">&lt;c:out value="$&#123;ds.name&#125;"&gt;&lt;/c:out&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Hogan Lee" />
+            
+              <p class="site-author-name" itemprop="name">Hogan Lee</p>
+              <p class="site-description motion-element" itemprop="description">Talk is not cheap. Talk can be powerful.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/forhcl" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:18028543308@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Lee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/chitose.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

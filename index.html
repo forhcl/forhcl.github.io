@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Talk is not cheap. Talk can be powerful.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hogan&#39;Blog">
+<meta property="og:url" content="http://forhcl.github.io/index.html">
+<meta property="og:site_name" content="Hogan&#39;Blog">
+<meta property="og:description" content="Talk is not cheap. Talk can be powerful.">
+<meta property="article:author" content="Hogan Lee">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://forhcl.github.io/"/>
+
+
+
+
+
+  <title>Hogan'Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/12/22/%E5%BC%B9%E5%B0%BD%E7%B2%AE%E7%BB%9D%EF%BC%8C%E8%B5%84%E6%BA%90%E5%85%B3%E9%97%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/22/%E5%BC%B9%E5%B0%BD%E7%B2%AE%E7%BB%9D%EF%BC%8C%E8%B5%84%E6%BA%90%E5%85%B3%E9%97%AD/" itemprop="url">弹尽粮绝，资源关闭</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-22T15:03:40+08:00">
+                2019-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;日常开发的时候，总是有许多需要我们调用 <code>close()</code> 方法手动关闭的<strong>物理</strong>资源，如文件/流资源、套接字资源、数据库连接资源等等。通常都是在 <code>finally</code> 语句块对资源进行关闭，如下面的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">oldFileHandle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 声明</span></span><br><span class="line">        FileInputStream fileInputStream = <span class="keyword">null</span>;</span><br><span class="line">        InputStreamReader inputStreamReader = <span class="keyword">null</span>;</span><br><span class="line">        BufferedReader bufferedReader = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建文件读取流</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fileInputStream = <span class="keyword">new</span> FileInputStream(url);</span><br><span class="line"></span><br><span class="line">            inputStreamReader =</span><br><span class="line">                    <span class="keyword">new</span> InputStreamReader(fileInputStream);</span><br><span class="line"></span><br><span class="line">            bufferedReader =</span><br><span class="line">                    <span class="keyword">new</span> BufferedReader(inputStreamReader);</span><br><span class="line"></span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            执行相关的业务逻辑</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 资源关闭</span></span><br><span class="line">            <span class="keyword">if</span> (bufferedReader != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    bufferedReader.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (inputStreamReader != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    inputStreamReader.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (fileInputStream != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    fileInputStream.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;这些资源关闭的代码不仅繁琐还降低了代码的简洁、可读性。大家可能会疑惑，Java不是提供了内存回收的机制吗？不手动关闭等GC自动回收可不可以？</p>
+<p>答案当然是不可以：）垃圾回收机制只负责回收堆内存资源，不会回收任何的物理资源。所以我们必须得手动地去关闭这些资源！！当然如果你对钱没有兴趣也可以不关闭，但是贫穷的我们要知道资源是有限的，如果我们不关闭这些资源，它们将会被长时间无效占用，浪费完所有的资源后，系统将没有办法继续维持生活。生活不易，且行且珍惜~  山区的小朋友们还在等你们省下来的资源打一局王者荣耀:smile:</p>
+<p>&emsp;&emsp;JDK7以后提供了一个语法糖 <code>try-with-resource</code>，利用这个可以把上面的例子修改为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">newFileHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> (</span><br><span class="line">            <span class="comment">// 声明</span></span><br><span class="line">            FileInputStream fileInputStream = <span class="keyword">new</span> FileInputStream(<span class="string">"G:/Singleton.txt"</span>);</span><br><span class="line">            InputStreamReader inputStreamReader = <span class="keyword">new</span> InputStreamReader(fileInputStream);</span><br><span class="line">            BufferedReader bufferedReader = <span class="keyword">new</span> BufferedReader(inputStreamReader)</span><br><span class="line">    ) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        执行相关的业务逻辑</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相比较而言，代码的数量少了很多！！</p>
+<h2 id="try-with-resource-简介"><a href="#try-with-resource-简介" class="headerlink" title="try-with-resource 简介"></a><code>try-with-resource</code> 简介</h2><p>&emsp;&emsp;<code>try-with-resource</code> 是JDK7引入的新特性，并没有对Java的底层语法有所改变，只是JDK7提供的一种语法糖，方便程序猿们使用，让代码更加简洁，有更高的可读性。</p>
+<p>查看编译后的源码，可以发现还是会将try-with-resource语句try小括号中的资源在finally语句块中进行关闭，并将相关异常追加到异常链中。</p>
+<h4 id="try-with-resource使用"><a href="#try-with-resource使用" class="headerlink" title="try-with-resource使用"></a>try-with-resource使用</h4><ul>
+<li>多资源自动关闭</li>
+<li>通过try-with-resource语句进行关闭的物理资源需实现AutoCloseable接口</li>
+<li>避免异常屏蔽</li>
+</ul>
+<p>推荐文章： <strong>Effective Java</strong>中的第9小节<code>Prefer try-with-resource to try-finally</code></p>
+<h6 id="资源关闭的特殊情况"><a href="#资源关闭的特殊情况" class="headerlink" title="资源关闭的特殊情况"></a>资源关闭的特殊情况</h6><ol>
+<li>资源对象被<code>return</code>的情况下，由调用方关闭。</li>
+<li>ByteArrayInputStream等不需要检查关闭的资源对象。</li>
+<li>使用Socket获取的InputStream和OutputStream对象不需要关闭，直接关闭InputStream和OutputStream会导致Socket也被关闭了（正确的方法是调用Socket的shutdown进行关闭）。</li>
+</ol>
+<p><code>try-with-resource</code>资源关闭的顺序：</p>
+<ul>
+<li>先开后关：如数据库连接JDBC中Connection、Statement、ResultSet三个资源的开关顺序</li>
+<li>从外到内原则</li>
+<li>底层资源单独声明原则</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/12/18/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/18/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url">牛客网Java专项练习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-18T08:17:50+08:00">
+                2019-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="Java的参数传递是“按值传递”还是“按引用传递”？"><a href="#Java的参数传递是“按值传递”还是“按引用传递”？" class="headerlink" title="Java的参数传递是“按值传递”还是“按引用传递”？"></a>Java的参数传递是“按值传递”还是“按引用传递”？</h5><ul>
+<li>值传递：在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。</li>
+<li>引用传递：在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.sun.org.apache.xerces.internal.dom.PSVIAttrNSImpl;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 以下程序运行的结果是：</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-18 10:17</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tester</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer var1=<span class="keyword">new</span> Integer(<span class="number">1</span>);</span><br><span class="line">        Integer var2=var1;</span><br><span class="line">        doSomething(var2);</span><br><span class="line">        System.out.print(var1.intValue());</span><br><span class="line">        System.out.print(var2==var1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">(Integer integer)</span></span>&#123;</span><br><span class="line">        integer=<span class="keyword">new</span> Integer(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A 1true  B 2true  C 1false  D 2false</span></span><br><span class="line"><span class="comment"> * 正确答案为A</span></span><br><span class="line"><span class="comment"> * 如果还是不明白就再去ide中debug一下，看一下运行流程</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>分析上例，可以得出如下图的结果。<span style="color:red">当传入引用类型的变量作为参数时，是将引用类型中存储的实例对象地址复制一份传递给形参，实参和形参指向同一个实例对象。</span>当对对象进行修改时，形参和实参都会发生改变，但是当形参指向一个新的对象的时候，实参并不会发生改变。可见，Java的引用类型和基本类型一样都是值传递，并不存在引用传递。</p>
+<p><img src="%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/image1.png" alt=""></p>
+<h5 id="import关键字的导入范围？"><a href="#import关键字的导入范围？" class="headerlink" title="import关键字的导入范围？"></a>import关键字的导入范围？</h5><p><code>import java.util.*</code> 只能读取其目录下的类，不能读取其子目录下的类。</p>
+<p>因为其根目录和子目录下可能有同名类，若都能读取，则会混淆。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/12/15/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/15/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" itemprop="url">存储管理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-15T09:11:38+08:00">
+                2019-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;近年来，随着硬件技术和生产水平的提高，存储器的成本迅速下降，容量一直在不断地扩大，但仍然不能满足各种软件对存储空间急剧增长的需求，因此，存储器仍然是一种宝贵而紧俏的资源，如何对其进行有效的管理，不仅直接影响存储器的利用率，而且对系统性能也有重大影响。</p>
+<p>&emsp;&emsp;众所周知，计算机在执行程序的时候，每条指令都是在CPU中执行的，而执行的时候，又免不了要和数据打交道。而计算机上面的程序及其要访问的数据往往是存放在内存中。刚开始，还相安无事的，但是随着CPU技术的发展，CPU的执行速度越来越快。从<strong>内存中读取和写入数据的速度</strong>开始跟不上<strong>CPU的执行速度</strong>，两者的差距越来越大，这导致CPU每次操作内存都要耗费很多的等待时间。</p>
+<p>&emsp;&emsp;可是吧，我们总不能因为内存拖后腿就暂停发展CPU，等待内存技术赶上来吧！为了解决CPU和存储器之间速度上的不匹配，就在CPU和内存之间设置了高速缓存存储器；高速缓冲存储器相比较主存而言有以下特点：价格昂贵，容量小，速度快。其工作原理就是将CPU频繁访问的数据保存一份拷贝在高速缓冲存储器中，将大多数的CPU和主存之间的交互转换为CPU与高速缓冲存储器之间的交互，从而在整体上提高系统的性能。由于高速缓存的速度越高价格也越贵，因此目前的计算机系统中多设置两级或多级高速缓存。两级缓存比一级缓存速度慢，但容量更大，主要用作一级缓存和内存之间数据临时交换的地方。</p>
+<p><img src="%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt=""></p>
+<img src="/2019/12/15/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" class="" title="计算机系统存储层次示意图">
+
+<p>在多级存储结构中，在储存层次中越往上，存储介质的访问速度越快，价格也越高，相对存储容量也越小。CPU寄存器、主存掉电后其存储的信息不再存在，属于操作系统存储管理的讨论范畴；辅存属于操作系统设备管理的范畴，其存储的信息会长期保存。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/26/%E6%94%BB%E7%95%A5JDK8%E6%96%B0%E7%89%B9%E6%80%A7-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/26/%E6%94%BB%E7%95%A5JDK8%E6%96%B0%E7%89%B9%E6%80%A7-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">攻略JDK8新特性--Lambda表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-26T21:56:33+08:00">
+                2019-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Lambda表达式？</p>
+<h1 id="一、什么是Lambda表达式？"><a href="#一、什么是Lambda表达式？" class="headerlink" title="一、什么是Lambda表达式？"></a>一、什么是Lambda表达式？</h1><p><strong>Lambda表达式，针对函数式接口的简单实现。</strong></p>
+<ul>
+<li>Lambda表达式也被称为箭头函数、匿名函数、闭包。</li>
+<li>Lambda表达式体现的是轻量级函数式编程思想</li>
+<li>‘-&gt;’符号是Lambda表达式核心操作符号，符号左侧是操作参数，符号右侧是操作表达式</li>
+</ul>
+<h2 id="Model-Code-as-Data"><a href="#Model-Code-as-Data" class="headerlink" title="Model Code as Data"></a>Model Code as Data</h2><p>Model Code as Data，编码即数据，尽可能轻量级的将代码封装为数据。传统的实现方案为接口&amp;实现类（匿名内部类），但是这种实现方式存在语法冗余、this关键字、变量捕获、数据控制不友好等问题。下面通过一个例子来展示传统开发方式中存在的问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">项目问题：功能接口的设计及优化</span></span><br><span class="line"><span class="comment">  需求环境：线程类的创建</span></span><br><span class="line"><span class="comment">  解决方案：匿名内部类实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-26 22:50</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1. 传统模式下，新线程的创建</span></span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"threading...."</span>+Thread.currentThread().getName());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="string">"Thread01"</span>).start();</span><br><span class="line">        <span class="comment">//2. jdk8新特性，lambda表达式优化线程模式</span></span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">"lambda threading..."</span> + Thread.currentThread().getName());</span><br><span class="line">        &#125;,<span class="string">"Thread02"</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在传统的模式下，与线程创建语义相关的只占一小部分，大部分的代码与数据相关，很明显出现了代码的冗余。</p>
+<p>为什么要使用lambda表达式？</p>
+<ul>
+<li>它不是解决未知问题的新技术</li>
+<li>对现有解决方案的语义化优化</li>
+<li>需要根据实际需求考虑性能问题 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用Lambda表达式实现一个死锁</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-27 12:38</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Deadlock</span> </span>&#123;</span><br><span class="line">    <span class="comment">//临界资源1</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object1=<span class="keyword">new</span> Object();</span><br><span class="line">    <span class="comment">//临界资源2</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object2=<span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (object1)&#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">"取得object1的锁"</span>);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">synchronized</span> (object2)&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName()+<span class="string">"取得object2的锁"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="string">"Thread1"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (object2)&#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">"取得object2的锁"</span>);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">synchronized</span> (object1)&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName()+<span class="string">"取得object1的锁"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="string">"Thread2"</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="函数式接口（function-interface）"><a href="#函数式接口（function-interface）" class="headerlink" title="函数式接口（function interface）"></a>函数式接口（function interface）</h2><p>JDK8在传统的语法语义中抽象出来的语义化数据。</p>
+<ul>
+<li><p>函数式接口，就是Java类型系统中的普通接口</p>
+</li>
+<li><p>函数式接口，是<span style="color:red">只包含一个没有方法体的接口方法</span>（可以同时存在多个默认方法和静态方法）的特殊接口</p>
+</li>
+<li><p>语义化检测注解：<code>@FunctionInterface</code></p>
+</li>
+<li><p>如果抽象接口方法是从Object类继承过来的，那么不会计算到函数是接口中的抽象方法数量中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-27 10:21</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MarkerInterface</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过用户id，查找对应的用户名的 接口</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> id 要查找的用户的id</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回用户名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">String <span class="title">findOne</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//    List&lt;String&gt; findAll();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="默认方法和静态方法"><a href="#默认方法和静态方法" class="headerlink" title="默认方法和静态方法"></a>默认方法和静态方法</h2><p>JDK1.8新特性-default方法，打破了Java之前版本对接口的语法限制，允许接口中存在默认的实现。</p>
+<p>默认方法是给所有实现该接口的对象增加的通用的方法</p>
+<p>静态方法 额，好像和普通的接口方法使用一样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-27 10:21</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MarkerInterface</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过用户id，查找对应的用户名的 接口</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> id 要查找的用户的id</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回用户名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">String <span class="title">findOne</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    List&lt;String&gt; findAll();</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Name"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> String <span class="title">getId</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"dd"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">getTrue</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">getFalse</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数式接口（function-interface）-1"><a href="#函数式接口（function-interface）-1" class="headerlink" title="函数式接口（function interface）"></a>函数式接口（function interface）</h2><p>函数式接口，只包含一个操作方法</p>
+<p>Lambda表达式，只能操作一个方法</p>
+<p><span style="color:red">Java中的Lambda表达式，核心就是一个<strong>函数式接口</strong>的实现。</span></p>
+<p>Lambda表达式常见用途就是在简化匿名内部类，注意只有当这个匿名内部类实现的是一个函数式接口的时候才可以使用lambda表达式。</p>
+<p>()-&gt;{}</p>
+<p>()中为接口方法的参数</p>
+<p>{}为具体实现</p>
+<h4 id="JDK中常见的函数式接口"><a href="#JDK中常见的函数式接口" class="headerlink" title="JDK中常见的函数式接口"></a>JDK中常见的函数式接口</h4><ol>
+<li>java.lang.Runnable</li>
+<li>java.lang.Comparable</li>
+<li>java.lang.Comparator</li>
+<li>java.io.FileFilter</li>
+<li>more……</li>
+</ol>
+<p>针对lambda表达式，jdk8提供了java.util.function包，提供了常用的函数式功能接口（这里有点懵，自己自定义一个方法不行吗！？？ ）</p>
+<ul>
+<li><p><code>java.util.function.Predicate&lt;T&gt;</code> 接受参数对象T，返回一个boolean类型结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Predicate&lt;String&gt; predicate=(String username)-&gt;&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line">System.out.println(predicate.test(<span class="string">"加油"</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>java.util.function.Consumer&lt;T&gt;</code>  接收参数对象T，不返回结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Consumer&lt;String&gt; consumer=(String usenamer)-&gt;&#123;</span><br><span class="line">    System.out.println(usenamer);</span><br><span class="line">&#125;;</span><br><span class="line">consumer.accept(<span class="string">"加油"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>java.util.function.Function&lt;T,R&gt;</code>  接受参数对象T，返回结果对象R</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Function&lt;String,String&gt; function=(String message)-&gt;&#123;</span><br><span class="line">    <span class="keyword">return</span> message;</span><br><span class="line">&#125;;</span><br><span class="line">System.out.println(function.apply(<span class="string">"消息~"</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>java.util.function.Supplier&lt;T&gt;</code> 不接受参数，提供T对象的创建工厂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Supplier&lt;String&gt; supplier=()-&gt;&#123;</span><br><span class="line">    <span class="keyword">return</span> UUID.randomUUID().toString();</span><br><span class="line">&#125;;</span><br><span class="line">System.out.println(supplier.get());</span><br><span class="line">System.out.println(supplier.get());</span><br><span class="line">System.out.println(supplier.get());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>java.util.function.UnaryOperator&lt;T&gt;</code> 接受参数对象T，返回结果对象T</p>
+<p>比如前端传递一张图片过来之后，我们要对图片进行处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UnaryOperator&lt;String&gt; unaryOperator=(String img)-&gt;&#123;</span><br><span class="line">    <span class="keyword">return</span> img+=<span class="string">"[100*200]"</span>;</span><br><span class="line">&#125;;</span><br><span class="line">System.out.println(unaryOperator.apply(<span class="string">"原图--"</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>java.util.function.BinaryOperator&lt;T&gt;</code> 接受两个T对象，返回一个T对象结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BinaryOperator&lt;Integer&gt; binaryOperator=(Integer a,Integer b)-&gt;&#123;</span><br><span class="line">    <span class="keyword">return</span> Math.max(a,b);</span><br><span class="line">&#125;;</span><br><span class="line">System.out.println(binaryOperator.apply(<span class="number">4</span>,<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Lambda表达式基本语法"><a href="#Lambda表达式基本语法" class="headerlink" title="Lambda表达式基本语法"></a>Lambda表达式基本语法</h2><p><strong>1) 声明：就是和lambda表达式绑定的接口类型（必须的，不然怎么知道你要实现的是哪一个接口）</strong><br><strong>2) 参数：包含在一堆圆括号中，和绑定的接口中的抽象方法中的参数个数及顺序一致</strong>  </p>
+<p>(注意：</p>
+<ul>
+<li><p>只有一个参数情况下括号可以省略掉；</p>
+</li>
+<li><p>在Lambda表达式中可以省略参数的类型，JVM会在运行时根据Lambda表达式绑定的接口抽象方法参数类型，自动推导对应的参数类型)</p>
+</li>
+</ul>
+<p><strong>3) 操作符：-&gt;</strong><br><strong>4) 执行代码块：包含在一对大括号中，出现在操作符的右侧</strong></p>
+<p>（注意：</p>
+<ul>
+<li>执行代码块如果只有一行，可以省略大括号</li>
+<li>执行代码只有一行且省略大括号的情况下，有返回值时可以省略return关键字，单行代码的执行结果会自动返回）；如果添加了大括号，或者有多行代码，必须通过return关键字返回执行结果。</li>
+</ul>
+<p><strong>[接口声明]=(参数)-&gt;{执行代码块};</strong></p>
+<p>例子如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-26 22:50</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1. Lambda表达式的基本语法</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        1) 声明：就是和lambda表达式绑定的接口类型</span></span><br><span class="line"><span class="comment">        2) 参数：包含在一堆圆括号中，和绑定的接口中的抽象方法中的参数个数及顺序一致</span></span><br><span class="line"><span class="comment">        3) 操作符：-&gt;</span></span><br><span class="line"><span class="comment">        4) 执行代码块：包含在一对大括号中，出现在操作符的右侧</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        [接口声明]=(参数)-&gt;&#123;执行代码块&#125;;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        ILambda1 iLambda1 = () -&gt; System.out.println(<span class="string">"ILambda1"</span>);</span><br><span class="line">        iLambda1.test();</span><br><span class="line"></span><br><span class="line">        ILambda2 iLambda2=n-&gt;&#123;</span><br><span class="line">            System.out.println(n+<span class="string">"say:my year's old is "</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        iLambda2.test(<span class="string">"小明"</span>);</span><br><span class="line"></span><br><span class="line">        ILambda3 iLambda3=message-&gt; message;</span><br><span class="line">        System.out.println(iLambda3.test(<span class="string">"消息"</span>));</span><br><span class="line">        System.out.println(iLambda3.test(<span class="string">"消息"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//没有参数，没有返回值的lambda表达式绑定的接口</span></span><br><span class="line">    <span class="class"><span class="keyword">interface</span> <span class="title">ILambda1</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//带有参数，没有返回值的lambda表达式</span></span><br><span class="line">    <span class="class"><span class="keyword">interface</span> <span class="title">ILambda2</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(String name)</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//带有参数，带有返回值的Lambda表达式</span></span><br><span class="line">    <span class="class"><span class="keyword">interface</span> <span class="title">ILambda3</span></span>&#123;</span><br><span class="line">        <span class="function">String <span class="title">test</span><span class="params">(String message)</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量捕获"><a href="#变量捕获" class="headerlink" title="变量捕获"></a>变量捕获</h2><ul>
+<li>匿名内部类中的变量捕获</li>
+<li>lambda表达式的变量捕获</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-27 20:16</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App2</span> </span>&#123;</span><br><span class="line">    String s1=<span class="string">"全局变量"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1.匿名内部类型中对于变量的访问</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testInnerClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">        String s2=<span class="string">"局部变量"</span>;</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            String s3=<span class="string">"内部变量"</span>;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">//访问全局变量</span></span><br><span class="line"><span class="comment">//                System.out.println(this.s1);  this关键字~表示是当前内部类型的对象</span></span><br><span class="line">                System.out.println(s1);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//访问局部变量</span></span><br><span class="line">                System.out.println(s2);  <span class="comment">//不能对局部变量进行数据的修改[final]</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">//访问内部变量</span></span><br><span class="line">                System.out.println(s3);</span><br><span class="line">                System.out.println(<span class="keyword">this</span>.s3);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1.Lambda表达式变量捕获</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testLambda</span><span class="params">()</span></span>&#123;</span><br><span class="line">        String s2=<span class="string">"局部变量lambda"</span>;</span><br><span class="line">        <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">           String s3=<span class="string">"内部变量lambda"</span>;</span><br><span class="line"></span><br><span class="line">           <span class="comment">//访问全局变量</span></span><br><span class="line">            System.out.println(<span class="keyword">this</span>.s1); <span class="comment">//this关键字，表示的就是所属方法所在类型的对象</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//访问局部变量</span></span><br><span class="line">            System.out.println(s2);</span><br><span class="line"><span class="comment">//            s2="hello"; 不能进行数据的修改，默认推导变量的修饰符：final</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//访问内部变量</span></span><br><span class="line">            System.out.println(s3);</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        App2 app2=<span class="keyword">new</span> App2();</span><br><span class="line"><span class="comment">//        app2.testInnerClass();</span></span><br><span class="line">        app2.testLambda();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结：lambda表达式优化了匿名内部类访问全局变量的时候对于this关键字的使用；同时无论是匿名内部类还是Lambda表达式都不可以对局部变量进行修改，默认将巨变变量推导为fianl类型。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/10/REST-API%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/10/REST-API%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" itemprop="url">REST API接口测试</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-10T08:49:40+08:00">
+                2019-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="REST-API-接口测试"><a href="#REST-API-接口测试" class="headerlink" title="REST API 接口测试"></a>REST API 接口测试</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/07/Spring-Security%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/07/Spring-Security%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83/" itemprop="url">Spring Security身份认证和授权</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-07T14:43:05+08:00">
+                2019-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring-Security/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Security</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Spring-Security开发安全的REST服务"><a href="#Spring-Security开发安全的REST服务" class="headerlink" title="Spring Security开发安全的REST服务"></a><code>Spring Security</code>开发安全的<code>REST</code>服务</h2><div class="note primary"><p>认证和授权–&gt;最终表现为<span style="color:red">登录</span>功能。 </p></div>
+
+<p>&emsp;&emsp;最初对于登录的理解就是前台的一个登录表单，提交到后台查看数据库是否存在该用户。如果存在，则登录成功；不存在，则登录失败。</p>
+<img src="/2019/11/07/Spring-Security%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83/%E7%AE%80%E9%99%8B%E7%89%88%E7%9A%84%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD.png" class="">
+
+<p>但是在真正的生产环境中远没有这么简单，会有以下几个方面需要考虑</p>
+<ul>
+<li>同时支持多种认证登录方式：表单登录、手机短信登录、微信登录、QQ登录</li>
+<li>同时支持多种前端渠道：浏览器、手机APP（两种原理的不同的）</li>
+<li>支持集群登录(一台机器上登录了，其他机器怎么办)，跨应用工作（单点登录SSO），SESSION控制，控制用户的权限，防护与身份认证相关的攻击 </li>
+</ul>
+<p>对于企业级的认证和授权，也就是登录功能的实现，主要有以下几个技术框架：</p>
+<ul>
+<li><p>Spring Security：授权机制的实现</p>
+</li>
+<li><p>Spring Social：第三方认证</p>
+</li>
+<li><p>Spring Security OAuth：手机APP认证，创建、管理和分发token。（Spring Security OAuth最终的效果就是能同时支持浏览器登录和手机App登录）</p>
+</li>
+</ul>
+<p>浏览器和服务器之间采用Session保存用户信息，App和服务器之间采用token保存用户信息（没有Session）。</p>
+<img src="/2019/11/07/Spring-Security%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83/%E4%BC%81%E4%B8%9A%E7%BA%A7%E7%9A%84%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83.png" class="">
+
+<hr>
+<img src="/2019/11/07/Spring-Security%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83/%E6%A1%88%E4%BE%8B%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png" class="">
+
+
+
+<h4 id="使用Spring-Security开发基于表单的认证"><a href="#使用Spring-Security开发基于表单的认证" class="headerlink" title="使用Spring Security开发基于表单的认证"></a>使用Spring Security开发基于表单的认证</h4><p>认证（你是谁）</p>
+<p>授权（你能做什么）</p>
+<p>攻击防护（防止伪造身份）</p>
+<p>内容简介</p>
+<ul>
+<li><p>SpringSecurity基本原理</p>
+<p>关闭引入SpringSecurity之后默认拦截所有URL的HTTP基本认证</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">security.basic.enabled</span>=<span class="string">false</span></span><br><span class="line"><span class="comment"># HTTP基本认证后才能访问对应的URL资源，其默认使用的用户名为user，密码则是动态生成并打印到控制台的一串随机码</span></span><br><span class="line"><span class="comment"># 自定义HTTP基本认证的用户名和密码</span></span><br><span class="line"><span class="comment">#  security:</span></span><br><span class="line"><span class="comment">#    user:</span></span><br><span class="line"><span class="comment">#      name: admin</span></span><br><span class="line"><span class="comment">#      password: 123</span></span><br></pre></td></tr></table></figure>
+
+<p>Spring Security其实就是一组过滤器链</p>
+</li>
+<li><p>实现用户名+密码登录</p>
+</li>
+<li><p>实现手机号+短信登录</p>
+</li>
+</ul>
+<h4 id="自定义用户认证逻辑"><a href="#自定义用户认证逻辑" class="headerlink" title="自定义用户认证逻辑"></a>自定义用户认证逻辑</h4><ul>
+<li><p>处理用户信息获取逻辑</p>
+<p>SpringSecurity将用户信息获取逻辑封装在UserDetailService中</p>
+</li>
+<li><p>处理用户校验逻辑</p>
+</li>
+<li><p>处理密码加密解密</p>
+</li>
+</ul>
+<p>课程目标</p>
+<ol>
+<li>深入理解Spring Security及其相关框架的原理、功能和代码</li>
+<li>可以基于Spring Security及相关框架独立开发认证授权相关功能</li>
+<li>掌握抽象和封装的常用技巧，可以编写可重用的模块供他人使用</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/03/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" itemprop="url">统一异常处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T23:04:05+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/springboot/" itemprop="url" rel="index">
+                    <span itemprop="name">springboot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="SpringBoot配置全局的异常捕获"><a href="#SpringBoot配置全局的异常捕获" class="headerlink" title="SpringBoot配置全局的异常捕获"></a>SpringBoot配置全局的异常捕获</h2><p>异常当作篮球的话,你有两种方式处理它,要么投篮,即是用try{}catch(){}来处理<br>一种是传球,即是用throws来处理<br>这里不能这样理解的,只能说把它交给别人</p>
+<h4 id="1-页面跳转的形式"><a href="#1-页面跳转的形式" class="headerlink" title="1.页面跳转的形式"></a>1.页面跳转的形式</h4><p>首先，定义一个抛出异常的类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/err"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ErrorController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/error"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">error</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//分母不能为0，会抛出ArithmeticException异常</span></span><br><span class="line">        <span class="keyword">int</span> a=<span class="number">1</span>/<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"thymeleaf/error"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面我们来研究如何对抛出的异常进行统一处理，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-03 23:25</span></span><br><span class="line"><span class="comment"> * 全局异常处理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalExceptionHandler</span> </span>&#123;</span><br><span class="line">    <span class="comment">//自定义的用户友好错误页面的逻辑视图名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ERROR_VIEW=<span class="string">"error"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(value = Exception<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">    <span class="title">public</span> <span class="title">Object</span> <span class="title">errorHandler</span>(<span class="title">HttpServletRequest</span> <span class="title">request</span>, <span class="title">HttpServletResponse</span> <span class="title">response</span>,<span class="title">Exception</span> <span class="title">e</span>) <span class="title">throws</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line"></span><br><span class="line">        ModelAndView mav=<span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mav.setViewName(ERROR_VIEW);</span><br><span class="line">        mav.addObject(<span class="string">"exception"</span>,e);</span><br><span class="line">        mav.addObject(<span class="string">"url"</span>,request.getRequestURL());</span><br><span class="line">        <span class="keyword">return</span> mav;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;对于 <code>@ExceptionHandler</code> 注解标注的方法来说，比较有意思的一点在于它能处理同一个控制器中所有的处理器方法所抛出的异常。而在带有 <code>@ControllerAdvice</code> 注解的类中，<code>@ExceptionHandler</code> 方法会运用到整个应用程序所有的控制器中带有 <code>@RequestMapping</code> 注解的方法上，以实现异常的集中统一处理。</p>
+<h4 id="2-ajax形式"><a href="#2-ajax形式" class="headerlink" title="2.ajax形式"></a>2.ajax形式</h4><h4 id="3-统一返回异常的方式"><a href="#3-统一返回异常的方式" class="headerlink" title="3.统一返回异常的方式"></a>3.统一返回异常的方式</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/03/JavaScript%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url">JavaScript基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T22:09:04+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如何在页面中插入JS代码？</p>
+<p><img src="http://img.mukewang.com/52e31ea8000149f406440218.jpg" alt="img"></p>
+<p>在H5页面中的哪个位置嵌入javascript代码最为合适？</p>
+<hr>
+<p><code>document.write(&quot;hello&quot;)</code>:直接在H5页面进行输出。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/03/Ajax%E5%85%A8%E6%8E%A5%E8%A7%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/Ajax%E5%85%A8%E6%8E%A5%E8%A7%A6/" itemprop="url">Ajax全接触</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T21:11:02+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;现在遇到一个问题！就是如果后端只给前端提供一个API，返回JSON格式的数据但是不指定用于渲染模型数据的视图。前端如果不是在当前页面上进行渲染的，涉及到页面的跳转应该如何处理？</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/" itemprop="url">JSON数据格式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T13:56:17+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p><span style="color:red">以数据为中心的表述性状态转移(REST)对JSON的定义是——用于<strong>表述REST资源</strong>的一种形式。表述是REST中很重要的一个方面，它是关于客户端和服务端针对某一资源是如何通信的。</span><code>JSON</code>是当前行业内使用最为广泛的数据传输格式。最常见的就是服务端提供给客户端的<code>API</code>，即控制器方法一般就是采用JSON作为数据传输的格式。NoSQL数据库采用JSON作为数据储存格式。JSON还为我们提供了一种对象序列化的方式。</p>
+<h4 id="JSON的基础知识"><a href="#JSON的基础知识" class="headerlink" title="JSON的基础知识"></a>JSON的基础知识</h4><h6 id="什么是JSON？"><a href="#什么是JSON？" class="headerlink" title="什么是JSON？"></a>什么是JSON？</h6><p>&emsp;&emsp;JSON是一种与开发语言无关的、轻量级的<span style="color:red">数据格式</span>。全称<code>JavaScript Object Notation</code>.</p>
+<ul>
+<li>最早源于JavaScript这门语言，后面使用得原来越广泛。几乎每种语言都有处理JSON的API</li>
+</ul>
+<p>优点：易于人的阅读和编写，易于程序解析和生产</p>
+<p>一个简单的JSON的样例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>:<span class="string">"JSON快速入门（Java版）"</span>,</span><br><span class="line">    <span class="attr">"author"</span>:<span class="string">"李广"</span>,</span><br><span class="line">    <span class="attr">"content"</span>:[<span class="string">"JSON基础入门"</span>,<span class="string">"常用JSON处理"</span>],</span><br><span class="line">    <span class="attr">"time"</span>:&#123;</span><br><span class="line">        <span class="attr">"value"</span>:<span class="number">30</span>,</span><br><span class="line">        <span class="attr">"unit"</span>:<span class="string">"分钟"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="标准的JSON数据表示"><a href="#标准的JSON数据表示" class="headerlink" title="标准的JSON数据表示"></a>标准的JSON数据表示</h6><p>数据结构</p>
+<p>Object:使用花括号{}包含的<span style="color:blue">键值对</span>结构，Key必须是string类型，value为任何的<span style="color:red">基本类型</span>或<span style="color:red">数据结构</span>。</p>
+<img src="/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E5%AF%B9%E8%B1%A1%E8%A1%A8%E7%A4%BA.png" class="">
+
+<p><img src="JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E5%AF%B9%E8%B1%A1%E8%A1%A8%E7%A4%BA.png" alt=""></p>
+<p>Array:使用中括号[]来起始，并用逗号，来分割元素</p>
+<img src="/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png" class="">
+
+<p><img src="JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png" alt=""></p>
+<p>基本类型</p>
+<p>​    string,number,true,false,null</p>
+<h4 id="Java中两种常见的JSON处理方式"><a href="#Java中两种常见的JSON处理方式" class="headerlink" title="Java中两种常见的JSON处理方式"></a>Java中两种常见的JSON处理方式</h4><p>Json中没有日期这样的数据格式，所以要采用字符串或数字的时间戳来表示</p>
+<p>Json本身不支持任何形式的注释！！</p>
+<p>能自动将Java中的对象转换为Json吗？</p>
+<h6 id="Json-In-Java"><a href="#Json-In-Java" class="headerlink" title="Json In Java"></a>Json In Java</h6><p>Java中有许多Json的Jar包，如</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.json/json --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.json<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>json<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>20190722<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如何使用Json生成我们想要的JSON数据，有两种方法</p>
+<ol>
+<li>使用JsonObject生成Json格式的数据</li>
+</ol>
+<h4 id="综合运用"><a href="#综合运用" class="headerlink" title="综合运用"></a>综合运用</h4><p>idea快捷键</p>
+<p>Ctrl+Shift+O : 将没有用到的包去掉</p>
+<h1 id="SpringBoot响应客户端渲染数据"><a href="#SpringBoot响应客户端渲染数据" class="headerlink" title="SpringBoot响应客户端渲染数据"></a><code>SpringBoot</code>响应客户端渲染数据</h1><ul>
+<li><p><code>SpringBoot</code>构造并返回一个json对象，注意在实际的开发中肯定不会单单返回JSON数据，会对JSON格式的数据进行进一步的封装。具体见Spring In Action书籍P440.</p>
+<p><code>@Responsebody</code>:将对象转换为资源表述(如JSON或XML)。</p>
+<p><code>@RequestBody</code>:将资源表述转换为对象。</p>
+<p>使用<code>@RESTController</code>代替<code>@Controller</code>，Spring将会为该控制器的所有处理方法应用消息转换功能。我们不必再为每个方法都添加 <code>@Responsebody</code> 注解。</p>
+<img src="/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85.png" class="">
+
+<p><img src="JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85.png" alt=""></p>
+</li>
+</ul>
+<ul>
+<li><p>Jackson基本演绎法</p>
+<p><code>@JacksonIgnore</code>注解某一个字段就可以在返回给前端的该对象从JSON数据移除这个属性</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Hogan Lee" />
+            
+              <p class="site-author-name" itemprop="name">Hogan Lee</p>
+              <p class="site-description motion-element" itemprop="description">Talk is not cheap. Talk can be powerful.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/forhcl" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:18028543308@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Lee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/chitose.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

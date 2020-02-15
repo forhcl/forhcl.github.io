@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Talk is not cheap. Talk can be powerful.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hogan&#39;Blog">
+<meta property="og:url" content="http://forhcl.github.io/page/6/index.html">
+<meta property="og:site_name" content="Hogan&#39;Blog">
+<meta property="og:description" content="Talk is not cheap. Talk can be powerful.">
+<meta property="article:author" content="Hogan Lee">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://forhcl.github.io/page/6/"/>
+
+
+
+
+
+  <title>Hogan'Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/10/Java%E4%B8%AD==%E5%92%8Cequals%E5%92%8ChashCode%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/10/Java%E4%B8%AD==%E5%92%8Cequals%E5%92%8ChashCode%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">Java中==和equals和hashCode的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T16:46:49+08:00">
+                2019-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="运算符"><a href="#运算符" class="headerlink" title="==运算符"></a><span style="color:#CD0000">==运算符</span></h4><p>两种情况：</p>
+<p>1）基本类型数据：比较两个变量中存储的值是否相等。</p>
+<p>2）引用类型：比较两个变量存储的对象引用是否相等，则实例对象的存储地址是否一致。</p>
+<h4 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a><span style="color:#CD0000">equals方法</span></h4><h5 id="Object类中的equals方法"><a href="#Object类中的equals方法" class="headerlink" title="Object类中的equals方法"></a>Object类中的equals方法</h5><p>​    <strong><code>Object</code>类中的<code>equals</code>方法用于检测一个对象是否等于另外一个对象。</strong>源码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    分析可知，<code>Object</code>类中的<code>equals</code>方法判断两个对象是否具有相同的引用，如果两个对象有相同的引用，则判定它们相等；如果它们们存储的对象引用（对象的存储地址）一样，则它们指向同一个实例对象。这种比较是完全没有实际意义的，就像证明“你妈是你妈”一样荒唐。<span style="color:#00008B">实际情况下，对象的比较应该由内容导出，当两个对象中存储的指定内容一样。就判定它们相等。所以当需要进行对象的比较时，应该在自定义类中根据实际需求去重写<code>Object</code>类中的<code>equals</code>方法。</span></p>
+<h5 id="以下情景没有重写equals方法的必要："><a href="#以下情景没有重写equals方法的必要：" class="headerlink" title="以下情景没有重写equals方法的必要："></a>以下情景没有重写equals方法的必要：</h5><ol>
+<li>类的每一个实例都是固定唯一的，例如 <code>Thread</code> 这种代表活动实体而不是值的类。</li>
+<li>类的实例之间没有比较内容相等的需要，则无需重写 <code>equals</code> 方法。</li>
+<li>父类已经重写equals方法，且父类的 <code>equals</code> 方法实现适用于子类。</li>
+<li>类是私有的或包级私有的，以及你可以确定它的 equals 方法永远不会被调用时。</li>
+</ol>
+<h5 id="完美equals方法的重写建议"><a href="#完美equals方法的重写建议" class="headerlink" title="完美equals方法的重写建议"></a>完美equals方法的重写建议</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显式参数命名为otherObject，稍后需要将它转换成另一个叫做other的变量。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object otherObject)</span></span>&#123;</span><br><span class="line"><span class="comment">/* 检测this和otherObject是否引用同一个对象，这条语句只是一个优化。实际上，这是一种经常采用的形式。因为计算这个等式要一个一个地比较类中的域所付出的代价小得多。 */</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>==otherObject)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"><span class="comment">// 检测otherObject是否为null，如果为null，返回false。这项检测是很必要的。</span></span><br><span class="line">    <span class="keyword">if</span>(otherObject==<span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="comment">/* optional:比较this与otherObject是否属于同一个类。如果equals的语义在每个子类中有所改变，就使用getClass检测: */</span></span><br><span class="line">    <span class="keyword">if</span>(getClass()!=otherObject.getClass())</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="comment">/* optional:如果所有的子类都拥有统一的语义，就使用instanceof检测: */</span></span><br><span class="line">    <span class="keyword">if</span>(!(otherObject <span class="keyword">instanceof</span> ClassName))</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="comment">// 将otherObject装换成相应的类类型变量：向下转型</span></span><br><span class="line">    ClassName other=（ClassName）otherObject；</span><br><span class="line"><span class="comment">/* 现在开始对所有需要比较的域进行比较了。使用==比较基本类型域，使用Objects.equals()比较对象域。如果所有的域都匹配，就返回true；否则返回false */</span></span><br><span class="line">    <span class="keyword">return</span> field1==other.field1&amp;&amp;Object.equals(field2,other.field2)&amp;&amp;···;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//提示：对于数组类型的域，可以使用静态的Array.equals方法检测相应的数据元素是否相等。为了防备field2和other.fiield2可能为null的情况，需要使用Objects.equals方法。如果两个参数都为null，Objects.equals(a,b)调用将返回true；如果其中一个参数为null，则返回false；否则，如果两个参数都不为null，则调用a.equals(b)。</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="hashCode方法"><a href="#hashCode方法" class="headerlink" title="hashCode方法"></a><span style="color:#CD0000">hashCode方法</span></h4><p><strong>散列码（hash code）是由对象导出的一个整型值。</strong><code>Object</code>中的<code>hashCode</code>方法是由对象的存储地址导出的。所以和<code>equals</code>方法一样，当需要进行对象的比较时，应该在自定义类中根据实际需求去重写<code>Object</code>类中的<code>hashCode</code>方法。</p>
+<h4 id="hashCode方法和equals方法的区别和使用场景"><a href="#hashCode方法和equals方法的区别和使用场景" class="headerlink" title="hashCode方法和equals方法的区别和使用场景"></a><span style="color:#CD0000">hashCode方法和equals方法的区别和使用场景</span></h4><h6 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h6><p>既然两个方法最后的作用都是用于对象的比较，那为什么还要同时存在呢？可以从两方面进行说明</p>
+<ol>
+<li><p>性能</p>
+<p><strong><code>hashCode</code>效率高，<code>equals</code>效率低。</strong></p>
+<p><code>equals</code>方法中封装着比较全面复杂的算法步骤，每次比较都需要进入方法中执行这些算法步骤，效率低下。</p>
+<p><code>hashCode</code>方法则导出一个整型的散列码，将对象的比较转化成整型值的比较，效率较高。</p>
+</li>
+<li><p>可靠性</p>
+<p><strong><code>equals</code>可靠，<code>hashCode</code>不可靠。</strong></p>
+<p>用<code>equals</code>方法比较的两个对象相等，则这两个对象通过<code>hashCode</code>方法导出的散列码一样。</p>
+<p>而当两个对象通过<code>hashCode</code>方法导出的散列码一致时，由<code>equals</code>方法判断两个对象不一定相等。</p>
+</li>
+</ol>
+<h6 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h6><ol>
+<li>当进行比较的对象的数量不多时，则直接使用<code>equals</code>方法进行比较。</li>
+<li>当进行比较的对象的数量较多时，则先使用<code>hashCode</code>方法进行比较，如果散列码不相等，则两个对象肯定不相等，当散列码相等时，再调用<code>equals</code>进行比较，如果<code>equals</code>比较的出两个对象相等，则这两个对象就真的相等了。如不允许重复的集合在添加数据时，则会 执行这一步！！</li>
+</ol>
+<img src="/2019/06/10/Java%E4%B8%AD==%E5%92%8Cequals%E5%92%8ChashCode%E7%9A%84%E5%8C%BA%E5%88%AB/%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E9%9B%86%E5%90%88%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8F%92%E5%85%A5.jpg" class="" title="不可重复集合对象的插入">
+
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a><span style="color:#CD0000">扩展</span></h4><p>阿里巴巴开发规范中明确规定：</p>
+<img src="/2019/06/10/Java%E4%B8%AD==%E5%92%8Cequals%E5%92%8ChashCode%E7%9A%84%E5%8C%BA%E5%88%AB/%E5%85%B3%E4%BA%8EhashCode%E5%92%8Cequals%E7%9A%84%E5%A4%84%E7%90%86.jpg" class="" title="关于hashCode和equals的处理">
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/10/Maven%E4%B9%8B%E4%BB%93%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/10/Maven%E4%B9%8B%E4%BB%93%E5%BA%93/" itemprop="url">Maven之仓库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T16:27:54+08:00">
+                2019-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Maven/" itemprop="url" rel="index">
+                    <span itemprop="name">Maven</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/10/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%B3%84%E9%9C%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/10/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%B3%84%E9%9C%B2/" itemprop="url">防止数据库连接池泄露</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T08:52:40+08:00">
+                2019-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JDBC/" itemprop="url" rel="index">
+                    <span itemprop="name">JDBC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>官方文档：<a href="http://tomcat.apache.org/tomcat-8.5-doc/jndi-datasource-examples-howto.html#Preventing_database_connection_pool_leaks" target="_blank" rel="noopener">JDBC DataSources</a></p>
+<img src="/2019/06/10/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%B3%84%E9%9C%B2/%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%96%87%E6%A1%A3.png" class="">
+
+<p>Web应用程序必须显式关闭ResultSet、Statement和Connection。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">free</span><span class="params">(ResultSet resultSet,Statement statemen,Connection connection)</span></span>&#123;   </span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(resultSet != <span class="keyword">null</span>)</span><br><span class="line">                resultSet.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(statemen != <span class="keyword">null</span>)</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    statemen.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(connection != <span class="keyword">null</span>)</span><br><span class="line">                        <span class="keyword">try</span> &#123;</span><br><span class="line">                            connection.close();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/05/Pro-git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/05/Pro-git/" itemprop="url">Pro git</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T17:03:44+08:00">
+                2019-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VCS/" itemprop="url" rel="index">
+                    <span itemprop="name">VCS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>参考资料：<a href="http://iissnan.com/progit/" target="_blank" rel="noopener" title="Pro Git 简体中文版">Pro git</a></p>
+<p><code>Git</code>仓库中的名为<code>.git</code>的目录，存放着所有<code>Git</code>需要的数据和资源。</p>
+<p><code>README</code>文件：项目介绍文档（写给对项目有兴趣的人看的）</p>
+<h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><p>&emsp;&emsp;版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。可对任何类型的文件进行版本控制。</p>
+<p>&emsp;&emsp;分布式版本控制系统（ Distributed Version Control System，简称 DVCS ）面世了。在这类系统中，像 Git，Mercurial，Bazaar 以及 Darcs 等，客户端并不只提取最新版本的文件快照，<span style="color:red">而是把代码仓库完整地镜像下来</span>。这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。因为每一次的提取操作，实际上都是一次对代码仓库的完整备份。</p>
+<p>&emsp;&emsp;需要在 Windows 命令行中使用 Git 的用户，必须注意：在参数中间有空格的时候，必须使用双引号将参数括起来（在 Linux 中是单引号）；另外，如果扬抑符（^）作为参数的结尾，并且作为这一行的最后一个字符，则这个参数也需要用双引号括起来。因为扬抑符在 Windows 命令行中表示续行（译注：即下一行为这一行命令的继续）。</p>
+<h4 id="一、取得项目的Git仓库"><a href="#一、取得项目的Git仓库" class="headerlink" title="一、取得项目的Git仓库"></a>一、取得项目的Git仓库</h4><p>&emsp;&emsp;有两种取得Git仓库的方法。第一种是在现存的目录下，通过导入所有所有文件来创建新的 Git 仓库。第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。</p>
+<h6 id="在工作目录中初始化新仓库"><a href="#在工作目录中初始化新仓库" class="headerlink" title="在工作目录中初始化新仓库"></a>在工作目录中初始化新仓库</h6><p>&emsp;&emsp;对<u>现有的某个项目</u>开始用Git管理，只需到此项目所在的目录，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;初始化后，在当前目录下会生成一个名为<code>.git</code>的目录。</p>
+<p>&emsp;&emsp;目前仅仅是按照既有的结构框架初始化好了里面所有的文件和目录，但我们还没有开始跟踪管理项目中的任何一个文件。</p>
+<p>&emsp;&emsp;如果当前目录下有几个文件想要<strong>纳入版本控制</strong>，需要先用 <code>git add</code> 命令告诉 Git 开始对这些文件进行跟踪，然后提交：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add *.c</span><br><span class="line">$ git add README</span><br><span class="line">$ git commit -m <span class="string">'initial project version'</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>&emsp;&emsp;应用场景，如Blog向github备份项目每次都要执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">'~'</span>（项目版本）</span><br><span class="line">$ git push origin ~(要把项目提交到的分支名称)</span><br></pre></td></tr></table></figure>
+
+ <!-- 因为github上面没有创建对应的远程仓库，所以先不研究git push命令 -->
+
+<h6 id="从现有仓库克隆"><a href="#从现有仓库克隆" class="headerlink" title="从现有仓库克隆"></a>从现有仓库克隆</h6><p><strong>初次克隆某个仓库时，工作目录中的所有文件都属于已跟踪文件，且状态为未修改</strong></p>
+<p>格式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> [url]  [指定/新建的项目目录]</span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git://github.com/schacon/grit.git</span><br></pre></td></tr></table></figure>
+
+<p>在当前目录下创建一个名为<code>grit</code>的目录，其中包含一个 <code>.git</code> 的目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git://github.com/schacon/grit.git mygrit</span><br></pre></td></tr></table></figure>
+
+<p>在当前目录下创建一个名为<code>mygrit</code>的目录，其中包含一个<code>.git</code>的目录。</p>
+<hr>
+<p>&emsp;&emsp;Git 支持许多数据传输协议。之前的例子使用的是 <code>git://</code> 协议，不过你也可以用 <code>http(s)://</code> 或者 <code>user@server:/path.git</code> 表示的 SSH 传输协议。</p>
+<h4 id="二、记录每次更新到仓库"><a href="#二、记录每次更新到仓库" class="headerlink" title="二、记录每次更新到仓库"></a>二、记录每次更新到仓库</h4><p>&emsp;&emsp;<code>git add</code> 的潜台词就是把目标文件快照放入暂存区域，也就是 add file into staged area，同时未曾跟踪过的文件标记为需要跟踪。</p>
+<p>使用 Git 时的文件状态变化周期:</p>
+<p><img src="Pro-git/Git-%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="File Statue Lifecycle"></p>
+<p>相关的英语单词：</p>
+<ol>
+<li>track：跟踪</li>
+<li>modify：修改</li>
+<li>stage：暂存</li>
+</ol>
+<p>注意：已跟踪的文件，在修改后要提交需要再次执行<code>git add</code>将文件放进暂存区。</p>
+<p>&emsp;&emsp;<code>git add</code> 命令（这是个多功能命令，根据目标文件的状态不同，此命令的效果也不同：可以用它开始跟踪新文件，或者把已跟踪的文件放到暂存区，还能用于合并时把有冲突的文件标记为已解决状态等）</p>
+<p>注意：每次提交时<code>commit</code>对象保存的是已放进暂存区的文件，所以每次提交的时候尽量使用<code>git status</code>命令查看是否有将要保存的文件放入暂存区。</p>
+<h6 id="忽略某些文件"><a href="#忽略某些文件" class="headerlink" title="忽略某些文件"></a>忽略某些文件</h6><p>&emsp;&emsp;一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。我们可以创建一个名为 <code>.gitignore</code> 的文件，列出要忽略的文件模式。</p>
+<p>编写<code>.gitignore</code>文件的具体语法：<a href="http://iissnan.com/progit/html/zh/ch2_2.html" target="_blank" rel="noopener">http://iissnan.com/progit/html/zh/ch2_2.html</a></p>
+<h6 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h6><p><code>git rm</code> ：将文件从已跟踪文件清单中移除（确切地说，是从暂存区域移除），<span style="color:red">并连带从工作目录中删除指定的文件。</span>如果不想删除目录中的文件而被老板炒鱿鱼，慎用。可通过配置<code>.gitignore</code>来忽略文件纳入版本管理。</p>
+<h6 id="查看已暂存和未暂存的更新"><a href="#查看已暂存和未暂存的更新" class="headerlink" title="查看已暂存和未暂存的更新"></a>查看已暂存和未暂存的更新</h6><p><code>git diff</code>：工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。</p>
+<p><code>git diff --staged</code>：已经暂存起来的文件和上次提交时的快照之间的差异。</p>
+<h6 id="提交更新"><a href="#提交更新" class="headerlink" title="提交更新"></a>提交更新</h6><p>git commit`：将当前暂存区中的文件实际保存到仓库的历史记录中。</p>
+<p>有以下两种提交方式：</p>
+<ul>
+<li>记述一行提交信息</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"提交信息"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>记述详细的提交信息</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit</span><br></pre></td></tr></table></figure>
+
+<p>​    在<code>vim</code>编辑器中记述提交信息的格式如下：</p>
+<p>​        第一行：用一行文字简述提交的更改内容。</p>
+<p>​        第二行：空行。</p>
+<p>​        第三行以后：记述更改的原因和详细内容。</p>
+<p>​    这种情况如果将提交信息留空并直接关闭编辑器，这次提交就会被中止。</p>
+<p>&emsp;&emsp;<code>Git</code> 提供了一个跳过使用暂存区域的方式，只要在提交的时候，给 <code>git commit</code> 加上 <code>-a</code> 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 步骤。</p>
+<h6 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h6><p><code>git mv [oldName] [newName]</code></p>
+<h6 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h6><p>在输入 Git 命令的时候可以敲两次跳格键（Tab），就会看到列出所有匹配的可用命令建议。</p>
+<p>一次跳格键（Tab）如果只有一个符合会自动补全。</p>
+<h6 id="Git命令别名"><a href="#Git命令别名" class="headerlink" title="Git命令别名"></a>Git命令别名</h6><hr>
+<h4 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a><code>Git</code>分支</h4><p>&emsp;&emsp;<span style="color:#d12573"><code>Git</code>保存的不是文件差异或者变化量，而只是一系列文件快照。</span>这句话有点不明白，如果是将文件整个保存，岂不是占大量存储空间，是不是还有将内容进行压缩？</p>
+<p>&emsp;&emsp;<code>Pro Git</code>中是这样定义分支的，分支本质上仅仅是个指向<code>commit</code>对象的可变指针。切换分支之前，留心你的暂存区或者工作目录里，那些还没有提交的修改，它会和你即将检出的分支产生冲突从而阻止<code>Git</code>为你切换分支。切换分支的时候最好保持一个清洁的工作区域。通过<code>stashing</code> 和 <code>commit amending</code>两种方法之一可以绕过切换分支前对未提交内容的提交。</p>
+<p>&emsp;&emsp;<code>Git</code>中通过<code>HEAD</code>指针指向你正在工作中的本地分支（译注：将<code>HEAD</code>想象为当前分支的别名。</p>
+<p>创建一个新的分支：</p>
+<p><code>git branch [branchName]</code></p>
+<p>切换分支：</p>
+<p><code>git checkout [branchName]</code></p>
+<p>创建并切换到新分支：</p>
+<p><code>git checkout -b [branchName]</code></p>
+<p>合并指定分支到当前分支：</p>
+<p><code>git merge [branchName]</code></p>
+<p>&emsp;&emsp;如果顺着一个分支走下去可以到达另一个分支的话，那么 <code>Git</code> 在合并两者时，只会简单地把指针右移，因为这种单线的历史分支不存在任何需要解决的分歧，所以这种合并过程可以称为快进（<code>Fast forward</code>）。</p>
+<p>删除指定分支：</p>
+<p><code>git branch -d [branchname]</code></p>
+<p>&emsp;&emsp;当出现合并冲突时，<code>Git</code>会在发生冲突的文件内容上自动作出标记，可以手动打开文件进行冲突处理。处理完冲突后使用<code>git add</code> 将把它们标记为已解决状态（译注：实际上就是来一次快照保存到暂存区域。），确认所有冲突都已解决，也就是进入了暂存区，就可以用 <code>git commit</code> 来完成这次合并提交。当然我们也可以安装一些处理合并冲突的<code>Git</code>插件。</p>
+<p>显示所有的分支：</p>
+<p><code>git branch</code></p>
+<p>查看各个分支最后一个提交对象的信息：</p>
+<p><code>git branch -v</code></p>
+<p>查看哪些分支已被并入当前分支（译注：也就是说哪些分支是当前分支的直接上游。）</p>
+<p><code>git branch --merge</code></p>
+<p>查看尚未合并的工作：</p>
+<p><code>git branch --no-merged</code></p>
+<p>删除不包含未提交内容的分支：</p>
+<p><code>git branch -d [branchName]</code></p>
+<p>强制删除包含为提交内容的分支：</p>
+<p><code>git branch -D [branchName]</code></p>
+<p><span style="color:red">额，谷歌看一下有没有可以实时查看这些选项方法没有，大脑内存不足</span></p>
+<p><span style="color:red">没错，是有的。比如，要学习config命令可以怎么用，运行：</span></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">help</span> config</span><br></pre></td></tr></table></figure>
+
+<p><span style="color:red">会弹出对应命令的网页。</span>或者利用代码的自动补全功能查看选项的全称。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/04/Blog-questions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/04/Blog-questions/" itemprop="url">Blog questions</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T23:26:51+08:00">
+                2019-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>正常的<code>MarkDown</code>语法下图片部署装换成HTML后无法显示</li>
+</ol>
+<p>参考文档：<a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">资源文件夹</a></p>
+<p>原因：部署以后，图片会自动添加日期相关的文件结构目录</p>
+<img src="/2019/06/04/Blog-questions/image-1.png" class="">
+
+<p>解决方案：</p>
+<ul>
+<li><p>将站点配置文件 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 <code>true</code>：开启文章资源文件夹</p>
+</li>
+<li><p>在插入图片的时候不使用<code>MarkDown</code>语法（可能造成图片或其他资源显示不正确），而使用<code>Hexo 3</code>提供的相对路径引用的标签插件。</p>
+</li>
+<li><p>缺陷：因为不是<code>MarkDown</code>语法所以在编写文章的时候没办法预览。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>其他解决方案：可以利用插件<code>hexo-asset-image</code>实现<code>MarkDown</code>语法插入相对路径的图片。尝试多次以配置失败告终，若感兴趣可自行搜索。</p>
+<ol start="2">
+<li><p>在hexo中使用plantUML画图，要将(当然首先要下载插件配置好，自行搜索)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% plantuml %&#125;</span><br><span class="line">&#123;% endplantuml %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何在<code>MarkDown</code>文档中实现首行缩进？</p>
+</li>
+</ol>
+<p>日常写文章的时候都习惯性地每一个段落进行首行缩进，但是在MarkDown语法中却似乎没有内置段落首行缩进。这让我感到十分困扰。我尝试过用<code>HTML</code>和<code>CSS</code>来实现，如<code>&lt;p style=&quot;text-indent:2em&quot;&gt;&lt;/p&gt;</code>，但是在<code>HTML</code>块中没办法使用<code>MarkDown</code>语法进行加粗、下划线等操作。可以通过使用占位符来实现首行缩进：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;ensp;或&amp;#8194; &#x2F;&#x2F;半角</span><br><span class="line">&amp;emsp;或&amp;#8195; &#x2F;&#x2F;全角   强烈推荐</span><br><span class="line">&amp;nbsp;或&amp;#160;</span><br></pre></td></tr></table></figure>
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/05/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">正则表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-29T16:41:39+08:00">
+                2019-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/" itemprop="url">Maven之坐标、依赖</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-29T10:05:41+08:00">
+                2019-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mavan/" itemprop="url" rel="index">
+                    <span itemprop="name">Mavan</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="坐标-：唯一标识Java构件（artifact）"><a href="#坐标-：唯一标识Java构件（artifact）" class="headerlink" title="坐标 ：唯一标识Java构件（artifact）"></a><em>坐标 ：唯一标识Java构件（artifact）</em></h3><p>在Maven世界中，任何一个依赖、插件或者项目构建的输出，都可以称为 <em>构件</em></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.sonatype.nexus<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>nexus-indexer<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>Maven项目的坐标与仓库路径以及文件名对应的关系：（以上述坐标为例，具体可到本地仓库查看引入的依赖目录）</em></p>
+<blockquote>
+<p>目录：<u>org/sonatype/nexus</u>/<u>nexus-indexer</u>/<u>2.0.0</u>/<strong>nexus-indexer-2.0.0.jar</strong></p>
+<p>文件名规则：artifactId-version[-classifier].packaging，中括号表示可选</p>
+</blockquote>
+<h6 id="构成Maven坐标的一些元素"><a href="#构成Maven坐标的一些元素" class="headerlink" title="构成Maven坐标的一些元素"></a>构成Maven坐标的一些元素</h6><p>一个实际项目可拆分为多个Maven项目（模块）</p>
+<ol>
+<li><em>必须定义的元素</em></li>
+</ol>
+<ul>
+<li><strong>groupId</strong>：公司或组织域名倒序.实际项目</li>
+<li><strong>artifactId</strong>：实际项目-【模块（Maven项目）】</li>
+<li><strong>version</strong>：版本</li>
+</ul>
+<ol start="2">
+<li><em>可选的元素</em></li>
+</ol>
+<ul>
+<li><p><strong>packaging</strong>：jar/war（默认为jar）</p>
+<p><u>注意：packaging不一定与构件扩展名对应，比如packaging为maven.plugin的构件扩展名为jar。</u></p>
+</li>
+</ul>
+<ol start="3">
+<li>不能直接定义的元素</li>
+</ol>
+<ul>
+<li><p><strong>classifier</strong>：该元素用来帮助定义构建输出的一些附属构件。</p>
+<p><u>注意：不能直接定义项目的classifier，因为附属构件不是项目直接默认生成的，而是由插件帮助生成。</u></p>
+</li>
+</ul>
+<hr>
+<p><strong>依赖</strong>：</p>
+<h6 id="依赖的配置"><a href="#依赖的配置" class="headerlink" title="依赖的配置"></a>依赖的配置</h6><p>根元素project下的deppendencies可以包含一个或者多个dependency元素，以声明一个或者多个项目依赖。每个依赖可以包含的元素有：</p>
+<ul>
+<li><strong>groupId、artifactId和version</strong>：依赖的基本坐标，对于任何一个依赖来说，基本坐标是最重要的，Maven根据坐标才能找到需要的依赖。</li>
+<li><strong>type</strong>：依赖的类型，对应于项目坐标定义的packaging。大部分情况下，该元素不必声明，其默认值为jar。</li>
+<li><strong>scope</strong>：依赖的范围。</li>
+<li><strong>optional</strong>：标记依赖是否可选。</li>
+<li><strong>exclusion</strong>：用来排除传递性依赖。</li>
+</ul>
+<p>大部分依赖声明只包含基本坐标，然而在一些特殊情况下，其他元素至关重要。</p>
+<h6 id="依赖范围"><a href="#依赖范围" class="headerlink" title="依赖范围"></a>依赖范围</h6><p>&emsp;&emsp;Maven在编译项目主代码的时候需要使用一套classpath，Maven在编译和执行测试的时候会使用另一套classpath，实际运行Maven项目的时候，又会使用一套classpath。</p>
+<p>&emsp;&emsp;依赖范围就是用来控制依赖与这三种classpath（编译classpath、测试classpath、运行classpath）的关系。</p>
+<p>Maven有以下几种依赖范围：</p>
+<ol>
+<li>compile：编译依赖范围，对于三种classpath都有效。（默认使用）</li>
+<li>test：测试依赖范围，值对于测试classpath有效。</li>
+<li></li>
+</ol>
+<img src="/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png" class="" title="依赖范围和classpath的关系">
+
+<h6 id="传递性依赖"><a href="#传递性依赖" class="headerlink" title="传递性依赖"></a>传递性依赖</h6><p><em>概念</em></p>
+<p>A依赖B，B依赖C，A对于B是第一直接依赖，B对于C是第二直接依赖，A对于C是传递性依赖。这时Maven的传递性依赖机制会解析各个直接依赖的POM，将那些必要的间接依赖，以传递性依赖的形式引入到当前的项目中。</p>
+<p><em>传递性依赖和依赖范围</em></p>
+<img src="/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%BD%B1%E5%93%8D%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96.png" class="" title="依赖范围影响传递性依赖">
+
+<p>仔细琢磨该表是有一定规律可循的，不必死记硬背。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/05/27/Markdown%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/27/Markdown%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">Markdown的学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-27T17:55:36+08:00">
+                2019-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">Markdown</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Markdown的学习笔记"><a href="#Markdown的学习笔记" class="headerlink" title="Markdown的学习笔记"></a>Markdown的学习笔记</h1><p>参考自：<a href="http://www.markdown.cn/" target="_blank" rel="noopener" title="教程-MarkDown">MarkDown-语法说明</a></p>
+<!-- 文章中的参考式链接管理 -->
+
+<h4 id="Markdown介绍"><a href="#Markdown介绍" class="headerlink" title="Markdown介绍"></a>Markdown介绍</h4><p>一个Web上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。</p>
+<h4 id="Markdown和HTML的区别？"><a href="#Markdown和HTML的区别？" class="headerlink" title="Markdown和HTML的区别？"></a>Markdown和HTML的区别？</h4><p><u><strong>HTML 是一种发布的格式，Markdown 是一种书写的格式。</strong></u></p>
+<p>也就是说Markdown到最后还是要装换成HTML才能呈现。那为什么还会有Markdown的出现呢？而且为什么会这么受人欢迎呢？那肯定是它有优于HTML的闪光点！！</p>
+<ol>
+<li><p><strong>Markdown只对应HTML的一小部分标记。（即纯文本可以涵盖的范围）</strong><br>当然会有程序员朋友觉得HTML的标记不难记，但是对于非程序员的用户他们的<u>关注点在于撰写的内容上</u>，并不想花费太多的时间去学习HTMl标记的语义，这时候Markdown的语法简单，但是学习成本低，容易上手。又能达到他们想要的效果，何乐不为呢！！</p>
+</li>
+<li><p>那问题又来了，Markdown对应的HTML标记那么少，有一些功能不能实现，需要用到Markdown涵盖范围之外的HTML标记呢？不用担心，<strong>Markdown兼容HTML,在Markdown环境下编写的HTML5代码也能实时转换成对应的格式。</strong><u>不在Markdown涵盖范围之内的标签，都可以直接在文档里面用HTML撰写。当然如果你乐意，在Markdown涵盖范围内的标签也可以直接用HTML标记来撰写。不过这就没意思啦</u></p>
+<p>注意：在HTML区块标签间的Markdown格式语法将不会被处理。</p>
+</li>
+<li><p><strong>撰写过程中的直观性。</strong>不会像是由许多标签或是格式指令所构成，关注于内容本身，没有HTML的各种标签的干扰。排版格式良好、可</p>
+</li>
+<li><p>可读性强。</p>
+<p><em>Markdown也是存在一些缺陷的，具体可以自己自行上网搜索。</em></p>
+</li>
+</ol>
+<h4 id="Markdown的语法"><a href="#Markdown的语法" class="headerlink" title="Markdown的语法"></a>Markdown的语法</h4><h5 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h5><h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><ol>
+<li><p>行内式</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">[<span class="string">链接文字</span>](<span class="link">网址链接 "Title"</span>)</span><br><span class="line">例：</span><br><span class="line">[<span class="string">我的博客</span>](<span class="link">https://forhcl.github.io/ "Hogan_Lee'note"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>效果展示：<a href="https://forhcl.github.io/" title="Hogan_Lee&#39;note">我的博客</a></p>
+<p>注意：<code>&quot;Title&quot;</code>是可选的部分，对应<strong>HTML5</strong>的<code>&lt;a&gt;</code>标签的<code>title</code>属性。当写入<code>&quot;Title&quot;</code>后，鼠标在超链接上悬停时会把<code>Title</code>显示出来。一般将<code>Title</code>设置为链接对应网页的标题。</p>
+</li>
+<li><p>参考式</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">[<span class="string">链接文字</span>][<span class="symbol">辨识链接的标记</span>]</span><br><span class="line">然后，在文件的任意处，定义标记的链接内容</span><br><span class="line">[<span class="symbol">标记</span>]: <span class="link">网址链接  "Title"</span></span><br><span class="line">[<span class="symbol">标记</span>]: <span class="link">网址链接  'Title'</span></span><br><span class="line">[<span class="symbol">标记</span>]: <span class="link">网址链接  (Title)</span></span><br><span class="line">例子：</span><br><span class="line">[<span class="string">我的博客</span>][<span class="symbol">myBlog</span>]</span><br><span class="line">[<span class="symbol">myBlog</span>]: <span class="link">https://forhcl.github.io/ "Hogan_Lee'note"</span></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：<a href="https://forhcl.github.io/" title="Hogan_Lee&#39;note">我的博客</a></p>
+<p><strong>隐式链接标记功能</strong>让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 “Google” 链接到 google.com，你可以简化成：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">Google</span>][<span class="symbol"></span>]</span><br></pre></td></tr></table></figure>
+
+<p>然后定义链接内容：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">Google</span>]: <span class="link">http://google.com/</span></span><br></pre></td></tr></table></figure>
+
+<p> 注意：</p>
+<ul>
+<li><p><code>Title</code> 依旧是可选的，可以用单引号、双引号或是括弧包着，三种标记的链接内容的定义都是相同的。当然也可以把title属性放到下一行。</p>
+</li>
+<li><p>辨识链接的标记不区分大小写。</p>
+</li>
+</ul>
+<p><strong>行内式和参考式的比较</strong>：对于这两种定义链接的语法，给我最直观的感觉就是参考式对于链接的管理十分便捷。</p>
+<h6 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h6><p>类似于链接的格式</p>
+<ol>
+<li><p>行内式</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Alt text</span>](<span class="link">/path/to/img.jpg "Optional title"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参考式</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Alt text</span>][<span class="symbol">id</span>]</span><br></pre></td></tr></table></figure>
+
+<p>「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">id</span>]: <span class="link">url/to/image  "Optional title attribute"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>注意：到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的<code>&lt;img&gt;</code>标签。</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Hogan Lee" />
+            
+              <p class="site-author-name" itemprop="name">Hogan Lee</p>
+              <p class="site-description motion-element" itemprop="description">Talk is not cheap. Talk can be powerful.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/forhcl" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:18028543308@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Lee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/chitose.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

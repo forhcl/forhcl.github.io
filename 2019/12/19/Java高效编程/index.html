@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="LombokLombok是一个java库，为我们提供一些常用的注解，在类或者属性上添加这些注解可以在源代码编译时期为我们自动生成一些源代码，从而达到对我们类功能的增强。 Lombok实现的原理 注解的两种解析方式：  运行时解析：反射、动态代理  编译时解析：lombok就是运行在编译时期的（可以去看看编译后的class文件）引入Jar的依赖范围 1&lt;scope&gt;provided&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java高效编程">
+<meta property="og:url" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hogan&#39;Blog">
+<meta property="og:description" content="LombokLombok是一个java库，为我们提供一些常用的注解，在类或者属性上添加这些注解可以在源代码编译时期为我们自动生成一些源代码，从而达到对我们类功能的增强。 Lombok实现的原理 注解的两种解析方式：  运行时解析：反射、动态代理  编译时解析：lombok就是运行在编译时期的（可以去看看编译后的class文件）引入Jar的依赖范围 1&lt;scope&gt;provided&amp;lt">
+<meta property="og:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Lombok%E6%B3%A8%E8%A7%A3.png">
+<meta property="og:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E5%88%86%E5%B1%82%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/JavaBean%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.png">
+<meta property="article:published_time" content="2019-12-19T14:18:27.000Z">
+<meta property="article:modified_time" content="2020-02-15T00:43:02.473Z">
+<meta property="article:author" content="Hogan Lee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://forhcl.github.io/2019/12/19/Java高效编程/"/>
+
+
+
+
+
+  <title>Java高效编程 | Hogan'Blog</title><meta name="robots" content="noindex">
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java高效编程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-19T22:18:27+08:00">
+                2019-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h3><p>Lombok是一个java库，为我们提供一些常用的注解，在类或者属性上添加这些注解可以在源代码编译时期为我们自动生成一些源代码，从而达到对我们类功能的增强。</p>
+<p>Lombok实现的原理</p>
+<p>注解的两种解析方式：</p>
+<ul>
+<li><p>运行时解析：反射、动态代理</p>
+</li>
+<li><p>编译时解析：lombok就是运行在编译时期的（可以去看看编译后的class文件）引入Jar的依赖范围</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>编译时解析的两种机制：</p>
+<ul>
+<li>Annotation Processing Tool（注解处理器）已被移除</li>
+<li>Pluggable Annotation Processing API（JSR269插入式注解处理器）<img src="Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" alt=""></li>
+</ul>
+<p>Lombok的常用注解:</p>
+<p><img src="Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Lombok%E6%B3%A8%E8%A7%A3.png" alt=""></p>
+<p>日志这个记住，每次写logger有点烦</p>
+<p>Lombok注解介绍</p>
+<p>小技巧：在idea的maven窗口下载第三方Jar包源码，通过ctrl跳过去就不是反编译的代码了，而是第三方源码了</p>
+<p><code>@Getter</code> 为属性生成get方法。</p>
+<p>注解类：为类中的所有属性添加getter方法</p>
+<p>注解属性：为该属性生成getter方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Getter</span>注解</span></span><br><span class="line"><span class="comment"> * 为属性生成get方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GetterTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//懒加载：单例模式的懒加载那样子第一次使用的时候再加载，从而时间换空间</span></span><br><span class="line">    <span class="meta">@Getter</span>(</span><br><span class="line">            lazy = <span class="keyword">true</span></span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String field1 = <span class="string">"zhangxiaoxi"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Getter</span>(</span><br><span class="line"></span><br><span class="line">            value = AccessLevel.PRIVATE,</span><br><span class="line">            onMethod_=&#123;<span class="meta">@NotNull</span>&#125;</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">private</span> String field2;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>@Setter</code> 为属性添加Setter方法</p>
+<p>注解类：为类中的所有属性添加getter方法</p>
+<p>注解属性：为该属性生成getter方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Setter</span>注解</span></span><br><span class="line"><span class="comment"> * 为属性生成set方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SetterTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> String field1;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Setter</span>(</span><br><span class="line">            value = AccessLevel.PRIVATE,</span><br><span class="line">        <span class="comment">//方法的参数上</span></span><br><span class="line">            onParam_=&#123;<span class="meta">@NotNull</span>&#125;</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">private</span> String field2;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>@ToString</code> 生成toString方法</p>
+<p>必须作用在类上！！！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.zhangxiaoxi.lombok;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Setter;</span><br><span class="line"><span class="keyword">import</span> lombok.ToString;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ToString</span>注解</span></span><br><span class="line"><span class="comment"> * 生成toString方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@ToString</span>(</span><br><span class="line">        includeFieldNames = <span class="keyword">false</span>,</span><br><span class="line">    <span class="comment">//排除掉某个属性</span></span><br><span class="line"><span class="comment">//        exclude = &#123;"field1"&#125;,</span></span><br><span class="line">    <span class="comment">//只包含某个属性，优先级比exclude高 </span></span><br><span class="line"><span class="comment">//        of = &#123;"field1"&#125;,</span></span><br><span class="line">        doNotUseGetters = <span class="keyword">false</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ToStringTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> String field1;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> String field2;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getField2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"调用get方法！"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.field2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ToStringTest toStringTest = <span class="keyword">new</span> ToStringTest();</span><br><span class="line">        toStringTest.setField1(<span class="string">"zhang"</span>);</span><br><span class="line">        toStringTest.setField2(<span class="string">"xiaoxi"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(toStringTest.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>@EqualsAndHashCode</code> 生成Equals方法和HashCode方法</p>
+<p>语法规范要求两者要同时重写！！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@EqualsAndHashCode</span>注解</span></span><br><span class="line"><span class="comment"> * 生成Equals方法和HashCode方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@EqualsAndHashCode</span>(</span><br><span class="line">        exclude = &#123;<span class="string">"field1"</span>&#125;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EqualsAndHashCodeTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String field1;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String field2;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>@Data</code> 包括<code>@Getter</code>、<code>@Setter</code>、<code>@ToString</code>、<code>@EqualsAndHashCode</code>四个注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String field1;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String field2;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>val</code>接口 弱语言变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@val</span>注解</span></span><br><span class="line"><span class="comment"> * 弱语言变量</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ValTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        val field = <span class="string">"zhangxiaoxi"</span>;</span><br><span class="line"></span><br><span class="line">        val list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        list.add(<span class="string">"zhangxiaoxi"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此时只能一句卧槽，Java强类型语言硬生生被你玩成弱类型，Lombok是作用在生成字节码过程中的，生成字节码lombok会推断且生成相应Java类型的字节码。</p>
+<p><code>NouNull</code> 生成非空检查</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * @NonNull注解</span><br><span class="line"> * 生成非空检查</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class NonNullTest &#123;</span><br><span class="line"></span><br><span class="line">    public NonNullTest(@NonNull String field) &#123;</span><br><span class="line">        System.out.println(field);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>额，不方便统一异常处理，涉及持久层具体业务逻辑的判断和抛指定类型和自定义的异常</p>
+<p><code>@AllArgsConstructor</code> 有参</p>
+<p><code>@NoArgsConstructor</code> 无参</p>
+<p><code>@RequireConstructor</code> 必要参数</p>
+<p>Required arguments are final fields and fields with constraints such as {@code @NonNull}.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@AllArgsConstructor</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@NoArgsConstructor</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@RequiredArgsConstructor</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConstructorTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String field1;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NonNull</span></span><br><span class="line">    <span class="keyword">private</span> String field2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String field3;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>@Cleanup</code> 生成对资源进行关闭的一些代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Cleanup</span>注解</span></span><br><span class="line"><span class="comment"> * 资源关闭</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CleanupTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">copyFile</span><span class="params">(String in, String out)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Cleanup</span> FileInputStream fileInputStream =</span><br><span class="line">                <span class="keyword">new</span> FileInputStream(in);</span><br><span class="line">        <span class="meta">@Cleanup</span> FileOutputStream fileOutputStream =</span><br><span class="line">                <span class="keyword">new</span> FileOutputStream(out);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> r;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> ((r = fileInputStream.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">            fileOutputStream.write(r);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Ensures the variable declaration that you annotate will be cleaned up by calling its close method, regardlessof what happens. Implemented by wrapping all statements following the local variable declaration to theend of your scope into a try block that, as a finally action, closes the resource.</p>
+<p>与<code>try-with-result</code>作用一致，都是在编译时期将关闭语句封装到finally语句中，所以还是使用<code>try-with-resource</code>.官方一点</p>
+<p>lombok的优点：</p>
+<ul>
+<li>通过注解自动生成样板代码，提高开发效率</li>
+<li>代码简洁，只关注相关属性</li>
+<li>新增属性后，无需刻意修改相关方法</li>
+</ul>
+<p>lombok的缺点：</p>
+<ul>
+<li>降低了源代码的可读性和完整性</li>
+<li>加大对于问题排查的难度</li>
+<li>需要IDE的相关插件的支持</li>
+</ul>
+<h1 id="验证框架"><a href="#验证框架" class="headerlink" title="验证框架"></a>验证框架</h1><p>通过提供的校验注解和自定义校验注解对数据进行校验。</p>
+<p>JSR规范、验证框架的原理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">newHandler</span><span class="params">(Order order)</span></span>&#123;</span><br><span class="line">    <span class="comment">//实例化验证框架对象</span></span><br><span class="line">        Validator validator= Validation.buildDefaultValidatorFactory().getValidator();</span><br><span class="line">        <span class="comment">//对数据进行校验</span></span><br><span class="line">        Set&lt;ConstraintViolation&lt;UserInfo&gt;&gt; set=validator.validate(userInfo);</span><br><span class="line">        <span class="comment">//验证结果集不为空，合并后抛出异常</span></span><br><span class="line">        <span class="keyword">if</span>(set.size()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            StringBuilder stringBuilder=<span class="keyword">new</span> StringBuilder();</span><br><span class="line">            set.forEach(e-&gt;&#123;</span><br><span class="line">                stringBuilder.append(e.getMessage());</span><br><span class="line">                stringBuilder.append(<span class="string">';'</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(stringBuilder.toString());</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="分层验证与JavaBean验证"><a href="#分层验证与JavaBean验证" class="headerlink" title="分层验证与JavaBean验证"></a>分层验证与JavaBean验证</h5><ul>
+<li>分层验证模型</li>
+</ul>
+<p><img src="Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E5%88%86%E5%B1%82%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.png" alt=""></p>
+<p>将验证逻辑写在每一层上，由于验证逻辑重复性很大。所以会导致许多重复验证代码分布在不同的层中。</p>
+<ul>
+<li>JavaBean验证模型</li>
+</ul>
+<p><img src="Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/JavaBean%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.png" alt=""></p>
+<p>将验证逻辑通过注解约束在域模型上，从而使验证模型从每一层中剥离出来。 </p>
+<h5 id="JCP-JSR简介"><a href="#JCP-JSR简介" class="headerlink" title="JCP,JSR简介"></a>JCP,JSR简介</h5><p>JCP(Java Community Process)成立于1998年，是使有兴趣的各方参与定义Java的特征和未来版本的<span style="color:red">正式过程</span>。</p>
+<p>JCP使用JSR(<span style="color:red">Java规范请求</span>，Java Specification Requests)作为<span style="color:red">正式规范文档</span>，描述被提议加入到Java体系中的规范的技术。</p>
+<p>有关数据校验的JSR</p>
+<ul>
+<li>JSR303:Bean Validation 1.0                    JavaEE6</li>
+<li>JSR349:Bean Validation 1.1                    JavaEE7</li>
+<li>JSR380:Bean Validation 2.0                    JavaEE8</li>
+</ul>
+<p>可以到维基百科中了解更多。</p>
+<h5 id="Bean-Validation与Hibernate-Validator"><a href="#Bean-Validation与Hibernate-Validator" class="headerlink" title="Bean Validation与Hibernate Validator"></a>Bean Validation与Hibernate Validator</h5><p>Bean Validation仅仅只是一个规范，而Hibernate Validator则是这个规范的实现</p>
+<ul>
+<li>Bean Validation 1.0参考实现：Hibernate Validator 4.3.1.Final</li>
+<li>Bean Validation 1.1参考实现：Hibernate Validator 5.1.1.Final</li>
+<li>Bean Validation 2.0参考实现：Hibernate Validator 6.0.1.Final</li>
+</ul>
+<p><code>Hibernate Validator</code>和<code>ORM框架Hibernate</code>只是同一个团队开发的，除此之外没有半毛钱关系。也就是即使你使用的ORM框架是MyBatis也可以使用<code>Hibernate Validator</code>。</p>
+<h5 id="Hibernate-Validator与Spring-Validation"><a href="#Hibernate-Validator与Spring-Validation" class="headerlink" title="Hibernate Validator与Spring Validation"></a>Hibernate Validator与Spring Validation</h5><p>Spring Validator在Hibernate Validator的基础上，对其进行了<span style="color:red">二次封装</span>，以满足在Spring环境中更简单、高效的对数据进行校验。</p>
+<h3 id="常用的约束注解"><a href="#常用的约束注解" class="headerlink" title="常用的约束注解"></a>常用的约束注解</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.validation<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>validation-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.1.Final<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-validator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>6.0.16.Final<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 验证结果支持el表达式，但el表达式是web容器自带的，我们使用junit进行测试所以要引入相关jar包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.el<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.el-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.glassfish.web<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.el<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="初级约束注解"><a href="#初级约束注解" class="headerlink" title="初级约束注解"></a>初级约束注解</h5><ul>
+<li><p>空值校验类：<code>@Null</code>,<code>@NonNull</code>,<code>@NotEmpty</code>,<code>@NotBlank</code>等</p>
+<p><code>@Null</code>:空</p>
+<p><code>@NotNull</code>:不能是null但是可以是空字符串””</p>
+<p><code>@NotEmpty</code>：不能是null和不能是空字符串””</p>
+<p><code>@NotBlank</code>：不能是null和不能是空字符串””，同时不能全部都是空格”  “，即会自动调用trim()去掉字符串中前后空格</p>
+</li>
+<li><p>范围校验类：<code>@Length</code>(字符串的长度)、<code>@Min</code>/<code>@Max</code>(数值校验),<code>@Size</code>(集合的个数),<code>Digits</code>,<code>@Future</code>/<code>@Past</code>,<code>@Negative</code>等</p>
+</li>
+<li><p>其他校验类：<code>@Email</code>(邮箱必须为有效邮箱，但是可以为空),<code>@URL</code>,<code>@AssertTrue</code>,<code>@Pattern</code>等</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.forhcl.effectivecoding.validation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.AfterEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.BeforeEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.validation.ConstraintViolation;</span><br><span class="line"><span class="keyword">import</span> javax.validation.Validation;</span><br><span class="line"><span class="keyword">import</span> javax.validation.Validator;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-25 22:40</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ValidationTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//验证器对象</span></span><br><span class="line">    <span class="keyword">private</span> Validator validator;</span><br><span class="line">    <span class="comment">//待验证对象</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserInfo userInfo;</span><br><span class="line">    <span class="comment">//验证失败的结果集</span></span><br><span class="line">    Set&lt;ConstraintViolation&lt;UserInfo&gt;&gt; constraintViolationSet;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@BeforeEach</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//初始化验证器</span></span><br><span class="line">        validator=Validation.buildDefaultValidatorFactory().getValidator();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">nullValidation</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//        userInfo.setUserId("");</span></span><br><span class="line"><span class="comment">//        userInfo.setUserName("  ");</span></span><br><span class="line"><span class="comment">//        userInfo.setPassWord("wwweew");</span></span><br><span class="line"><span class="comment">//        userInfo.setEmail("222@163.com");</span></span><br><span class="line">        <span class="comment">//使用验证器对对象进行验证</span></span><br><span class="line">     constraintViolationSet=validator.validate(userInfo);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 结果打印</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@AfterEach</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        StringBuilder stringBuilder=<span class="keyword">new</span> StringBuilder();</span><br><span class="line">        constraintViolationSet.stream().forEach(e-&gt;&#123;</span><br><span class="line">            stringBuilder.append(e.getMessage());</span><br><span class="line">            stringBuilder.append(<span class="string">';'</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        System.out.println(stringBuilder.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="中级约束注解"><a href="#中级约束注解" class="headerlink" title="中级约束注解"></a>中级约束注解</h5><ul>
+<li><p>级联验证</p>
+<p>对实体类中存储相同实体类型对象集合类型属性中的对象进行校验。通过<code>@Valid</code>注解实现，如下面的例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> javax.validation.constraints.*;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 待验证对象实体类</span></span><br><span class="line"><span class="comment"> * 用户信息类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-25 22:37</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 好友列表</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Size</span>(min = <span class="number">2</span>,max = <span class="number">4</span>)</span><br><span class="line">    <span class="keyword">private</span> List&lt;<span class="meta">@Valid</span> UserInfo&gt; friends;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分组验证</p>
+<p>使用场景：如希望校验注解在某些情况下可用，在某些情况下不可用。</p>
+<ul>
+<li>定义一个接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用来校验注解分组</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GroupVaild</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>相应的校验注解上面添加属性<code>groups</code>进行分组</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@NotBlank</span>(message = <span class="string">"密码不能为空~"</span>,groups = &#123;GroupVaild<span class="class">.<span class="keyword">class</span>&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用分组</li>
+</ul>
+<p>注解方式：最后在控制器的处理器方法上<code>@Validated</code>中指明使用的校验分组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Validated</span>(User.GroupVaild<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+<p>校验器方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">validator=Validation.buildDefaultValidatorFactory().getValidator();</span><br><span class="line">constraintViolationSet=validator.validate(userInfo, UserInfo.TestGroup<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组排序</p>
+<p>同时使用几个检验分组，第一种方式</p>
+<ul>
+<li><p>注解方式：最后在控制器的处理器方法上<code>@Validated</code>中指明使用的校验分组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Validated</span>(&#123;User.GroupVaild<span class="class">.<span class="keyword">class</span>,<span class="title">User</span>.<span class="title">GroupValid1</span>.<span class="title">class</span>&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p>校验器方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">validator=Validation.buildDefaultValidatorFactory().getValidator();</span><br><span class="line">constraintViolationSet=validator.validate(userInfo, UserInfo.TestGroup<span class="class">.<span class="keyword">class</span>,<span class="title">User</span>.<span class="title">GroupValid1</span>.<span class="title">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式有一个缺点，就是不是先验证一个组之后再验证另外一个组，而是根据属性分布进行校验有的时候我们希望先校验耗时短的分组再校验长的分组，这时候我们就应该控制各个分组执行的前后顺序。所以我们就需要采用第二种方式组排序</p>
+</li>
+</ul>
+<ol>
+<li><p>定义组排序接口，在大组里面定义各个小组和它们的前后顺序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GroupSequence</span>(&#123;</span><br><span class="line">        User.GroupVaild<span class="class">.<span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">        <span class="title">User</span>.<span class="title">GroupValid1</span>.<span class="title">class</span>,</span></span><br><span class="line"><span class="class">        <span class="title">Default</span>.<span class="title">class</span></span></span><br><span class="line"><span class="class">&#125;)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">interface</span> <span class="title">Group</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h5 id="高级约束注解使用"><a href="#高级约束注解使用" class="headerlink" title="高级约束注解使用"></a>高级约束注解使用</h5><p>一般情况下我们都是对实体类进行校验，但除此之外还有其他的情况。</p>
+<h6 id="校验参数"><a href="#校验参数" class="headerlink" title="校验参数"></a>校验参数</h6></li>
+</ul>
+<h6 id="校验返回值"><a href="#校验返回值" class="headerlink" title="校验返回值"></a>校验返回值</h6><h6 id="校验构造方法"><a href="#校验构造方法" class="headerlink" title="校验构造方法"></a>校验构造方法</h6><!-- flag of hidden posts -->
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Hogan Lee
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/" title="Java高效编程">http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Hogan Lee" />
+            
+              <p class="site-author-name" itemprop="name">Hogan Lee</p>
+              <p class="site-description motion-element" itemprop="description">Talk is not cheap. Talk can be powerful.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/forhcl" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:18028543308@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lombok"><span class="nav-number">1.</span> <span class="nav-text">Lombok</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#验证框架"><span class="nav-number"></span> <span class="nav-text">验证框架</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#分层验证与JavaBean验证"><span class="nav-number">0.0.1.</span> <span class="nav-text">分层验证与JavaBean验证</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JCP-JSR简介"><span class="nav-number">0.0.2.</span> <span class="nav-text">JCP,JSR简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bean-Validation与Hibernate-Validator"><span class="nav-number">0.0.3.</span> <span class="nav-text">Bean Validation与Hibernate Validator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hibernate-Validator与Spring-Validation"><span class="nav-number">0.0.4.</span> <span class="nav-text">Hibernate Validator与Spring Validation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的约束注解"><span class="nav-number">1.</span> <span class="nav-text">常用的约束注解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初级约束注解"><span class="nav-number">1.0.1.</span> <span class="nav-text">初级约束注解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#中级约束注解"><span class="nav-number">1.0.2.</span> <span class="nav-text">中级约束注解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#高级约束注解使用"><span class="nav-number">1.0.3.</span> <span class="nav-text">高级约束注解使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#校验参数"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">校验参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#校验返回值"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">校验返回值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#校验构造方法"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">校验构造方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Lee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/chitose.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
