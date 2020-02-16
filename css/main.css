@@ -1641,6 +1641,13 @@ pre .javascript .function {
 .fancybox-close:hover {
   border: none;
 }
+.post-copyright {
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid #ff1700;
+  background-color: #f9f9f9;
+  list-style: none;
+}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -1741,6 +1748,11 @@ pre .javascript .function {
   max-width: 96px;
   height: auto;
   border: 2px solid #333;
+/* 头像圆形 */
+  border-radius: 80px;
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  box-shadow: inset 0 -1px 0 #333 sf;
 }
 .site-author-name {
   margin: 5px 0 0;
@@ -1822,7 +1834,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4db8b6;
+  background: #ffb4de;
 }
 .links-of-blogroll {
   font-size: 13px;
