@@ -431,7 +431,7 @@ Spring Validator在Hibernate Validator的基础上，对其进行了<span style=
 
   `@NotBlank`：不能是null和不能是空字符串""，同时不能全部都是空格"  "，即会自动调用trim()去掉字符串中前后空格
 
-- 范围校验类：`@Length`(字符串的长度)、`@Min`/`@Max`(数值校验),`@Size`(集合的个数),`Digits`,`@Future`/`@Past`,`@Negative`等
+- 范围校验类：`@Length`(字符串的长度)、`@Min`/`@Max`(数值校验),`@Size`(集合元素的个数),`Digits`,`@Future`/`@Past`,`@Negative`等
 
 - 其他校验类：`@Email`(邮箱必须为有效邮箱，但是可以为空),`@URL`,`@AssertTrue`,`@Pattern`等
 
@@ -502,7 +502,7 @@ class ValidationTest {
 
 - 级联验证
 
-  对实体类中存储相同实体类型对象集合类型属性中的对象进行校验。通过`@Valid`注解实现，如下面的例子
+  对实体类中存储相同实体类型对象集合类型属性中的对象进行校验。通过`@Valid`注解实现，验证的是默认分组！！如下面的例子
 
   ```java
   import lombok.Data;
@@ -563,7 +563,8 @@ class ValidationTest {
 
   同时使用几个检验分组，第一种方式
 
-  - 注解方式：最后在控制器的处理器方法上`@Validated`中指明使用的校验分组
+  - 注解方式：最后在控制器的处理器方法上`@Validated`中指明使用的校验分组，默认分组也得指明出来！！如果有多个参数的情况下，要
+  注解在要校验的参数前面，如果只有要校验的参数一个参数，则可以注解在方法上！！
 
     ```java
     @Validated({User.GroupVaild.class,User.GroupValid1.class})
