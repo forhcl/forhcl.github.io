@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>职业变动</title>
+    <url>/2020/05/30/%E8%81%8C%E4%B8%9A%E5%8F%98%E5%8A%A8/</url>
+    <content><![CDATA[<p>&emsp;&emsp;受2020年疫情影响，同时本人的技术没能达到进入大厂的境界，也想让自己未来能够变得能言善语，而不仅仅是一个技术宅。所以我尝试去做软件实施，虽然感觉有点自封天花板。但是我不后悔，我会为我的选择买单。趁现在年轻还能够试错。</p>
+<p>&emsp;&emsp;同时，也希望自己不要因为技术要求的降低而松懈自己，多考证然后尝试考珠三角一二线城市的编制岗位。蜕变成一个自己希望的乐观、开朗、普普通通的人。日常多看书，练字、锻炼，书也不要都是技术类的，作为一个大学生，文笔这么差，感觉好丢脸。腹有诗书气自华嘛！！</p>
+<p>存钱开自己的便利店、买房（公寓）、老家自建房、老家再买一套。搞线上的副业，无关技术想做点小买卖成为一个小商人。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>弹尽粮绝，资源关闭</title>
     <url>/2019/12/22/%E5%BC%B9%E5%B0%BD%E7%B2%AE%E7%BB%9D%EF%BC%8C%E8%B5%84%E6%BA%90%E5%85%B3%E9%97%AD/</url>
     <content><![CDATA[<p>&emsp;&emsp;日常开发的时候，总是有许多需要我们调用 <code>close()</code> 方法手动关闭的<strong>物理</strong>资源，如文件/流资源、套接字资源、数据库连接资源等等。通常都是在 <code>finally</code> 语句块对资源进行关闭，如下面的例子：</p>
@@ -3744,7 +3752,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% plantuml %&#125;</span><br><span class="line">&#123;% endplantuml %&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>这个目前有更好的解决办法，直接通过图床服务器存储图片，然后使用外链来引入图片，语法也不用改，直接使用Markdown的语法即可。</strong></p>
-<p><strong>缓解了服务器加载图片的压力，七牛云图床服务器还有CDN加速，加快博客的加载！！我感觉需要自己写一个插件，在markdown传入图片的时候就把照片传上七牛云，允许同名</strong></p>
+<p><strong>缓解了服务器加载图片的压力，七牛云图床服务器还有CDN加速，加快博客的加载！！我感觉需要自己写一个插件，在markdown传入图片的时候就把照片传上七牛云，七牛云存在一个Windows端的同步上传工具，允许将指定文件夹的内容同步上传到七牛云，所以我们只需要配置好Mrakdown编辑器拉进来的图片的保存位置即可，允许同名图片</strong></p>
 <p><strong>可以把资源文件夹去掉了！！</strong></p>
 </li>
 <li><p>如何在<code>MarkDown</code>文档中实现首行缩进？</p>

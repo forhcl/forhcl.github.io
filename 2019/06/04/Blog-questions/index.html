@@ -91,7 +91,7 @@
 <meta property="og:description" content="正常的MarkDown语法下图片部署装换成HTML后无法显示  参考文档：资源文件夹 原因：部署以后，图片会自动添加日期相关的文件结构目录   解决方案：  将站点配置文件 config.yml 文件中的 post_asset_folder 选项设为 true：开启文章资源文件夹  在插入图片的时候不使用MarkDown语法（可能造成图片或其他资源显示不正确），而使用Hexo 3提供的相对路径引">
 <meta property="og:image" content="http://forhcl.github.io/2019/06/04/Blog-questions/image-1.png">
 <meta property="article:published_time" content="2019-06-04T15:26:51.000Z">
-<meta property="article:modified_time" content="2020-03-16T01:46:32.103Z">
+<meta property="article:modified_time" content="2020-03-16T01:59:01.383Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -408,7 +408,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% plantuml %&#125;</span><br><span class="line">&#123;% endplantuml %&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>这个目前有更好的解决办法，直接通过图床服务器存储图片，然后使用外链来引入图片，语法也不用改，直接使用Markdown的语法即可。</strong></p>
-<p><strong>缓解了服务器加载图片的压力，七牛云图床服务器还有CDN加速，加快博客的加载！！我感觉需要自己写一个插件，在markdown传入图片的时候就把照片传上七牛云，允许同名</strong></p>
+<p><strong>缓解了服务器加载图片的压力，七牛云图床服务器还有CDN加速，加快博客的加载！！我感觉需要自己写一个插件，在markdown传入图片的时候就把照片传上七牛云，七牛云存在一个Windows端的同步上传工具，允许将指定文件夹的内容同步上传到七牛云，所以我们只需要配置好Mrakdown编辑器拉进来的图片的保存位置即可，允许同名图片</strong></p>
 <p><strong>可以把资源文件夹去掉了！！</strong></p>
 </li>
 <li><p>如何在<code>MarkDown</code>文档中实现首行缩进？</p>
@@ -564,7 +564,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

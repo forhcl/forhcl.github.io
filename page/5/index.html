@@ -288,6 +288,398 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/" itemprop="url">常见的HTTP状态码和原因短语</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-21T08:59:43+08:00">
+                2019-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;谈到HTTP状态码，可能很多人会想起让自己抓狂的404页面。没错404也是一个状态码，当你请求服务器上不存在的资源的，404错误页面就会出现。当然，除了404以外还有其它的状态码。</p>
+<p>&emsp;&emsp;实际上，请求过程中会有很多状态码快速的发生着变化，且看不出这些状态码是如何变化的，除非像打断点似的操作一步停一下，因此导致在服务器响应过程中，很多状态码我们是看不到的。下面介绍一下如何查看当前页面的状态码。</p>
+<ol>
+<li><p>打开要查看的页面，按F12；然后点击network（或网络），再点击Doc。</p>
+<img src="/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg" class="">
+</li>
+<li><p>按F5刷新，就可以看到“Status”一栏下的页面返回状态码了。</p>
+<img src="/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E7%8A%B6%E6%80%81%E7%A0%81%E6%9F%A5%E7%9C%8B.jpg" class="">
+
+</li>
+</ol>
+<p>&emsp;&emsp;HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。状态码的数量多达60余种，下面我们了解一下常见的14种。首先我们对状态码进行简单的分类：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1XX</td>
+<td>Informational（信息性状态码）</td>
+<td>接收的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>Success（成功状态码）</td>
+<td>请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>Redirection（重定向状态码）</td>
+<td>需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Client Error（客户端错误状态码）</td>
+<td>服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Server Error（服务器错误状态码）</td>
+<td>服务器处理请求出错</td>
+</tr>
+</tbody></table>
+<p>&emsp;&emsp;下面分别对每一类状态信息进行总结：</p>
+<h2 id="1xx-信息"><a href="#1xx-信息" class="headerlink" title="1xx: 信息"></a>1xx: 信息</h2><table>
+<thead>
+<tr>
+<th align="left">消息:</th>
+<th align="left">描述:</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">100 Continue</td>
+<td align="left">服务器仅接收到部分请求，但是一旦服务器并没有拒绝该请求，客户端应该继续发送其余的请求。</td>
+</tr>
+<tr>
+<td align="left">101 Switching Protocols</td>
+<td align="left">服务器转换协议：服务器将遵从客户的请求转换到另外一种协议。</td>
+</tr>
+</tbody></table>
+<h2 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx: 成功"></a>2xx: 成功</h2><table>
+<thead>
+<tr>
+<th align="left">消息:</th>
+<th align="left">描述:</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">200 OK</td>
+<td align="left">请求成功（其后是对GET和POST请求的应答文档。）</td>
+</tr>
+<tr>
+<td align="left">201 Created</td>
+<td align="left">请求被创建完成，同时新的资源被创建。</td>
+</tr>
+<tr>
+<td align="left">202 Accepted</td>
+<td align="left">供处理的请求已被接受，但是处理未完成。</td>
+</tr>
+<tr>
+<td align="left">203 Non-authoritative Information</td>
+<td align="left">文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝。</td>
+</tr>
+<tr>
+<td align="left">204 No Content</td>
+<td align="left">没有新文档。浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。</td>
+</tr>
+<tr>
+<td align="left">205 Reset Content</td>
+<td align="left">没有新文档。但浏览器应该重置它所显示的内容。用来强制浏览器清除表单输入内容。</td>
+</tr>
+<tr>
+<td align="left">206 Partial Content</td>
+<td align="left">客户发送了一个带有Range头的GET请求，服务器完成了它。</td>
+</tr>
+</tbody></table>
+<h2 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx: 重定向"></a>3xx: 重定向</h2><table>
+<thead>
+<tr>
+<th align="left">消息:</th>
+<th align="left">描述:</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">300 Multiple Choices</td>
+<td align="left">多重选择。链接列表。用户可以选择某链接到达目的地。最多允许五个地址。</td>
+</tr>
+<tr>
+<td align="left">301 Moved Permanently</td>
+<td align="left">所请求的页面已经转移至新的url。</td>
+</tr>
+<tr>
+<td align="left">302 Found</td>
+<td align="left">所请求的页面已经临时转移至新的url。</td>
+</tr>
+<tr>
+<td align="left">303 See Other</td>
+<td align="left">所请求的页面可在别的url下被找到。</td>
+</tr>
+<tr>
+<td align="left">304 Not Modified</td>
+<td align="left">未按预期修改文档。客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。</td>
+</tr>
+<tr>
+<td align="left">305 Use Proxy</td>
+<td align="left">客户请求的文档应该通过Location头所指明的代理服务器提取。</td>
+</tr>
+<tr>
+<td align="left">306 <em>Unused</em></td>
+<td align="left">此代码被用于前一版本。目前已不再使用，但是代码依然被保留。</td>
+</tr>
+<tr>
+<td align="left">307 Temporary Redirect</td>
+<td align="left">被请求的页面已经临时移至新的url。</td>
+</tr>
+</tbody></table>
+<h2 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx: 客户端错误"></a>4xx: 客户端错误</h2><table>
+<thead>
+<tr>
+<th align="left">消息:</th>
+<th align="left">描述:</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">400 Bad Request</td>
+<td align="left">服务器未能理解请求。</td>
+</tr>
+<tr>
+<td align="left">401 Unauthorized</td>
+<td align="left">被请求的页面需要用户名和密码。</td>
+</tr>
+<tr>
+<td align="left">402 Payment Required</td>
+<td align="left">此代码尚无法使用。</td>
+</tr>
+<tr>
+<td align="left">403 Forbidden</td>
+<td align="left">对被请求页面的访问被禁止。</td>
+</tr>
+<tr>
+<td align="left">404 Not Found</td>
+<td align="left">服务器无法找到被请求的页面。</td>
+</tr>
+<tr>
+<td align="left">405 Method Not Allowed</td>
+<td align="left">请求中指定的方法不被允许。</td>
+</tr>
+<tr>
+<td align="left">406 Not Acceptable</td>
+<td align="left">服务器生成的响应无法被客户端所接受。</td>
+</tr>
+<tr>
+<td align="left">407 Proxy Authentication Required</td>
+<td align="left">用户必须首先使用代理服务器进行验证，这样请求才会被处理。</td>
+</tr>
+<tr>
+<td align="left">408 Request Timeout</td>
+<td align="left">请求超出了服务器的等待时间。</td>
+</tr>
+<tr>
+<td align="left">409 Conflict</td>
+<td align="left">由于冲突，请求无法被完成。</td>
+</tr>
+<tr>
+<td align="left">410 Gone</td>
+<td align="left">被请求的页面不可用。</td>
+</tr>
+<tr>
+<td align="left">411 Length Required</td>
+<td align="left">“Content-Length” 未被定义。如果无此内容，服务器不会接受请求。</td>
+</tr>
+<tr>
+<td align="left">412 Precondition Failed</td>
+<td align="left">请求中的前提条件被服务器评估为失败。</td>
+</tr>
+<tr>
+<td align="left">413 Request Entity Too Large</td>
+<td align="left">由于所请求的实体的太大，服务器不会接受请求。</td>
+</tr>
+<tr>
+<td align="left">414 Request-url Too Long</td>
+<td align="left">由于url太长，服务器不会接受请求。当post请求被转换为带有很长的查询信息的get请求时，就会发生这种情况。</td>
+</tr>
+<tr>
+<td align="left">415 Unsupported Media Type</td>
+<td align="left">由于媒介类型不被支持，服务器不会接受请求。</td>
+</tr>
+<tr>
+<td align="left">416</td>
+<td align="left">服务器不能满足客户在请求中指定的Range头。</td>
+</tr>
+<tr>
+<td align="left">417 Expectation Failed</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx: 服务器错误"></a>5xx: 服务器错误</h2><table>
+<thead>
+<tr>
+<th align="left">消息:</th>
+<th align="left">描述:</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">500 Internal Server Error</td>
+<td align="left">请求未完成。服务器遇到不可预知的情况。</td>
+</tr>
+<tr>
+<td align="left">501 Not Implemented</td>
+<td align="left">请求未完成。服务器不支持所请求的功能。</td>
+</tr>
+<tr>
+<td align="left">502 Bad Gateway</td>
+<td align="left">请求未完成。服务器从上游服务器收到一个无效的响应。</td>
+</tr>
+<tr>
+<td align="left">503 Service Unavailable</td>
+<td align="left">请求未完成。服务器临时过载或当机。</td>
+</tr>
+<tr>
+<td align="left">504 Gateway Timeout</td>
+<td align="left">网关超时。</td>
+</tr>
+<tr>
+<td align="left">505 HTTP Version Not Supported</td>
+<td align="left">服务器不支持请求中指明的HTTP协议版本。</td>
+</tr>
+</tbody></table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/16/%E5%8F%8D%E5%B0%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2074,172 +2466,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/10/run%E5%92%8Cstart%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/10/run%E5%92%8Cstart%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">run和start方法的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T20:52:48+08:00">
-                2019-06-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="面试题：run和start方法的区别"><a href="#面试题：run和start方法的区别" class="headerlink" title="面试题：run和start方法的区别"></a>面试题：<code>run</code>和<code>start</code>方法的区别</h5><p><code>run</code>方法和<code>start</code>方法是<code>java.lang.Thread</code>类中的两个方法。我们通过一个例子来分析它们的不同之处。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Test a = <span class="keyword">new</span> Test() &#123;</span><br><span class="line">			<span class="comment">//重写Thread类的run方法，输出当前线程</span></span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">				<span class="keyword">super</span>.run();</span><br><span class="line">				System.out.println(<span class="string">"current thread is:"</span> + Thread.currentThread().getName());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="comment">//调用run方法</span></span><br><span class="line">		a.run();</span><br><span class="line">		<span class="comment">//中断执行4秒</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">4000</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//调用start方法</span></span><br><span class="line">		a.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下图：</p>
-<img src="/2019/06/10/run%E5%92%8Cstart%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/run%E5%92%8Cstart%E6%96%B9%E6%B3%95.png" class="" title="run和start方法">
-
-<p><code>run</code>方法在主线程中执行，和普通的方法调用一样；而<code>start</code>方法在非<code>main</code>线程中执行，这中间发生了什么？</p>
-<p>start方法的源码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * This method is not invoked for the main method thread or "system"</span></span><br><span class="line"><span class="comment">         * group threads created/set up by the VM. Any new functionality added</span></span><br><span class="line"><span class="comment">         * to this method in the future may have to also be added to the VM.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * A zero status value corresponds to state "NEW".</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">if</span> (threadStatus != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalThreadStateException();</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* Notify the group that this thread is about to be started</span></span><br><span class="line"><span class="comment">         * so that it can be added to the group's list of threads</span></span><br><span class="line"><span class="comment">         * and the group's unstarted count can be decremented. */</span></span><br><span class="line">        group.add(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> started = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            start0();</span><br><span class="line">            started = <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!started) &#123;</span><br><span class="line">                    group.threadStartFailed(<span class="keyword">this</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Throwable ignore) &#123;</span><br><span class="line">                <span class="comment">/* do nothing. If start0 threw a Throwable then</span></span><br><span class="line"><span class="comment">                  it will be passed up the call stack */</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>主要内容就在于<code>start0</code>方法的调用，查看<code>start0</code>方法源码。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">start0</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p><code>native</code>关键字：使用native关键字说明这个方法是原生函数，也就是这个方法是用C/C++语言实现的，并且被编译成了DLL，由java去调用。其对应的源码可以到OpenJDK网站查看。</p>
-<p>关于start0这里不做过多介绍，毕竟我不懂cpp，看了头痛。<code>start0</code>方法的主要任务的如下：</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Thread#start()方法调用Thread#start0()方法，调用JVM_StartThread方法，创建一个子线程，然后在子线程中调用Thread#run()方法。</p>
-<p><strong><span style="color:red">调用<code>start</code>方法会创建一个新的子线程并启动，在子线程中进行<code>run</code>方法的调用。</span></strong></p>
-<p><strong><span style="color:red"><code>run</code>方法只是<code>Thread</code>的一个普通方法调用，还是在主线程中执行。</span></strong></p>
-<h4 id="关于start方法的拓展"><a href="#关于start方法的拓展" class="headerlink" title="关于start方法的拓展"></a>关于start方法的拓展</h4><p>Java的线程是不允许启动两次的，当线程执行完<code>run</code>方法或主线程执行完<code>main</code>方法进入死亡状态就不能复生了。</p>
-<img src="/2019/06/10/run%E5%92%8Cstart%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/Java%E4%B8%AD%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81.jpg" class="" title="[Java线程状态]">
-
-<p>故如果多次调用<code>start</code>方法，则会出现异常<code>Exception in thread &quot;main&quot; java.lang.IllegalThreadStateExceprion</code>。如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">				System.out.println(<span class="string">"线程启动"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		thread.start();</span><br><span class="line">		thread.start();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行结果如图</p>
-<img src="/2019/06/10/run%E5%92%8Cstart%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class="">
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2294,7 +2520,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
