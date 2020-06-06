@@ -288,6 +288,399 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/03/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" itemprop="url">统一异常处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T23:04:05+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/springboot/" itemprop="url" rel="index">
+                    <span itemprop="name">springboot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="SpringBoot配置全局的异常捕获"><a href="#SpringBoot配置全局的异常捕获" class="headerlink" title="SpringBoot配置全局的异常捕获"></a>SpringBoot配置全局的异常捕获</h2><p>异常当作篮球的话,你有两种方式处理它,要么投篮,即是用try{}catch(){}来处理<br>一种是传球,即是用throws来处理<br>这里不能这样理解的,只能说把它交给别人</p>
+<h4 id="1-页面跳转的形式"><a href="#1-页面跳转的形式" class="headerlink" title="1.页面跳转的形式"></a>1.页面跳转的形式</h4><p>首先，定义一个抛出异常的类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/err"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ErrorController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/error"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">error</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//分母不能为0，会抛出ArithmeticException异常</span></span><br><span class="line">        <span class="keyword">int</span> a=<span class="number">1</span>/<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"thymeleaf/error"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面我们来研究如何对抛出的异常进行统一处理，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-11-03 23:25</span></span><br><span class="line"><span class="comment"> * 全局异常处理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalExceptionHandler</span> </span>&#123;</span><br><span class="line">    <span class="comment">//自定义的用户友好错误页面的逻辑视图名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ERROR_VIEW=<span class="string">"error"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(value = Exception<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">    <span class="title">public</span> <span class="title">Object</span> <span class="title">errorHandler</span>(<span class="title">HttpServletRequest</span> <span class="title">request</span>, <span class="title">HttpServletResponse</span> <span class="title">response</span>,<span class="title">Exception</span> <span class="title">e</span>) <span class="title">throws</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line"></span><br><span class="line">        ModelAndView mav=<span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mav.setViewName(ERROR_VIEW);</span><br><span class="line">        mav.addObject(<span class="string">"exception"</span>,e);</span><br><span class="line">        mav.addObject(<span class="string">"url"</span>,request.getRequestURL());</span><br><span class="line">        <span class="keyword">return</span> mav;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;对于 <code>@ExceptionHandler</code> 注解标注的方法来说，比较有意思的一点在于它能处理同一个控制器中所有的处理器方法所抛出的异常。而在带有 <code>@ControllerAdvice</code> 注解的类中，<code>@ExceptionHandler</code> 方法会运用到整个应用程序所有的控制器中带有 <code>@RequestMapping</code> 注解的方法上，以实现异常的集中统一处理。</p>
+<h4 id="2-ajax形式"><a href="#2-ajax形式" class="headerlink" title="2.ajax形式"></a>2.ajax形式</h4><h4 id="3-统一返回异常的方式"><a href="#3-统一返回异常的方式" class="headerlink" title="3.统一返回异常的方式"></a>3.统一返回异常的方式</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/03/JavaScript%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url">JavaScript基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T22:09:04+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如何在页面中插入JS代码？</p>
+<p><img src="http://img.mukewang.com/52e31ea8000149f406440218.jpg" alt="img"></p>
+<p>在H5页面中的哪个位置嵌入javascript代码最为合适？</p>
+<hr>
+<p><code>document.write(&quot;hello&quot;)</code>:直接在H5页面进行输出。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/03/Ajax%E5%85%A8%E6%8E%A5%E8%A7%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/03/Ajax%E5%85%A8%E6%8E%A5%E8%A7%A6/" itemprop="url">Ajax全接触</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-03T21:11:02+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;现在遇到一个问题！就是如果后端只给前端提供一个API，返回JSON格式的数据但是不指定用于渲染模型数据的视图。前端如果不是在当前页面上进行渲染的，涉及到页面的跳转应该如何处理？</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1321,474 +1714,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/31/%E6%AD%BB%E9%94%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/31/%E6%AD%BB%E9%94%81/" itemprop="url">死锁</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T07:31:57+08:00">
-                2019-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="一、死锁的概念"><a href="#一、死锁的概念" class="headerlink" title="一、死锁的概念"></a><em>一、死锁的概念</em></h3><p>&emsp;&emsp;死锁是指在一个进程集合中的所有进程都在等待只能由该集合中的其他一个进程才能引发的事件而无限期僵持下去的局面。</p>
-<h3 id="二、死锁产生的原因和条件"><a href="#二、死锁产生的原因和条件" class="headerlink" title="二、死锁产生的原因和条件"></a><em>二、死锁产生的原因和条件</em></h3><h4 id="死锁产生的原因可以总结为下面两点："><a href="#死锁产生的原因可以总结为下面两点：" class="headerlink" title="死锁产生的原因可以总结为下面两点："></a>死锁产生的原因可以总结为下面两点：</h4><ol>
-<li><p><strong>资源竞争（请求同种类型的不可剥夺资源）</strong></p>
-<p>&emsp;&emsp;系统资源不足是产生死锁的根本原因。例如，系统中有三个进程A、B、C，其对不可剥夺资源D的需求分别为3、5、2，资源D的总数量为6，当前已分别分配给A、B、C的资源数为1、4、1，此时三个进程都没有拿到足够数量的资源D，但系统中也没有空闲的此类资源，三个进程都要等待其他进程完成后释放资源D才能继续进行，同时又由于自身没有完成而不能推进并最终释放资源，显然此时三个进程互相等待，进入死锁状态。</p>
-<p>&emsp;&emsp;当然，系统资源不足时也并不一定就会引起死锁。只要并发进程之间的推进顺序合理，也可能不会引起死锁。</p>
-</li>
-<li><p><strong>资源的请求或释放顺序不当（请求多种不同类型的不可剥夺资源）</strong></p>
-</li>
-</ol>
-<h4 id="产生死锁的四个必要条件："><a href="#产生死锁的四个必要条件：" class="headerlink" title="产生死锁的四个必要条件："></a>产生死锁的四个必要条件：</h4><ol>
-<li><p><strong>互斥条件</strong></p>
-<p>在一段时间内，某个资源只能被一个进程使用，如果其他进程提出使用申请，那么后到进程只能等待该资源被当前进程释放后才能使用，即进程对已获取的资源进行排他性使用。即临界资源。</p>
-</li>
-<li><p><strong>不剥夺条件</strong></p>
-<p>进程所获得的资源在未使用完毕前，其他进程不能强行剥夺，而只能等待使用该资源的进程完成任务后自行释放。</p>
-</li>
-<li><p><strong>请求与保持条件</strong></p>
-<p>已经获取了一部分资源的若又提出新资源申请，且新资源已被别的进程占用时，该进程阻塞自身，并在保持已经获取到的资源的同时等待其他进程释放其他资源。</p>
-</li>
-<li><p><strong>环路条件</strong></p>
-<p>在死锁发生时，必然存在一个进程——资源循环等待链，链中每一个进程已获得的资源都同时被下一个进程所请求。</p>
-</li>
-</ol>
-<h3 id="三、死锁的避免"><a href="#三、死锁的避免" class="headerlink" title="三、死锁的避免"></a><em>三、死锁的避免</em></h3><ul>
-<li><p>用Java写一个会导致死锁的程序，你将怎么解决？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用匿名内部类实现一个死锁</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-08-31 7:12</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeadLock</span> </span>&#123;</span><br><span class="line">    <span class="comment">//定义临界资源</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object resourceA = <span class="keyword">new</span> Object();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object resourceB = <span class="keyword">new</span> Object();</span><br><span class="line">    <span class="comment">//定义线程的名称</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String ThreadA = <span class="string">"A"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String ThreadB = <span class="string">"B"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义线程A，先后对资源resourceA和resourceB发起请求</span></span><br><span class="line">        Thread A = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="keyword">synchronized</span> (resourceA) &#123;</span><br><span class="line">                    System.out.println(<span class="string">"线程"</span> + Thread.currentThread().getName() + <span class="string">"获得resourceA"</span>);</span><br><span class="line">                    <span class="comment">//休眠2秒，确保线程B持有resourceB</span></span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">synchronized</span> (resourceB) &#123;</span><br><span class="line">                        System.out.println(<span class="string">"线程"</span> + Thread.currentThread().getName() + <span class="string">"获得resourceB"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, ThreadA);</span><br><span class="line">        <span class="comment">//定义线程B，先后对资源resourceB和resourceA发起请求</span></span><br><span class="line">        Thread B = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="keyword">synchronized</span> (resourceB) &#123;</span><br><span class="line">                    System.out.println(<span class="string">"线程"</span> + Thread.currentThread().getName() + <span class="string">"获得resourceB"</span>);</span><br><span class="line">                    <span class="comment">//休眠2秒，确保线程A持有resourceA</span></span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">synchronized</span> (resourceA) &#123;</span><br><span class="line">                        System.out.println(<span class="string">"线程"</span> + Thread.currentThread().getName() + <span class="string">"获得resourceA"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, ThreadB);</span><br><span class="line">        A.start();</span><br><span class="line">        B.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- 使用Lambda表达式实现一个死锁</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- <span class="doctag">@create</span> 2019-11-27 12:38</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Deadlock</span> </span>&#123;</span><br><span class="line">    <span class="comment">//临界资源1</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object1=<span class="keyword">new</span> Object();</span><br><span class="line">    <span class="comment">//临界资源2</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object object2=<span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">         <span class="keyword">synchronized</span> (object1)&#123;</span><br><span class="line">             System.out.println(Thread.currentThread().getName()+<span class="string">"取得object1的锁"</span>);</span><br><span class="line">             <span class="keyword">try</span> &#123;</span><br><span class="line">                 Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">             &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                 e.printStackTrace();</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">synchronized</span> (object2)&#123;</span><br><span class="line">                 System.out.println(Thread.currentThread().getName()+<span class="string">"取得object2的锁"</span>);</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;,<span class="string">"Thread1"</span>).start();</span><br><span class="line">     <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">         <span class="keyword">synchronized</span> (object2)&#123;</span><br><span class="line">             System.out.println(Thread.currentThread().getName()+<span class="string">"取得object2的锁"</span>);</span><br><span class="line">             <span class="keyword">try</span> &#123;</span><br><span class="line">                 Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">             &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                 e.printStackTrace();</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">synchronized</span> (object1)&#123;</span><br><span class="line">                 System.out.println(Thread.currentThread().getName()+<span class="string">"取得object1的锁"</span>);</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;,<span class="string">"Thread2"</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>&emsp;&emsp;首先创建了两个资源，并创建了两个线程，线程调度器先调度了线程 A，也就是把 CPU 资源让给了线程 A，线程 A 调用了 getResourceA() 方法，方法里面使用 synchronized(resourceA) 方法获取到了 resourceA 的监视器锁，然后调用 sleep 函数休眠 1s，休眠 1s 是为了保证线程 A 在执行 getResourceB 方法前让线程 B 抢占到 CPU 执行 getResourceB 方法。线程 A 调用了 sleep 后线程 B 会执行 getResourceB 方法里面的 synchronized(resourceB)，代表线程 B 获取到了 objectB 对象的监视器锁资源，然后调用 sleep 函数休眠 1s。</p>
-<p>&emsp;&emsp;到了这里线程 A 获取到了 objectA 的资源，线程 B 获取到了 objectB 的资源。线程 A 休眠结束后会调用 getResouceB 方法企图获取到 objectB 的资源，而 objectB 资源被线程 B 所持有，所以线程 A 会被阻塞而等待。而同时线程 B 休眠结束后会调用 getResourceA 方法企图获取到 objectA 上的资源，而资源 objectA 已经被线程 A 持有，所以线程 A 和 B 就陷入了相互等待的状态，也就产生了死锁。</p>
-<p>&emsp;&emsp;那么如何规避死锁呢？其实造成死锁的原因和申请资源的顺序有很大关系。使用资源申请的有序性原则就可以避免死锁。</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/23/%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/23/%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1/" itemprop="url">线程通信</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-23T09:02:35+08:00">
-                2019-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">多线程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="使用等待-通知机制实现线程间的通信"><a href="#使用等待-通知机制实现线程间的通信" class="headerlink" title="使用等待/通知机制实现线程间的通信"></a><em>使用等待/通知机制实现线程间的通信</em></h3><ol>
-<li>方法wait()的作用是是当前执行的线程进行等待。</li>
-</ol>
-<h3 id="生产者-消费者模式的实现"><a href="#生产者-消费者模式的实现" class="headerlink" title="生产者/消费者模式的实现"></a><em>生产者/消费者模式的实现</em></h3><h3 id="方法join的使用"><a href="#方法join的使用" class="headerlink" title="方法join的使用"></a><em>方法join的使用</em></h3><h3 id="ThreadLocal类的使用"><a href="#ThreadLocal类的使用" class="headerlink" title="ThreadLocal类的使用"></a><em>ThreadLocal类的使用</em></h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8/" itemprop="url">数据结构之链表</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T16:25:25+08:00">
-                2019-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>&emsp;&emsp;由于本人大学期间对数据结构的学习都是基于c语言，Java又采用了内存自动分配和垃圾回收技术，远离了内存管理的高墙，所以我很好奇基于Java的链表在少了c语言的指针之后又是如何进行实现的呢？</p>
-<p>&emsp;&emsp;动态数组 和基于动态数组的栈 队列这三种数据结构是靠重新分配内存解决固定容量问题，底层还是依托静态数组，则所谓的动态是从用户的角度来体现的。而链表则是一种<span style="color:red">真正的、最简单的动态数据结构</span>。通过对链表的学习，我们可以更加深刻的理解<span style="color:blue">引用（或者指针）、递归</span>等知识点;辅助组成其他数据结构，栈也可以通过链表来实现。</p>
-<h3 id="Linked-List-链表"><a href="#Linked-List-链表" class="headerlink" title="Linked List(链表)"></a>Linked List(链表)</h3><img src="/2019/08/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8.png" class="">
-
-<p><img src="%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8.png" alt=""></p>
-<ul>
-<li><p>数据存储在“节点”（Node）中</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    <span class="comment">//数据</span></span><br><span class="line">    E e;</span><br><span class="line">    <span class="comment">//通过节点类型的引用--指向下一个节点，相当于c语言中的指针</span></span><br><span class="line">    Node next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后一个节点指向null</p>
-<ul>
-<li>优点：真正的动态，不需要处理固定容量的问题。</li>
-<li>缺点：丧失了随机访问的能力。</li>
-</ul>
-</li>
-<li><p>数组和链表的对比</p>
-<ul>
-<li>数组最好用于索引有语意的情况。scores[2]</li>
-<li>最大的优点：支持快速查询</li>
-<li></li>
-<li>链表不适用于索引有语意的情况。</li>
-<li>最大的优点：动态。</li>
-</ul>
-</li>
-</ul>
-<h5 id="自定义链表"><a href="#自定义链表" class="headerlink" title="自定义链表"></a>自定义链表</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-08-20 16:41</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//链表的节点</span></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> E e;</span><br><span class="line">        <span class="keyword">public</span> Node next;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(E e, Node next)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.e = e;</span><br><span class="line">            <span class="keyword">this</span>.next = next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(e, <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(<span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> e.toString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> Node head;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LinkedList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        head=<span class="keyword">null</span>;</span><br><span class="line">        size=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取链表中元素的个数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//返回链表是否为null</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size==<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//在（链表头）添加元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addfirst</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">        <span class="comment">//Node node=new Node(e);</span></span><br><span class="line">        <span class="comment">//node.next=head;</span></span><br><span class="line">        <span class="comment">//head=node;</span></span><br><span class="line">        head=<span class="keyword">new</span> Node(e,head);</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1838,7 +1768,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
