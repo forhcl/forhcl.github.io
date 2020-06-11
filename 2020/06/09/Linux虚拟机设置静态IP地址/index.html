@@ -83,14 +83,18 @@
 
 
 
-<meta name="description" content="Talk is not cheap. Talk can be powerful.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hogan&#39;Blog">
-<meta property="og:url" content="http://forhcl.github.io/archives/2019/page/2/index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;VMware虚拟机中的Linux镜像系统IP地址在午休重启之后总是由DHCP重新分配，而我们外部的SecureCRT和ftp文件传输工具都是通过IP地址连接到虚拟机的，所以每次都需要手动去修改这些Linux工具的IP地址，次数多了超级烦人！！所以我就想着能不能把虚拟机的IP地址固定下来！！避免变化！！ &amp;emsp;&amp;emsp;下面整理了我设置静态IP地址的全过程，首先虚拟网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux虚拟机设置静态IP地址">
+<meta property="og:url" content="http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
-<meta property="og:description" content="Talk is not cheap. Talk can be powerful.">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;VMware虚拟机中的Linux镜像系统IP地址在午休重启之后总是由DHCP重新分配，而我们外部的SecureCRT和ftp文件传输工具都是通过IP地址连接到虚拟机的，所以每次都需要手动去修改这些Linux工具的IP地址，次数多了超级烦人！！所以我就想着能不能把虚拟机的IP地址固定下来！！避免变化！！ &amp;emsp;&amp;emsp;下面整理了我设置静态IP地址的全过程，首先虚拟网">
+<meta property="og:image" content="http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png">
+<meta property="article:published_time" content="2020-06-09T07:01:59.000Z">
+<meta property="article:modified_time" content="2020-06-10T09:10:12.111Z">
 <meta property="article:author" content="Hogan Lee">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://forhcl.github.io/archives/2019/page/2/"/>
+  <link rel="canonical" href="http://forhcl.github.io/2020/06/09/Linux虚拟机设置静态IP地址/"/>
 
 
 
 
 
-  <title>归档 | Hogan'Blog</title>
+  <title>Linux虚拟机设置静态IP地址 | Hogan'Blog</title>
   
 
 
@@ -145,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,410 +277,172 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">Linux虚拟机设置静态IP地址</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-09T15:01:59+08:00">
+                2020-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        好! 目前共计 63 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/19/%E7%BB%8F%E5%85%B8%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="url">
-              
-                <span itemprop="name">经典同步问题——生产者/消费者模式</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-19T08:26:46+08:00"
-              content="2019-09-19" >
-          09-19
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/13/SpringAOP/" itemprop="url">
-              
-                <span itemprop="name">SpringAOP</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-13T22:34:53+08:00"
-              content="2019-09-13" >
-          09-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <p>&emsp;&emsp;VMware虚拟机中的Linux镜像系统IP地址在午休重启之后总是由DHCP重新分配，而我们外部的SecureCRT和ftp文件传输工具都是通过IP地址连接到虚拟机的，所以每次都需要手动去修改这些Linux工具的IP地址，次数多了超级烦人！！所以我就想着能不能把虚拟机的IP地址固定下来！！避免变化！！</p>
+<p>&emsp;&emsp;下面整理了我设置静态IP地址的全过程，首先虚拟网络编辑器窗口中把这个勾去掉！！</p>
+<p><img src="Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png" alt=""></p>
+<p>注意：修改配置文件的时候先拷贝一份备份！！！</p>
+<p><code>cp ifcfg-xxx ifcfg-xxx.bak</code></p>
+<p>然后修改文件/etc/sysconfig/network-scripts/ifcfg-xxx，这里xxx不是lo是其它的！！xxx貌似是ifconfig上面的ip地址网卡名称！！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">DEVICE="eth0"</span><br><span class="line">BOOTPROTO=static     # 这一行由dhcp改成static</span><br><span class="line">IPV6INIT="yes"</span><br><span class="line">NM_CONTROLLED="yes"</span><br><span class="line">ONBOOT="yes"         # 这一行改成yes</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">NAME="System eth0"</span><br><span class="line">UUID=5fb06bd0-0bb0-7ffb-45f1-d6edd65f3e03</span><br><span class="line">HWADDR=00:0C:29:65:61:B5</span><br><span class="line">PEERDNS=yes</span><br><span class="line">PEERROUTES=yes</span><br><span class="line">IPV6_PEERDNS=yes</span><br><span class="line">IPV6_PEERROUTES=yes</span><br><span class="line"><span class="meta">#</span><span class="bash"> 下面四行都是需要手动添加的，要填的值都可以在虚拟网络编辑器窗口里面找到</span></span><br><span class="line">IPADDR=192.168.91.129  # 固定IP地址，有限制范围不是随便给的</span><br><span class="line">NETMASK=255.255.255.0  # 子网掩码</span><br><span class="line">GATEWAY=192.168.91.2   # 网关</span><br><span class="line">DNS1=192.168.91.2      # DNS，填和网关一样</span><br></pre></td></tr></table></figure>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/06/%E9%9D%A2%E8%AF%95%E9%A2%983-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/" itemprop="url">
-              
-                <span itemprop="name">面试题3:数组中重复的数字</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-06T17:10:12+08:00"
-              content="2019-09-06" >
-          09-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<p>然后执行命令，”service network restart”重启网络服务</p>
+<p>DNS1不配的话可能虚拟机不能访问外网，然后可以ping一下<a href="http://www.baidu.com，ping一下外部主机的IP。用主机的ftp、secureCRT等工具连接测试一下是否出错！！" target="_blank" rel="noopener">www.baidu.com，ping一下外部主机的IP。用主机的ftp、secureCRT等工具连接测试一下是否出错！！</a></p>
+<p>如果出错就把配置文件删除，把刚才备份的重新用上。然后去虚拟网络编辑器窗口把那个勾勾上。实在还是不行的话就直接去虚拟网络编辑器窗口里面还原网络默认配置！！</p>
+<p>不知道为什么全部配置好了下次开机就又出问题了！！下一次找到问题再更新</p>
+<p>可以直接改变虚拟机的IP地址，就不用逐个去修改远程连接的地址!!!</p>
+<p><code>ifconfig eth0 192.168.117.128</code></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/04/%E9%9D%A2%E8%AF%95%E9%A2%9810-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" itemprop="url">
-              
-                <span itemprop="name">面试题10:斐波那契数列</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-04T21:16:22+08:00"
-              content="2019-09-04" >
-          09-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/04/%E9%9D%A2%E8%AF%95%E9%A2%986-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/" itemprop="url">
-              
-                <span itemprop="name">面试题6:从尾到头打印链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-04T17:53:26+08:00"
-              content="2019-09-04" >
-          09-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/04/%E9%9D%A2%E8%AF%95%E9%A2%989-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/" itemprop="url">
-              
-                <span itemprop="name">面试题9:用两个栈实现队列</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-04T17:52:26+08:00"
-              content="2019-09-04" >
-          09-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/31/%E6%AD%BB%E9%94%81/" itemprop="url">
-              
-                <span itemprop="name">死锁</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-31T07:31:57+08:00"
-              content="2019-08-31" >
-          08-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/23/%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1/" itemprop="url">
-              
-                <span itemprop="name">线程通信</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-23T09:02:35+08:00"
-              content="2019-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8/" itemprop="url">
-              
-                <span itemprop="name">数据结构之链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-19T16:25:25+08:00"
-              content="2019-08-19" >
-          08-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/11/Path%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" itemprop="url">
-              
-                <span itemprop="name">Path环境变量</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-11T09:16:48+08:00"
-              content="2019-08-11" >
-          08-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Hogan Lee
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/" title="Linux虚拟机设置静态IP地址">http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/07/2020%E6%98%A5%E6%8B%9B/" rel="next" title="2020春招">
+                <i class="fa fa-chevron-left"></i> 2020春招
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2019/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/6/">6</a><a class="extend next" rel="next" href="/archives/2019/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -684,6 +450,23 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+  <script src="https://utteranc.es/client.js"
+    repo="forhcl/forhcl.github.io"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
+
+  
+
+
 
         </div>
         
@@ -918,6 +701,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

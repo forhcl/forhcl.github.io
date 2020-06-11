@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux虚拟机设置静态IP地址</title>
+    <url>/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/</url>
+    <content><![CDATA[<p>&emsp;&emsp;VMware虚拟机中的Linux镜像系统IP地址在午休重启之后总是由DHCP重新分配，而我们外部的SecureCRT和ftp文件传输工具都是通过IP地址连接到虚拟机的，所以每次都需要手动去修改这些Linux工具的IP地址，次数多了超级烦人！！所以我就想着能不能把虚拟机的IP地址固定下来！！避免变化！！</p>
+<p>&emsp;&emsp;下面整理了我设置静态IP地址的全过程，首先虚拟网络编辑器窗口中把这个勾去掉！！</p>
+<p><img src="Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png" alt=""></p>
+<p>注意：修改配置文件的时候先拷贝一份备份！！！</p>
+<p><code>cp ifcfg-xxx ifcfg-xxx.bak</code></p>
+<p>然后修改文件/etc/sysconfig/network-scripts/ifcfg-xxx，这里xxx不是lo是其它的！！xxx貌似是ifconfig上面的ip地址网卡名称！！</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">DEVICE="eth0"</span><br><span class="line">BOOTPROTO=static     # 这一行由dhcp改成static</span><br><span class="line">IPV6INIT="yes"</span><br><span class="line">NM_CONTROLLED="yes"</span><br><span class="line">ONBOOT="yes"         # 这一行改成yes</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">NAME="System eth0"</span><br><span class="line">UUID=5fb06bd0-0bb0-7ffb-45f1-d6edd65f3e03</span><br><span class="line">HWADDR=00:0C:29:65:61:B5</span><br><span class="line">PEERDNS=yes</span><br><span class="line">PEERROUTES=yes</span><br><span class="line">IPV6_PEERDNS=yes</span><br><span class="line">IPV6_PEERROUTES=yes</span><br><span class="line"><span class="meta">#</span><span class="bash"> 下面四行都是需要手动添加的，要填的值都可以在虚拟网络编辑器窗口里面找到</span></span><br><span class="line">IPADDR=192.168.91.129  # 固定IP地址，有限制范围不是随便给的</span><br><span class="line">NETMASK=255.255.255.0  # 子网掩码</span><br><span class="line">GATEWAY=192.168.91.2   # 网关</span><br><span class="line">DNS1=192.168.91.2      # DNS，填和网关一样</span><br></pre></td></tr></table></figure>
+
+<p>然后执行命令，”service network restart”重启网络服务</p>
+<p>DNS1不配的话可能虚拟机不能访问外网，然后可以ping一下<a href="http://www.baidu.com，ping一下外部主机的IP。用主机的ftp、secureCRT等工具连接测试一下是否出错！！" target="_blank" rel="noopener">www.baidu.com，ping一下外部主机的IP。用主机的ftp、secureCRT等工具连接测试一下是否出错！！</a></p>
+<p>如果出错就把配置文件删除，把刚才备份的重新用上。然后去虚拟网络编辑器窗口把那个勾勾上。实在还是不行的话就直接去虚拟网络编辑器窗口里面还原网络默认配置！！</p>
+<p>不知道为什么全部配置好了下次开机就又出问题了！！下一次找到问题再更新</p>
+<p>可以直接改变虚拟机的IP地址，就不用逐个去修改远程连接的地址!!!</p>
+<p><code>ifconfig eth0 192.168.117.128</code></p>
+]]></content>
+  </entry>
+  <entry>
     <title>2020春招</title>
     <url>/2020/06/07/2020%E6%98%A5%E6%8B%9B/</url>
     <content><![CDATA[<p>&emsp;&emsp;个人情况：普通二本院校计算机科班应届生，成绩水平中等，在校期间也较少参加社团活动；求职之初是希望往Java开发方向，后面也开始动摇了。</p>
@@ -144,6 +163,17 @@
 <p>把ps的查询结果通过管道给grep查找<strong>包含特定字符串</strong>的进程，<strong>管道符|用来隔开两个命令、管道符左边命令的输出会作为管道符右边命令的输入。</strong></p>
 <p><strong>grep 命令用于查找文件里符合条件的字符串！！！</strong>是一种强大的文本搜索工具</p>
 <p>然后通过<code>kill -s 9 进程号</code>来杀死进程</p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>假设存在文件1.txt</p>
+<ul>
+<li><p>硬链接</p>
+<p>只能创建在和文件同一个分区中，硬链接相当于一个引用、文件本身也算一个引用，当所有引用都被删除了文件就消失了。例如删除文件但是没有删除硬链接，那么我们还可以通过硬链接访问文件。</p>
+<p>创建硬链接：<code>ln 1.txt a</code></p>
+</li>
+<li><p>软链接</p>
+<p>这个就相当于Windows10中的快捷方式，保存的是某个文件的路径，当这个文件被删除了，那么就不能通过软连接去访问文件了。软链接可以存放在不同的分区中。</p>
+<p><code>ln -s 1.txt b</code></p>
+</li>
+</ul>
 ]]></content>
   </entry>
   <entry>
