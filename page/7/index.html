@@ -288,6 +288,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/04/Blog-questions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/04/Blog-questions/" itemprop="url">Blog questions</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T23:26:51+08:00">
+                2019-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>正常的<code>MarkDown</code>语法下图片部署装换成HTML后无法显示</li>
+</ol>
+<p>参考文档：<a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">资源文件夹</a></p>
+<p>原因：部署以后，图片会自动添加日期相关的文件结构目录</p>
+<img src="/2019/06/04/Blog-questions/image-1.png" class="">
+
+<p>解决方案：</p>
+<ul>
+<li><p>将站点配置文件 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 <code>true</code>：开启文章资源文件夹</p>
+</li>
+<li><p>在插入图片的时候不使用<code>MarkDown</code>语法（可能造成图片或其他资源显示不正确），而使用<code>Hexo 3</code>提供的相对路径引用的标签插件。</p>
+</li>
+<li><p>缺陷：因为不是<code>MarkDown</code>语法所以在编写文章的时候没办法预览。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>其他解决方案：可以利用插件<code>hexo-asset-image</code>实现<code>MarkDown</code>语法插入相对路径的图片。尝试多次以配置失败告终，若感兴趣可自行搜索。</p>
+<ol start="2">
+<li><p>在hexo中使用plantUML画图，要将(当然首先要下载插件配置好，自行搜索)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% plantuml %&#125;</span><br><span class="line">&#123;% endplantuml %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这个目前有更好的解决办法，直接通过图床服务器存储图片，然后使用外链来引入图片，语法也不用改，直接使用Markdown的语法即可。</strong></p>
+<p><strong>缓解了服务器加载图片的压力，七牛云图床服务器还有CDN加速，加快博客的加载！！我感觉需要自己写一个插件，在markdown传入图片的时候就把照片传上七牛云，七牛云存在一个Windows端的同步上传工具，允许将指定文件夹的内容同步上传到七牛云，所以我们只需要配置好Mrakdown编辑器拉进来的图片的保存位置即可，允许同名图片</strong></p>
+<p><strong>可以把资源文件夹去掉了！！</strong></p>
+</li>
+<li><p>如何在<code>MarkDown</code>文档中实现首行缩进？</p>
+</li>
+</ol>
+<p>日常写文章的时候都习惯性地每一个段落进行首行缩进，但是在MarkDown语法中却似乎没有内置段落首行缩进。这让我感到十分困扰。我尝试过用<code>HTML</code>和<code>CSS</code>来实现，如<code>&lt;p style=&quot;text-indent:2em&quot;&gt;&lt;/p&gt;</code>，但是在<code>HTML</code>块中没办法使用<code>MarkDown</code>语法进行加粗、下划线等操作。可以通过使用占位符来实现首行缩进：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;ensp;或&amp;#8194; &#x2F;&#x2F;半角</span><br><span class="line">&amp;emsp;或&amp;#8195; &#x2F;&#x2F;全角   强烈推荐</span><br><span class="line">&amp;nbsp;或&amp;#160;</span><br></pre></td></tr></table></figure>
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/05/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -849,7 +1028,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
