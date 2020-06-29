@@ -89,16 +89,16 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/06/12/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="Java使用一种称为异常处理（exception handing）的错误捕获机制处理异常。 一. 异常分类  在Java程序设计语言中，异常对象都是派生于Throwable类的一个实例。但在下一层立即分解为两个分支：Error和Exception。  Error是在应用程序的控制和处理能力之外的系统错误，编译器不做检查，属于JVM需要承担的责任。如内存不足等问题  Exception是程序可以处理">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/12/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E5%AD%97.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/12/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E5%AD%97.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86_%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
 <meta property="article:published_time" content="2019-06-12T12:48:01.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.583Z">
+<meta property="article:modified_time" content="2020-06-29T02:03:36.496Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="Java基础知识">
 <meta property="article:tag" content="异常处理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/06/12/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E5%AD%97.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E5%AD%97.png">
 
 
 
@@ -405,16 +405,12 @@
 <p>受查异常必须捕获或者声明抛出。</p>
 <p>允许忽略非受查异常，不进行相关处理编译器也不会报错。</p>
 <p>Java的<strong>异常处理机制</strong>通过五个关键字来实现：<code>try</code>、<code>catch</code>、<code>finally</code>、<code>throws</code>、<code>throws</code>。</p>
-<img src="/2019/06/12/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E5%AD%97.png" class="" title="[异常处理关键字]">
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E5%AD%97.png" alt=""></p>
 <p>try必须和finally或者（0或多个）catch一起执行，try、catch、finally不可以单独执行</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UnCheckedExceptionDemo</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> number1;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> number2;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">			System.out.print(<span class="string">"请输入整数1:"</span>);</span><br><span class="line">			number1 = scanner.nextInt();</span><br><span class="line">			System.out.print(<span class="string">"请输入整数2:"</span>);</span><br><span class="line">			number2 = scanner.nextInt();</span><br><span class="line">			System.out.println(<span class="string">"两个数的商为"</span> + (number1 / number2));</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"除数为0，出错"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>如果在控制台输入number2的值为0，就会出现算术异常<code>java.lang.ArithmeticException</code>，该异常类继承于<code>RuntimeException</code>，属于非受查异常。catch捕获到异常，执行语句块输出异常信息，执行finally语句块</p>
-<img src="/2019/06/12/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class="" title="[运行结果]">
-
-
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86_%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
 <p>多重catch语句</p>
 <p>return关键字在异常处理中的作用（返回值，程序终止）</p>
 <p>注意到一个有趣的地方，当异常处理块中没有return语句时，还会继续执行下面的语句。</p>
@@ -595,7 +591,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

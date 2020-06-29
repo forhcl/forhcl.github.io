@@ -89,15 +89,15 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="LombokLombok是一个java库，为我们提供一些常用的注解，在类或者属性上添加这些注解可以在源代码编译时期为我们自动生成一些源代码，从而达到对我们类功能的增强。 Lombok实现的原理 注解的两种解析方式：  运行时解析：反射、动态代理  编译时解析：lombok就是运行在编译时期的（可以去看看编译后的class文件）引入Jar的依赖范围 1&lt;scope&gt;provided&amp;lt">
-<meta property="og:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Lombok%E6%B3%A8%E8%A7%A3.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E5%88%86%E5%B1%82%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/JavaBean%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.PNG">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/Lombok%E6%B3%A8%E8%A7%A3.PNG">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E5%88%86%E5%B1%82%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.PNG">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/JavaBean%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.PNG">
 <meta property="article:published_time" content="2019-12-19T14:18:27.000Z">
-<meta property="article:modified_time" content="2020-02-24T15:24:35.270Z">
+<meta property="article:modified_time" content="2020-06-29T02:01:16.200Z">
 <meta property="article:author" content="Hogan Lee">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/12/19/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.PNG">
 
 
 
@@ -377,10 +377,10 @@
 <p>编译时解析的两种机制：</p>
 <ul>
 <li>Annotation Processing Tool（注解处理器）已被移除</li>
-<li>Pluggable Annotation Processing API（JSR269插入式注解处理器）<img src="Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" alt=""></li>
+<li>Pluggable Annotation Processing API（JSR269插入式注解处理器）<img src="http://cdn1.hikariblog.cn/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.PNG" alt=""></li>
 </ul>
 <p>Lombok的常用注解:</p>
-<p><img src="Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/Lombok%E6%B3%A8%E8%A7%A3.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/Lombok%E6%B3%A8%E8%A7%A3.PNG" alt=""></p>
 <p>日志这个记住，每次写logger有点烦</p>
 <p>Lombok注解介绍</p>
 <p>小技巧：在idea的maven窗口下载第三方Jar包源码，通过ctrl跳过去就不是反编译的代码了，而是第三方源码了</p>
@@ -445,12 +445,12 @@
 <h5 id="分层验证与JavaBean验证"><a href="#分层验证与JavaBean验证" class="headerlink" title="分层验证与JavaBean验证"></a>分层验证与JavaBean验证</h5><ul>
 <li>分层验证模型</li>
 </ul>
-<p><img src="Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E5%88%86%E5%B1%82%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E5%88%86%E5%B1%82%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.PNG" alt=""></p>
 <p>将验证逻辑写在每一层上，由于验证逻辑重复性很大。所以会导致许多重复验证代码分布在不同的层中。</p>
 <ul>
 <li>JavaBean验证模型</li>
 </ul>
-<p><img src="Java%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/JavaBean%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/JavaBean%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.PNG" alt=""></p>
 <p>将验证逻辑通过注解约束在域模型上，从而使验证模型从每一层中剥离出来。 </p>
 <h5 id="JCP-JSR简介"><a href="#JCP-JSR简介" class="headerlink" title="JCP,JSR简介"></a>JCP,JSR简介</h5><p>JCP(Java Community Process)成立于1998年，是使有兴趣的各方参与定义Java的特征和未来版本的<span style="color:red">正式过程</span>。</p>
 <p>JCP使用JSR(<span style="color:red">Java规范请求</span>，Java Specification Requests)作为<span style="color:red">正式规范文档</span>，描述被提议加入到Java体系中的规范的技术。</p>
@@ -660,7 +660,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

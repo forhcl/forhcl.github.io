@@ -89,16 +89,16 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="文章基于Java1.8版本，Java1.8相对于Java1.7版本对 HashMap 进行了一些优化。 &amp;emsp;&amp;emsp;HashMap 最擅长的事情就是快速索引。 数据结构HashMap&amp;emsp;&amp;emsp;HashMap是一个存放数据的容器，HashMap 为了达到它快速索引的目的，利用了数组快速定位的特性。建立插入值和数组所在坐标之间的关系，pos&#x3D;key%size（key为插入的值">
-<meta property="og:image" content="http://forhcl.github.io/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%871.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%872.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%871.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%872.png">
 <meta property="article:published_time" content="2019-07-22T09:01:13.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.614Z">
+<meta property="article:modified_time" content="2020-06-29T02:43:42.927Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="集合">
 <meta property="article:tag" content="HashMap">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%871.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%871.png">
 
 
 
@@ -387,11 +387,9 @@
         <p>文章基于Java1.8版本，Java1.8相对于Java1.7版本对 <code>HashMap</code> 进行了一些优化。</p>
 <p>&emsp;&emsp;<code>HashMap</code> 最擅长的事情就是<span style="color:#2E8B57">快速索引</span>。</p>
 <h3 id="数据结构HashMap"><a href="#数据结构HashMap" class="headerlink" title="数据结构HashMap"></a>数据结构HashMap</h3><p>&emsp;&emsp;<code>HashMap</code>是一个存放数据的容器，<code>HashMap</code> 为了达到它快速索引的目的，利用了数组快速定位的特性。建立插入值和数组所在坐标之间的关系，pos=key%size（key为插入的值，size为数组的长度），假设存在以下长度为10的Integer数组，当key的值为21，求模之后为1，就将它存放在下标为1的位置，以此类推。当求模之后的值一样，则出现哈希冲突。</p>
-<img src="/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%871.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%871.png" alt=""></p>
 <p>通过扩展单链表来解决冲突</p>
-<img src="/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%872.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%872.png" alt=""></p>
 <p>当为解决哈希冲突延伸出来的单链表越来越长时，定位的时候首先还是定位到对应的下标，然后遍历单链表进行对比数值，时间复杂度为O(n)。不能满足快速定位的目的。所以JDK1.8又引入了红黑树(一种特殊的二叉树查询效率依赖的树的深度)的数据结构，当单链表过长的时候，将单链表转换为红黑树以提高查询的性能。</p>
 <ul>
 <li>HashMap的数据结构包括了初始数组、链表、红黑树；</li>
@@ -559,7 +557,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

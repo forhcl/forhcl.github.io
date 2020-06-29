@@ -288,6 +288,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/06/gradle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/06/gradle/" itemprop="url">gradle</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T16:49:27+08:00">
+                2019-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="新一代构建工具Gradle"><a href="#新一代构建工具Gradle" class="headerlink" title="新一代构建工具Gradle"></a>新一代构建工具Gradle</h2><h3 id="1-Gradle是什么？"><a href="#1-Gradle是什么？" class="headerlink" title="1 Gradle是什么？"></a><em>1 Gradle是什么？</em></h3><p>&emsp;&emsp;一个开源的<span style="color:red">项目自动化构建工具</span>，建立在 <code>Apache Ant</code> 和 <code>Apache Maven</code> 概念的基础上，并引入了基于 <code>Groovy</code> 的特定领域语言（DSL），而不在使用XML形式管理构建脚本，能具有更高的灵活性和可拓展性。</p>
+<h5 id="1-1-Gradle安装"><a href="#1-1-Gradle安装" class="headerlink" title="1.1 Gradle安装"></a><em>1.1 Gradle安装</em></h5><ul>
+<li>确保电脑上已经安装JDK，可以通过 <code>java -version</code> 命令进行确认。</li>
+<li>从Gradle官网下载Gradle，<a href="http://gradle.org" target="_blank" rel="noopener">http://gradle.org</a></li>
+<li>配置环境变量，<span style="color:red">GRADLE_HOME</span></li>
+<li>添加到Path，<span style="color:red">%GRADLE_HOME%\bin;</span></li>
+<li>验证是否安装成功，<span style="color:red">gradle -v</span></li>
+</ul>
+<h3 id="2-Groovy是什么？"><a href="#2-Groovy是什么？" class="headerlink" title="2 Groovy是什么？"></a><em>2 Groovy是什么？</em></h3><p>&emsp;&emsp;<code>Groovy</code> 是用于 <code>Java</code> 虚拟机的一种敏捷的动态语言，它是一种成熟的面向对象编程语言，既可以用于面向对象编程，又可以用作纯粹的脚本语言。使用该种语言不必编写过多的代码，同时又具有闭包和动态语言中的其他特性。</p>
+<p>与 <code>Java</code> 比较</p>
+<ul>
+<li><p><code>Groovy</code> 完全兼容 <code>Java</code> 的语法</p>
+</li>
+<li><p>分号是可选的</p>
+</li>
+<li><p>类、方法默认是 <code>public</code> 的，没有 <code>default</code> 这种访问权限</p>
+</li>
+<li><p>编译器给属性自动添加getter/setter方法</p>
+</li>
+<li><p>属性可以直接用点号获取</p>
+</li>
+<li><p>最后一个表达式的值会被作为返回值</p>
+</li>
+<li><p>==等同于equals()，不会抛空指针异常</p>
+</li>
+<li><p>assert语句</p>
+</li>
+<li><p>弱类型 如def 变量。会自动推断</p>
+</li>
+<li><p>可选的括号</p>
+</li>
+<li><p>字符串</p>
+<p>单引号：仅仅是字符串</p>
+<p>双引号：可以通过${}插入变量</p>
+<p>三引号：可以换行</p>
+</li>
+<li><p>集合API</p>
+</li>
+<li><p>闭包</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/08/06/Spring-Security/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -521,7 +681,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">"$&#123;name&#125;"</span>&gt;</span></span><br><span class="line">    fskfh</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>运行时，text标签中的内容会覆盖掉p容器标签包含的内容</p>
-<p><img src="JSP%E7%BB%88%E7%BB%93%E8%80%85%E2%80%94%E2%80%94Thymeleaf/%E6%A0%87%E5%87%86%E6%96%B9%E8%A8%80.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E6%A0%87%E5%87%86%E6%96%B9%E8%A8%80.png" alt="标准方言"></p>
 <h5 id="变量表达式"><a href="#变量表达式" class="headerlink" title="变量表达式"></a><em>变量表达式</em></h5><p><strong>语法：${…}</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.author.name&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -734,9 +894,9 @@
 <li>零配置（不需要XML配置，遵循“约定大于配置”）</li>
 </ul>
 <p>抛弃了传统JavaEE 项目繁琐的配置、学习过程，让企业级应用开发过程变得so easy！</p>
-<p><img src="SpringBoot/Spring%E5%BA%94%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/Spring%E5%BA%94%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png" alt="Spring应用开发流程"></p>
 <p>让Spring应用开发变得简单粗暴，将之前的框架进行完美整合。</p>
-<p>![](SpringBoot/Spring Boot应用开发流程.png)</p>
+<p><img src="http://cdn1.hikariblog.cn/Spring%20Boot%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png" alt="Spring Boot应用开发流程"></p>
 <p>Spring Boot核心特性</p>
 <ul>
 <li>极低的学习成本</li>
@@ -815,7 +975,7 @@
 <li>入口类上增加@SpringBootApplication注解</li>
 <li>利用SpringApplication.run()方法启动应用</li>
 </ul>
-<h3 id="Spring-Boot启动流程"><a href="#Spring-Boot启动流程" class="headerlink" title="Spring Boot启动流程"></a><em>Spring Boot启动流程</em></h3><p><img src="SpringBoot/SpringBoot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B.png" alt=""></p>
+<h3 id="Spring-Boot启动流程"><a href="#Spring-Boot启动流程" class="headerlink" title="Spring Boot启动流程"></a><em>Spring Boot启动流程</em></h3><p><img src="http://cdn1.hikariblog.cn/SpringBoot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B.png" alt="SpringBoot启动流程"></p>
 <h3 id="Spring-Boot内置配置选项"><a href="#Spring-Boot内置配置选项" class="headerlink" title="Spring Boot内置配置选项"></a><em>Spring Boot内置配置选项</em></h3><p>在Application.properties中配置</p>
 <p>日志级别：debug-&gt;info-&gt;warn-&gt;error-&gt;fatal</p>
 <p>Spring boot启动后的默认级别为info</p>
@@ -1022,7 +1182,7 @@
 </li>
 <li><p>只能从一端添加元素，也只能从同一端取出元素</p>
 </li>
-<li><p>这一端称为栈顶<img src="%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E6%A0%88.png" alt="栈"></p>
+<li><p>这一端称为栈顶<img src="http://cdn1.hikariblog.cn/%E6%A0%88.png" alt="栈"></p>
 
 
 </li>
@@ -1213,8 +1373,7 @@
 <li><p><strong>RESTful只是一种风格，并不是强制的标准。</strong></p>
 </li>
 </ol>
-
-
+<p><img src="http://cdn1.hikariblog.cn/REST%E6%88%90%E7%86%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B.PNG" alt="REST成熟度模型"></p>
 <p>RESTful支持处理GET、POST、PUT、DELETE、PATCH</p>
 <p>问题：默认是能处理GET、POST请求的，而PUT和DELETE请求是不能够处理的，通过特殊的方式将POST请求转换为PUT请求或者DELETE请求。</p>
 <p>首先在web.xml中配置一个过滤器</p>
@@ -1282,7 +1441,7 @@
 </ul>
 </li>
 </ul>
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3.PNG" alt="日期格式和时间戳"></p>
 <p><code>@Vaild</code>注解和<code>BindingResult</code>验证请求参数的合法性并处理校验结果</p>
 <ol>
 <li><p>状态码400：请求的格式错误（如参数校验出现错误）</p>
@@ -1304,10 +1463,8 @@
 <li><p>@NotBlank:只能作用在String上，不能为Null，而且调用trim()后，长度必须大于0</p>
 </li>
 <li><p>@NonNull：在方法或构造函数的参数上使用，生成一个空值检查语句</p>
-
-
-
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E6%B3%A8%E8%A7%A3.PNG" alt="参数校验注解"></p>
+<p><img src="http://cdn1.hikariblog.cn/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E6%B3%A8%E8%A7%A31.PNG" alt="参数校验注解"></p>
 </li>
 </ol>
 <p>每一个校验注解都有一个message，可以用于自定义错误消息</p>
@@ -1323,9 +1480,7 @@
 <li><p>Spring Boot 中默认的错误处理机制</p>
 <p>额，默认的异常处理机制也很好用！！</p>
 <p>Spring Boot自定义错误页面的存放位置！好像只有2.0以下的是这个样子，尝试了2.0以上的不可以</p>
-
-
-<p><img src="RESTful%E5%85%A5%E9%97%A8/%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2.PNG" alt="错误页面"></p>
 </li>
 <li><p>自定义异常处理</p>
 </li>
@@ -2155,11 +2310,9 @@
             <p>文章基于Java1.8版本，Java1.8相对于Java1.7版本对 <code>HashMap</code> 进行了一些优化。</p>
 <p>&emsp;&emsp;<code>HashMap</code> 最擅长的事情就是<span style="color:#2E8B57">快速索引</span>。</p>
 <h3 id="数据结构HashMap"><a href="#数据结构HashMap" class="headerlink" title="数据结构HashMap"></a>数据结构HashMap</h3><p>&emsp;&emsp;<code>HashMap</code>是一个存放数据的容器，<code>HashMap</code> 为了达到它快速索引的目的，利用了数组快速定位的特性。建立插入值和数组所在坐标之间的关系，pos=key%size（key为插入的值，size为数组的长度），假设存在以下长度为10的Integer数组，当key的值为21，求模之后为1，就将它存放在下标为1的位置，以此类推。当求模之后的值一样，则出现哈希冲突。</p>
-<img src="/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%871.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%871.png" alt=""></p>
 <p>通过扩展单链表来解决冲突</p>
-<img src="/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%872.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%872.png" alt=""></p>
 <p>当为解决哈希冲突延伸出来的单链表越来越长时，定位的时候首先还是定位到对应的下标，然后遍历单链表进行对比数值，时间复杂度为O(n)。不能满足快速定位的目的。所以JDK1.8又引入了红黑树(一种特殊的二叉树查询效率依赖的树的深度)的数据结构，当单链表过长的时候，将单链表转换为红黑树以提高查询的性能。</p>
 <ul>
 <li>HashMap的数据结构包括了初始数组、链表、红黑树；</li>
@@ -2294,8 +2447,7 @@
 <li>Model：模型数据，业务逻辑。</li>
 <li>View：呈现模型，与用户进行交互。</li>
 </ul>
-<img src="/2019/07/19/Spring-MVC%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BF%98%E8%AE%B0/MVC%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B8%E5%9E%8B%E5%90%88%E4%BD%9C.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/MVC%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B8%E5%9E%8B%E5%90%88%E4%BD%9C.png" alt="MVC组件之间的典型合作"></p>
 <h3 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h3><h4 id="SpringMVC的概念"><a href="#SpringMVC的概念" class="headerlink" title="SpringMVC的概念"></a>SpringMVC的概念</h4><p>&emsp;&emsp;<code>SpringMVC</code> 是目前最好的实现 <code>MVC</code> 设计模式的框架，是 <code>Spring</code> 框架的一个后续产品/子模块，二者可以很好的结合使用，不需要整合。</p>
 <p><strong>SpringMVC核心组件</strong></p>
 <ol>
@@ -2319,8 +2471,7 @@
 <li>DispatcherServlet通过ViewResolver进行解析。</li>
 <li>返回填充了模型数据的View，响应给客户端。</li>
 </ol>
-<img src="/2019/07/19/Spring-MVC%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BF%98%E8%AE%B0/SpringMVC%E6%B5%81%E7%A8%8B.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/SpringMVC%E6%B5%81%E7%A8%8B.png" alt="SpringMVC流程"></p>
 <h4 id="SpringMVC的使用"><a href="#SpringMVC的使用" class="headerlink" title="SpringMVC的使用"></a>SpringMVC的使用</h4><h5 id="传统意义上的配置："><a href="#传统意义上的配置：" class="headerlink" title="传统意义上的配置："></a>传统意义上的配置：</h5><ol>
 <li><p>大部分组件由框架提供，开发者只需通过配置进行关联。</p>
 </li>
@@ -2371,9 +2522,7 @@
 <!-- JSP是通过创建Servlet(继承于HTTPServlet的类，也是JSPMVC里面的控制器)，重写里面的doGet/doPost方法，由方法的HttpServletRequest类型的参数获得HTTP请求中的参数，从而实现数据的绑定。这种做法有一个缺点，就是传输的数据到最后都是String类型的，需要进行类型的转换 -->
 
 <p>Spring<span style="color:red">自动</span>将信息进行封装,我们可以直接使用封装好的形参完成后续业务方法的逻辑操作。</p>
-<img src="/2019/07/19/Spring-MVC%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BF%98%E8%AE%B0/SpringMVC%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png" class="">
-
-<p><img src="Spring-MVC%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BF%98%E8%AE%B0/SpringMVC%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/SpringMVC%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png" alt="SpringMVC数据绑定"></p>
 </li>
 </ul>
 <h5 id="SpringMVC数据绑定的使用"><a href="#SpringMVC数据绑定的使用" class="headerlink" title="SpringMVC数据绑定的使用"></a>SpringMVC数据绑定的使用</h5><ul>
@@ -2466,154 +2615,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/07/15/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/15/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/" itemprop="url">数组中重复的数字</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-15T13:01:31+08:00">
-                2019-07-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%91%E6%8C%87Offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指Offer</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>题目一：找出数组中重复的数字</p>
-<p>​    在一个长度为n的数组里的所有数字都在0~n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是重复的数字2或者3；</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.NoSuchElementException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-07-15 13:05</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="comment">//暴力解法,直接循环，这样子得到的都是数组中第一个满足条件的</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNumber</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (array == <span class="keyword">null</span>||array.length==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= array.length - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (array[i] == array[j]) &#123;</span><br><span class="line">                        <span class="keyword">return</span> array[i];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//很明显应该可以采用查找算法进行优化</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试用例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2668,7 +2669,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

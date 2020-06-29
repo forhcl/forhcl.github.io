@@ -89,16 +89,16 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/12/21/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="解决问题：数据分片、消息粘包、消息丢包 性能优化：性能调试、性能分析、并发封装 相应拓展：内存技术、桥接技术 课程安排：  底层协议  报文、协议、Mac地址、IP、端口、服务器等概念 UDP、TCP  通过讲解协议区别、性能比较、适用场景，从而推导出NIO NIO大家族 Selector，Channel(FileChannel、ScoketChannel、ReadChannel)，Buffer(">
-<meta property="og:image" content="http://forhcl.github.io/2019/12/21/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/12/21/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE1.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/12/21/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE2.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1.PNG">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE1.PNG">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE2.PNG">
 <meta property="article:published_time" content="2019-12-21T01:09:08.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.630Z">
+<meta property="article:modified_time" content="2020-06-29T03:01:11.946Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="计算机网络">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/12/21/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1.PNG">
 
 
 
@@ -481,14 +481,14 @@
 <p>49152到65535号端口属于“动态端口”范围，没有端口可以被正式的注册占用</p>
 <p>问题：端口总数数：65536，连接能建立多少个？65536个？</p>
 <p>有的电脑可以有n个Ip，n*65535个连接</p>
-<p><img src="%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1.PNG" alt="数据传输层次"></p>
 <p><strong>远程服务器</strong></p>
 <p>局域网：一般而言，家里的环境以及公司相互电脑之间的环境都属于局域网</p>
 <p>我和你们的电脑之间属于互联网，而非局域网</p>
 <p>默认的：我的电脑无法直接链接到你们的电脑</p>
-<p><img src="%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE1.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE1.PNG" alt=""></p>
 <p>通过一个因特网上的IP地址的服务器才能连接到，不同局域网主机之间不能直接连接，如果可以地址重复了怎么办，地址也不够用呀</p>
-<p><img src="%E8%A7%A3%E9%94%81Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE2.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE2.PNG" alt=""></p>
 <p>HTTP/HTTPS都是使用的TCP</p>
 <h1 id="Socket-UDP快速入门"><a href="#Socket-UDP快速入门" class="headerlink" title="Socket-UDP快速入门"></a>Socket-UDP快速入门</h1><p>英语：User Datagram protocol，缩写为UDP</p>
 <p>一种<strong>用户数据报协议</strong>，又称<strong>用户数据报文协议</strong></p>
@@ -659,7 +659,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

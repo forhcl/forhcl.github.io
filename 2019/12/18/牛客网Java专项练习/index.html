@@ -89,13 +89,13 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/12/18/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="Java的参数传递是“按值传递”还是“按引用传递”？ 值传递：在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。 引用传递：在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。  123456789101112131415161718192021222324import com.sun.org.apache.x">
-<meta property="og:image" content="http://forhcl.github.io/2019/12/18/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/image1.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/image1.png">
 <meta property="article:published_time" content="2019-12-18T00:17:50.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.614Z">
+<meta property="article:modified_time" content="2020-06-29T02:55:26.300Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/12/18/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/image1.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/image1.png">
 
 
 
@@ -366,7 +366,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.sun.org.apache.xerces.internal.dom.PSVIAttrNSImpl;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 以下程序运行的结果是：</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-18 10:17</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tester</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer var1=<span class="keyword">new</span> Integer(<span class="number">1</span>);</span><br><span class="line">        Integer var2=var1;</span><br><span class="line">        doSomething(var2);</span><br><span class="line">        System.out.print(var1.intValue());</span><br><span class="line">        System.out.print(var2==var1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">(Integer integer)</span></span>&#123;</span><br><span class="line">        integer=<span class="keyword">new</span> Integer(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A 1true  B 2true  C 1false  D 2false</span></span><br><span class="line"><span class="comment"> * 正确答案为A</span></span><br><span class="line"><span class="comment"> * 如果还是不明白就再去ide中debug一下，看一下运行流程</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
 <p>分析上例，可以得出如下图的结果。<span style="color:red">当传入引用类型的变量作为参数时，是将引用类型中存储的实例对象地址复制一份传递给形参，实参和形参指向同一个实例对象。</span>当对对象进行修改时，形参和实参都会发生改变，但是当形参指向一个新的对象的时候，实参并不会发生改变。可见，Java的引用类型和基本类型一样都是值传递，并不存在引用传递。</p>
-<p><img src="%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/image1.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/image1.png" alt=""></p>
 <h5 id="import关键字的导入范围？"><a href="#import关键字的导入范围？" class="headerlink" title="import关键字的导入范围？"></a>import关键字的导入范围？</h5><p><code>import java.util.*</code> 只能读取其目录下的类，不能读取其子目录下的类。</p>
 <p>因为其根目录和子目录下可能有同名类，若都能读取，则会混淆。</p>
 
@@ -523,7 +523,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

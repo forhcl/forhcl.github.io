@@ -83,20 +83,20 @@
 
 
 
-<meta name="description" content="Class类下面的官方文档对Class类的说明    在面向对象的世界里，万事万物皆对象。八种基本类型不是对象，但是Java为他们提供了相对应的包装类。类也是对象，是java.lang.Class的实例对象。官网将java.lang.Class的实例对象称为其对应类的类类型。java.lang.Class类的构造器是私有，不能通过new关键字创建该类的实例对象，只能由虚拟机进行创建。下面为java">
+<meta name="description" content="Class类下面的官方文档对Class类的说明   在面向对象的世界里，万事万物皆对象。八种基本类型不是对象，但是Java为他们提供了相对应的包装类。类也是对象，是java.lang.Class的实例对象。官网将java.lang.Class的实例对象称为其对应类的类类型。java.lang.Class类的构造器是私有，不能通过new关键字创建该类的实例对象，只能由虚拟机进行创建。下面为java.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反射">
 <meta property="og:url" content="http://forhcl.github.io/2019/06/16/%E5%8F%8D%E5%B0%84/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
-<meta property="og:description" content="Class类下面的官方文档对Class类的说明    在面向对象的世界里，万事万物皆对象。八种基本类型不是对象，但是Java为他们提供了相对应的包装类。类也是对象，是java.lang.Class的实例对象。官网将java.lang.Class的实例对象称为其对应类的类类型。java.lang.Class类的构造器是私有，不能通过new关键字创建该类的实例对象，只能由虚拟机进行创建。下面为java">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/16/%E5%8F%8D%E5%B0%84/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Class%E7%B1%BB%E7%9A%84%E8%AF%B4%E6%98%8E.png">
+<meta property="og:description" content="Class类下面的官方文档对Class类的说明   在面向对象的世界里，万事万物皆对象。八种基本类型不是对象，但是Java为他们提供了相对应的包装类。类也是对象，是java.lang.Class的实例对象。官网将java.lang.Class的实例对象称为其对应类的类类型。java.lang.Class类的构造器是私有，不能通过new关键字创建该类的实例对象，只能由虚拟机进行创建。下面为java.">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Class%E7%B1%BB%E7%9A%84%E8%AF%B4%E6%98%8E.png">
 <meta property="article:published_time" content="2019-06-16T07:53:45.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.567Z">
+<meta property="article:modified_time" content="2020-06-29T02:30:35.729Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/06/16/%E5%8F%8D%E5%B0%84/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Class%E7%B1%BB%E7%9A%84%E8%AF%B4%E6%98%8E.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Class%E7%B1%BB%E7%9A%84%E8%AF%B4%E6%98%8E.png">
 
 
 
@@ -383,8 +383,7 @@
 
       
         <h3 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h3><p>下面的官方文档对Class类的说明</p>
-<img src="/2019/06/16/%E5%8F%8D%E5%B0%84/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Class%E7%B1%BB%E7%9A%84%E8%AF%B4%E6%98%8E.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Class%E7%B1%BB%E7%9A%84%E8%AF%B4%E6%98%8E.png" alt="官方文档-Class类的说明"></p>
 <ol>
 <li><p>在面向对象的世界里，万事万物皆对象。八种基本类型不是对象，但是Java为他们提供了相对应的包装类。<span style="color:red">类也是对象</span>，是<code>java.lang.Class</code>的实例对象。<span style="color:blue">官网将<code>java.lang.Class</code>的实例对象称为其对应类的类类型。</span><code>java.lang.Class</code>类的构造器是私有，不能通过<code>new</code>关键字创建该类的实例对象，只能由虚拟机进行创建。下面为<code>java.lang.Class</code>类的构造器。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Private constructor. Only the Java Virtual Machine creates Class objects.</span></span><br><span class="line"><span class="comment"> * This constructor is not used and prevents the default constructor being</span></span><br><span class="line"><span class="comment"> * generated.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">Class</span><span class="params">(ClassLoader loader)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Initialize final field for classLoader.  The initialization value of non-null</span></span><br><span class="line">    <span class="comment">// prevents future JIT optimizations from assuming this final field is null.</span></span><br><span class="line">    classLoader = loader;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -606,7 +605,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -89,12 +89,10 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/06/14/%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;数组是一种数据结构，它将数据码成一排进行存放。在Java中，数组中的元素必须是相同数据类型的，而对于一些弱类型的语言，数组可以存放不同数据类型的数据，如JavaScript。 &amp;emsp;&amp;emsp;数组采用以0开始的索引标识数组中的每一个元素。即在一个存放n个元素的数组中，第一个元素的索引为0，第n个元素的索引为n-1；我们可以通过整型下标索引随机访问数组中的值。例如，如">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/14/%E6%95%B0%E7%BB%84/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/14/%E6%95%B0%E7%BB%84/%E6%95%B0%E7%BB%84/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/14/%E6%95%B0%E7%BB%84/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/14/%E6%95%B0%E7%BB%84/%E6%95%B0%E7%BB%84/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png">
 <meta property="article:published_time" content="2019-06-14T03:02:52.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.598Z">
+<meta property="article:modified_time" content="2020-06-29T02:49:45.141Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="Java">
@@ -102,7 +100,7 @@
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数组">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/06/14/%E6%95%B0%E7%BB%84/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png">
 
 
 
@@ -443,16 +441,12 @@
 <p>数组最好应用于“索引有语义”的情况。</p>
 <p>但并非所有有语义的索引都适用于数组。如身份证号码</p>
 <p><span style="color:red">本章主要处理“索引没有语义”的情况数组的使用。</span></p>
-<img src="/2019/06/14/%E6%95%B0%E7%BB%84/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png" class="">
-
-<p><img src="%E6%95%B0%E7%BB%84/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png" alt="索引无语义数组"></p>
 <p>&emsp;&emsp;如果索引没有语义，那么数组就是一个暂存数据的空间。此时我们应该如何去表示还没有存放数据的元素呢，因为数组的大小是从一开始就指定的，所以有一些空间在实际应用上是还没有存放数据的，但是它们可以被访问，从用户的角度看来，它们是非法的。</p>
 <p>如何添加元素？如何删除元素？数组越界？</p>
 <p>Java提供的数组没有提供这种实际应用的功能的？</p>
 <p><strong>自定义数组</strong></p>
-<img src="/2019/06/14/%E6%95%B0%E7%BB%84/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png" class="">
-
-<p><img src="%E6%95%B0%E7%BB%84/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png" alt="自定义数组"></p>
 <p>自定义数组里面的封装的成员变量，需要维护</p>
 <p>数组data，实际存放元素个数size，数组的大小capacity(可以直接使用data.length获得，没必要声明)。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span>[] data;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> size;</span><br></pre></td></tr></table></figure>
@@ -660,7 +654,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

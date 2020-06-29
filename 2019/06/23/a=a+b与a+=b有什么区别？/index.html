@@ -89,14 +89,14 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/06/23/a=a+b%E4%B8%8Ea+=b%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="从执行效率和类型转换两个方面来比较a&#x3D;a+b和a+&#x3D;b之间的区别 执行效率&amp;emsp;&amp;emsp;不考虑编译器的优化的话，a&#x3D;a+b的执行效率是低于a+&#x3D;b的，因为它多进行了一步中间变量的操作，而且会多占用一个变量的空间。而Java编译器默认对其进行了优化，优化之后两条语句都当做a+&#x3D;b来执行了，所以实际上是没有任何区别的。 类型转换我们通过一个例子来说明两者的区别 12345678910Test">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/23/a=a+b%E4%B8%8Ea+=b%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%88%E6%B3%95%E8%BD%AC%E6%8D%A2.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%88%E6%B3%95%E8%BD%AC%E6%8D%A2.png">
 <meta property="article:published_time" content="2019-06-23T01:41:20.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.551Z">
+<meta property="article:modified_time" content="2020-06-29T01:51:42.226Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/06/23/a=a+b%E4%B8%8Ea+=b%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%88%E6%B3%95%E8%BD%AC%E6%8D%A2.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%88%E6%B3%95%E8%BD%AC%E6%8D%A2.png">
 
 
 
@@ -388,8 +388,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TestDemo.java</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a=<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">float</span> b=<span class="number">6</span>;</span><br><span class="line">        a+=b;</span><br><span class="line">        <span class="comment">//a=a+b;</span></span><br><span class="line">        a= (<span class="keyword">int</span>) (a+b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;在执行<code>a=a+b</code>时，当使用a和b两个数值进行二元操作时（例如上面的<code>a+b</code>，a是整数，b是浮点数），先要将两个操作数转换成同一种类型，然后再进行运算。数值类型之间的合法转换如图所示，可见a会被转换成<code>float</code>类型。</p>
-<img src="/2019/06/23/a=a+b%E4%B8%8Ea+=b%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%88%E6%B3%95%E8%BD%AC%E6%8D%A2.png" class="" title="数值类型之间的合法转换">
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%88%E6%B3%95%E8%BD%AC%E6%8D%A2.png" alt=""></p>
 <p>&emsp;&emsp;此时，再将<code>a+b</code>的运算结果赋值给a，明显是非法的、编译器会报错。在<code>Java</code>中，允许进行这种数值之间的类型转换。当然，有可能会丢失一些信息。在这种情况下，需要通过强制类型转换（cast）实现这个操作。强制类型转换的语法格式是在圆括号中给出想要转换的目标类型，后面紧跟待转换的变量名。所以我们对<code>(a+b)</code>进行强制类型装换操作。但是为什么<code>a+=b</code>没有报错呢？我们对TestDemo.class进行<span style="color:blue">反编译</span>：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TestDemo.java</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TestDemo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">float</span> b = <span class="number">6.0F</span>;</span><br><span class="line">        <span class="keyword">int</span> a = (<span class="keyword">int</span>)((<span class="keyword">float</span>)a + b);</span><br><span class="line">        <span class="keyword">int</span> a = (<span class="keyword">int</span>)((<span class="keyword">float</span>)a + b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -551,7 +550,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

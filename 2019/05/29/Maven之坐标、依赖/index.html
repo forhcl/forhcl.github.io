@@ -89,14 +89,14 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="坐标 ：唯一标识Java构件（artifact）在Maven世界中，任何一个依赖、插件或者项目构建的输出，都可以称为 构件 123&lt;groupId&gt;org.sonatype.nexus&lt;&#x2F;groupId&gt;&lt;artifactId&gt;nexus-indexer&lt;&#x2F;artifactId&gt;&lt;version&gt;2.0.0&lt;&#x2F;version&gt;">
-<meta property="og:image" content="http://forhcl.github.io/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%BD%B1%E5%93%8D%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%BD%B1%E5%93%8D%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96.png">
 <meta property="article:published_time" content="2019-05-29T02:05:41.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.489Z">
+<meta property="article:modified_time" content="2020-06-29T03:18:30.195Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="Maven">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png">
 
 
 
@@ -434,13 +434,11 @@
 <li>test：测试依赖范围，值对于测试classpath有效。</li>
 <li></li>
 </ol>
-<img src="/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png" class="" title="依赖范围和classpath的关系">
-
+<p><img src="http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="依赖范围和classpath的关系"></p>
 <h6 id="传递性依赖"><a href="#传递性依赖" class="headerlink" title="传递性依赖"></a>传递性依赖</h6><p><em>概念</em></p>
 <p>A依赖B，B依赖C，A对于B是第一直接依赖，B对于C是第二直接依赖，A对于C是传递性依赖。这时Maven的传递性依赖机制会解析各个直接依赖的POM，将那些必要的间接依赖，以传递性依赖的形式引入到当前的项目中。</p>
 <p><em>传递性依赖和依赖范围</em></p>
-<img src="/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%BD%B1%E5%93%8D%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96.png" class="" title="依赖范围影响传递性依赖">
-
+<p><img src="http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%BD%B1%E5%93%8D%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96.png" alt="依赖范围影响传递性依赖"></p>
 <p>仔细琢磨该表是有一定规律可循的，不必死记硬背。</p>
 
       
@@ -596,7 +594,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

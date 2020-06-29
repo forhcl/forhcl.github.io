@@ -89,12 +89,12 @@
 <meta property="og:url" content="http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;VMware虚拟机中的Linux镜像系统IP地址在午休重启之后总是由DHCP重新分配，而我们外部的SecureCRT和ftp文件传输工具都是通过IP地址连接到虚拟机的，所以每次都需要手动去修改这些Linux工具的IP地址，次数多了超级烦人！！所以我就想着能不能把虚拟机的IP地址固定下来！！避免变化！！ &amp;emsp;&amp;emsp;下面整理了我设置静态IP地址的全过程，首先虚拟网">
-<meta property="og:image" content="http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png">
 <meta property="article:published_time" content="2020-06-09T07:01:59.000Z">
-<meta property="article:modified_time" content="2020-06-10T09:10:12.111Z">
+<meta property="article:modified_time" content="2020-06-29T02:17:44.006Z">
 <meta property="article:author" content="Hogan Lee">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png">
 
 
 
@@ -360,7 +360,7 @@
       
         <p>&emsp;&emsp;VMware虚拟机中的Linux镜像系统IP地址在午休重启之后总是由DHCP重新分配，而我们外部的SecureCRT和ftp文件传输工具都是通过IP地址连接到虚拟机的，所以每次都需要手动去修改这些Linux工具的IP地址，次数多了超级烦人！！所以我就想着能不能把虚拟机的IP地址固定下来！！避免变化！！</p>
 <p>&emsp;&emsp;下面整理了我设置静态IP地址的全过程，首先虚拟网络编辑器窗口中把这个勾去掉！！</p>
-<p><img src="Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png" alt="虚拟网络编辑器"></p>
 <p>注意：修改配置文件的时候先拷贝一份备份！！！</p>
 <p><code>cp ifcfg-xxx ifcfg-xxx.bak</code></p>
 <p>然后修改文件/etc/sysconfig/network-scripts/ifcfg-xxx，这里xxx不是lo是其它的！！xxx貌似是ifconfig上面的ip地址网卡名称！！</p>
@@ -511,7 +511,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

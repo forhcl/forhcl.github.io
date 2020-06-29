@@ -89,17 +89,16 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/06/26/Spring%E6%A1%86%E6%9E%B6/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="Spring的核心&amp;emsp;&amp;emsp;Spring的成功来自于理念，而不是技术，它最为核心的理念是IoC(控制反转)和AOP(面向切面编程)，其中IoC是Spring的基础，而AOP则是其重要的功能，最为典型的当属数据库事务的使用。 一、开发步骤1. 以maven依赖的形式引入Spring开发jar包12345678910111213141516171819202122232425262728">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/26/Spring%E6%A1%86%E6%9E%B6/Spring.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/26/Spring%E6%A1%86%E6%9E%B6/JDBC.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/26/Spring%E6%A1%86%E6%9E%B6/Spring%E6%A1%86%E6%9E%B6/JDBC.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/Spring.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/JDBC.png">
 <meta property="article:published_time" content="2019-06-26T08:59:31.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.536Z">
+<meta property="article:modified_time" content="2020-06-29T02:37:11.677Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="框架">
 <meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/06/26/Spring%E6%A1%86%E6%9E%B6/Spring.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/Spring.png">
 
 
 
@@ -390,8 +389,7 @@
 
 <h5 id="2-理解IOC控制反转和DI依赖注入"><a href="#2-理解IOC控制反转和DI依赖注入" class="headerlink" title="2. 理解IOC控制反转和DI依赖注入"></a>2. 理解IOC控制反转和DI依赖注入</h5><p>&emsp;&emsp;<code>IOC(Inverse of Control)</code> 反转控制的概念，就是将原本在程序中手动创建对象的控制权，交由 <code>Spring</code> 框架管理；简单说，就是创建对象控制权被反转到了 <code>Spring</code> 框架。我们通过描述(XML或者注解)并通过IoC容器去产生或获取特定对象的方式。</p>
 <p>&emsp;&emsp;<code>DI(Dependency Injection)</code> 依赖注入的概念，就是在 <code>Spring</code> 创建这个对象的过程中，将这个对象所依赖的属性（也可能是自定义<span style="color:#e7a791">引用类型</span>的属性）注入进去，<span style="color:rgb(255, 68, 68)">从而实现应用对象之间协作关系的协调，让相互协作的软件组件保持松散耦合。</span></p>
-<img src="/2019/06/26/Spring%E6%A1%86%E6%9E%B6/Spring.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/Spring.png" alt="Spring"></p>
 <h5 id="3-编写Spring的核心配置文件"><a href="#3-编写Spring的核心配置文件" class="headerlink" title="3. 编写Spring的核心配置文件"></a>3. 编写Spring的核心配置文件</h5><p>&emsp;&emsp;Spring默认的配置文件名字 <code>applicationContext.xml</code>，在配置文件中用 <code>&lt;bean&gt;&lt;/bean&gt;</code> 标签<span style="color:#0000EE">装配Bean</span>。</p>
 <p>注意：Eclipse中可以通过安装sts插件实现自动生成配置文件和Spring相关代码提示的功能。</p>
 <h5 id="4-在程序中读取Spring的配置文件，通过Spring框架获得Bean，完成相应的操作"><a href="#4-在程序中读取Spring的配置文件，通过Spring框架获得Bean，完成相应的操作" class="headerlink" title="4. 在程序中读取Spring的配置文件，通过Spring框架获得Bean，完成相应的操作"></a>4. 在程序中读取Spring的配置文件，通过Spring框架获得Bean，完成相应的操作</h5><p>&emsp;&emsp;在类中通过应用上下文<span style="color:#0000EE">创建和组装对象</span>，如下操作获得类实例。</p>
@@ -639,9 +637,7 @@
 </ul>
 <h4 id="JDBC-Template概念"><a href="#JDBC-Template概念" class="headerlink" title="JDBC Template概念"></a>JDBC Template概念</h4><ul>
 <li><p>为了简化持久化操作，Spring在JDBC API之上提供了JDBC Template组件，对JDBC API进行二次封装。</p>
-<img src="/2019/06/26/Spring%E6%A1%86%E6%9E%B6/JDBC.png" class="">
-
-<p><img src="Spring%E6%A1%86%E6%9E%B6/JDBC.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/JDBC.png" alt="JDBC"></p>
 </li>
 <li><p>JDBC Template提供统一的模板方法，在<span style="color:red">保留代码灵活性</span>的基础上，尽量减少持久化代码。（利用模板消除样板式编程）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JDBC API</span></span><br><span class="line">Statement statement=conn.createStatement();</span><br><span class="line">ResultSet resultSet=statememt.executeQuery(<span class="string">"select count(*) COUNT from student"</span>);</span><br><span class="line"><span class="keyword">if</span>(resultSet.next())&#123;</span><br><span class="line">    Integer count=resultSet.getInt(<span class="string">"COUNT"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//JDBC Template</span></span><br><span class="line">Integer count=jt.queryForObject(<span class="string">"select count(*) from student"</span>,Integer<span class="class">.<span class="keyword">class</span>)</span>;</span><br></pre></td></tr></table></figure>
@@ -917,7 +913,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

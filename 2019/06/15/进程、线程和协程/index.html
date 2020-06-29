@@ -89,15 +89,15 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/06/15/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="相关面试题： 进程和线程的区别进程和线程的由来   初期的计算机智能串行执行任务，并且需要长时间等待用户输入。 预先将用户的指令集中成清单，批量串行处理用户指令，仍然无法并发执行。 进程独占内存空间，保存各自的运行状态，相互间不干扰且可以互相切换，为并发处理任务提供了可能。 共享进程的内存资源，相互间切换更快速，支持更细粒度的任务控制，使进程内的子任务得以并发执行。  进程和线程的区别进程是系统资">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/15/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg">
 <meta property="article:published_time" content="2019-06-15T12:46:22.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.661Z">
+<meta property="article:modified_time" content="2020-06-29T02:24:55.427Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/06/15/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg">
 
 
 
@@ -401,8 +401,7 @@
 <li>进程是代码+数据集合，是代码在数据集合上的运行活动。</li>
 <li>进程是运行中的程序，而线程则是进程中的一个执行路径。</li>
 </ol>
-<h4 id="Java进程和线程的关系"><a href="#Java进程和线程的关系" class="headerlink" title="Java进程和线程的关系"></a>Java进程和线程的关系</h4><img src="/2019/06/15/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg" class="">
-
+<h4 id="Java进程和线程的关系"><a href="#Java进程和线程的关系" class="headerlink" title="Java进程和线程的关系"></a>Java进程和线程的关系</h4><p><img src="http://cdn1.hikariblog.cn/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg" alt="进程和线程的内存结构划分"></p>
 <p>如上图所示，Thread1到ThreadN这N个线程共享进程的堆和方法区资源，但是每个线程有自己的程序计数器（PC）和栈（stack）区域。</p>
 <ul>
 <li><p>其中PC计数器本质上是一块内存区域，用来记录线程当前要执行的指令地址，CPU一般是使用时间片轮转方式让线程轮询占用的，因此当前线程CPU时间片用完后，要让出CPU，这时PC计数器就会记录下当前线程下次要执行的命令的地址，等到下次轮到该线程占有CPU执行时，就从PC计数器获取自己将要执行的命令的地址继续执行。</p>
@@ -586,7 +585,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

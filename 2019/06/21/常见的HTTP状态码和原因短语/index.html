@@ -89,15 +89,15 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;谈到HTTP状态码，可能很多人会想起让自己抓狂的404页面。没错404也是一个状态码，当你请求服务器上不存在的资源的，404错误页面就会出现。当然，除了404以外还有其它的状态码。 &amp;emsp;&amp;emsp;实际上，请求过程中会有很多状态码快速的发生着变化，且看不出这些状态码是如何变化的，除非像打断点似的操作一步停一下，因此导致在服务器响应过程中，很多状态码我们是看不到的。下">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E7%8A%B6%E6%80%81%E7%A0%81%E6%9F%A5%E7%9C%8B.jpg">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E7%8A%B6%E6%80%81%E7%A0%81%E6%9F%A5%E7%9C%8B.jpg">
 <meta property="article:published_time" content="2019-06-21T00:59:43.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.583Z">
+<meta property="article:modified_time" content="2020-06-29T02:46:09.338Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg">
 
 
 
@@ -387,11 +387,10 @@
 <p>&emsp;&emsp;实际上，请求过程中会有很多状态码快速的发生着变化，且看不出这些状态码是如何变化的，除非像打断点似的操作一步停一下，因此导致在服务器响应过程中，很多状态码我们是看不到的。下面介绍一下如何查看当前页面的状态码。</p>
 <ol>
 <li><p>打开要查看的页面，按F12；然后点击network（或网络），再点击Doc。</p>
-<img src="/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg" class="">
+<p><img src="http://cdn1.hikariblog.cn/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg" alt="开发者工具"></p>
 </li>
 <li><p>按F5刷新，就可以看到“Status”一栏下的页面返回状态码了。</p>
-<img src="/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E7%8A%B6%E6%80%81%E7%A0%81%E6%9F%A5%E7%9C%8B.jpg" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E7%8A%B6%E6%80%81%E7%A0%81%E6%9F%A5%E7%9C%8B.jpg" alt="状态码查看"></p>
 </li>
 </ol>
 <p>&emsp;&emsp;HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。状态码的数量多达60余种，下面我们了解一下常见的14种。首先我们对状态码进行简单的分类：</p>
@@ -790,7 +789,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

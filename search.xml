@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>手把手搭建FTP服务器</title>
+    <url>/2020/06/28/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<p>&emsp;&emsp;由于软件更新需要，需要使用到FTP和SFTP。现在尝试手动来搭建SFTP和FTP服务器！！！</p>
+<ul>
+<li>FTP服务器搭建</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>Weblogic学习</title>
     <url>/2020/06/19/Weblogic%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>Oracle WebLogic Server：WebLogic应用服务器是整个WebLogic产品的核心</p>
+    <content><![CDATA[<p>Oracle WebLogic Server：WebLogic应用服务器是整个WebLogic产品的核心。</p>
+<p>&emsp;&emsp;首先，因为weblogic是通过一个jar包进行安装的，所以需要进行java环境的配置；其次，由于是通过可视化java GUI界面进行安装，在远程工具上面需要配置好DISPLAY环境变量，才能让可视化窗口在远程机器上面连接到！！</p>
+<h2 id="DISPLAY环境变量的配置"><a href="#DISPLAY环境变量的配置" class="headerlink" title="DISPLAY环境变量的配置"></a>DISPLAY环境变量的配置</h2><p>在Linux/Unix类操作系统上, DISPLAY用来设置将图形显示到何处。</p>
+<p><a href="https://blog.csdn.net/qq_39101111/article/details/78729647" target="_blank" rel="noopener">https://blog.csdn.net/qq_39101111/article/details/78729647</a></p>
+<p>这个真的是超级头痛，display设置出现的问题就是，X server也就是我们的机器处于局域网中，没有独立的公网IP地址，且有防火墙阻拦，由于阿里云服务器和我们的主机不是在同一个子网下，配置DISPLAY为ip:0.0的时候找不到我们的主机，没办法把GUI搞到我们的机器上面！！</p>
+<p>大多数客户端位于局域网中，IP地址是经过转换的，因此<strong>ipconfig</strong>或<strong>ifconfig</strong>命令返回的IP不一定是客户端的真实公网IP地址。若后续客户端无法登录FTP服务器，请重新确认其公网IP地址。</p>
 <h2 id="weblogic的安装最后需要去手动添加一个配置文件"><a href="#weblogic的安装最后需要去手动添加一个配置文件" class="headerlink" title="weblogic的安装最后需要去手动添加一个配置文件"></a>weblogic的安装最后需要去手动添加一个配置文件</h2><p>添加配置文件的位置，在启动文件下同一目录下面./servers/AdminServer/下创建一个security文件夹，然后通过vi创建一个boot.properties文件，</p>
 <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">username</span>=<span class="string"></span></span><br><span class="line"><span class="attr">password</span>=<span class="string"></span></span><br></pre></td></tr></table></figure>
 
@@ -34,7 +48,7 @@
     <url>/2020/06/09/Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/</url>
     <content><![CDATA[<p>&emsp;&emsp;VMware虚拟机中的Linux镜像系统IP地址在午休重启之后总是由DHCP重新分配，而我们外部的SecureCRT和ftp文件传输工具都是通过IP地址连接到虚拟机的，所以每次都需要手动去修改这些Linux工具的IP地址，次数多了超级烦人！！所以我就想着能不能把虚拟机的IP地址固定下来！！避免变化！！</p>
 <p>&emsp;&emsp;下面整理了我设置静态IP地址的全过程，首先虚拟网络编辑器窗口中把这个勾去掉！！</p>
-<p><img src="Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E7%BC%96%E8%BE%91%E5%99%A8.png" alt="虚拟网络编辑器"></p>
 <p>注意：修改配置文件的时候先拷贝一份备份！！！</p>
 <p><code>cp ifcfg-xxx ifcfg-xxx.bak</code></p>
 <p>然后修改文件/etc/sysconfig/network-scripts/ifcfg-xxx，这里xxx不是lo是其它的！！xxx貌似是ifconfig上面的ip地址网卡名称！！</p>
@@ -107,9 +121,7 @@
 </ul>
 </li>
 </ul>
-<img src="/2020/06/04/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8/cd%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F.png" class="">
-
-<p><img src="Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8/cd%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/cd%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F.png" alt="cd常用快捷方式"></p>
 <ul>
 <li><p>ls</p>
 <p><strong>以“.”字符开头命名的文件是隐藏的。</strong>这仅说明ls不会列出这些文件，除非输入ls -a。在创建用户账号时，主目录里会放置一些隐藏文件，用来配置账号信息。仔细观察这样的文件，可以使我们了解如何自定义工作环境。此外，一些应用程序也会将他们的配置文件和设置文件以隐藏文件的形式放在主目录下面。</p>
@@ -126,7 +138,7 @@
 <p>Ctrl+A移动到行首，Ctrl+E移动到行末</p>
 <p>搜索历史命令记录，Ctrl+R进入历史命令搜索模式，搜索到了Enter键执行，Ctrl+J将搜索到的命令输出到当前命令行中以作进一步的编辑。</p>
 <p>看一下权限和用户！！！！！和软件安装yum。然后安装一下Oracle</p>
-<h3 id="Linux根目录下各个文件夹的含义"><a href="#Linux根目录下各个文件夹的含义" class="headerlink" title="Linux根目录下各个文件夹的含义"></a>Linux根目录下各个文件夹的含义</h3><p><img src="C:%5CUsers%5C15016%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200604151154299.png" alt="image-20200604151154299"></p>
+<h3 id="Linux根目录下各个文件夹的含义"><a href="#Linux根目录下各个文件夹的含义" class="headerlink" title="Linux根目录下各个文件夹的含义"></a>Linux根目录下各个文件夹的含义</h3><p><img src="http://cdn1.hikariblog.cn/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95.png" alt="Linux根目录"></p>
 <ul>
 <li><p>bin</p>
 <p>包含二进制可执行文件。<br>在单用户模式下，你需要使用的常见linux命令都位于此目录下。系统的所有用户使用的命令都设在这里。<br>例如：ps、ls、ping、grep、cp</p>
@@ -260,7 +272,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.sun.org.apache.xerces.internal.dom.PSVIAttrNSImpl;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 以下程序运行的结果是：</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-18 10:17</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tester</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer var1=<span class="keyword">new</span> Integer(<span class="number">1</span>);</span><br><span class="line">        Integer var2=var1;</span><br><span class="line">        doSomething(var2);</span><br><span class="line">        System.out.print(var1.intValue());</span><br><span class="line">        System.out.print(var2==var1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">(Integer integer)</span></span>&#123;</span><br><span class="line">        integer=<span class="keyword">new</span> Integer(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A 1true  B 2true  C 1false  D 2false</span></span><br><span class="line"><span class="comment"> * 正确答案为A</span></span><br><span class="line"><span class="comment"> * 如果还是不明白就再去ide中debug一下，看一下运行流程</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
 <p>分析上例，可以得出如下图的结果。<span style="color:red">当传入引用类型的变量作为参数时，是将引用类型中存储的实例对象地址复制一份传递给形参，实参和形参指向同一个实例对象。</span>当对对象进行修改时，形参和实参都会发生改变，但是当形参指向一个新的对象的时候，实参并不会发生改变。可见，Java的引用类型和基本类型一样都是值传递，并不存在引用传递。</p>
-<p><img src="%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/image1.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/image1.png" alt=""></p>
 <h5 id="import关键字的导入范围？"><a href="#import关键字的导入范围？" class="headerlink" title="import关键字的导入范围？"></a>import关键字的导入范围？</h5><p><code>import java.util.*</code> 只能读取其目录下的类，不能读取其子目录下的类。</p>
 <p>因为其根目录和子目录下可能有同名类，若都能读取，则会混淆。</p>
 ]]></content>
@@ -274,8 +286,8 @@
     <content><![CDATA[<p>&emsp;&emsp;近年来，随着硬件技术和生产水平的提高，存储器的成本迅速下降，容量一直在不断地扩大，但仍然不能满足各种软件对存储空间急剧增长的需求，因此，存储器仍然是一种宝贵而紧俏的资源，如何对其进行有效的管理，不仅直接影响存储器的利用率，而且对系统性能也有重大影响。</p>
 <p>&emsp;&emsp;众所周知，计算机在执行程序的时候，每条指令都是在CPU中执行的，而执行的时候，又免不了要和数据打交道。而计算机上面的程序及其要访问的数据往往是存放在内存中。刚开始，还相安无事的，但是随着CPU技术的发展，CPU的执行速度越来越快。从<strong>内存中读取和写入数据的速度</strong>开始跟不上<strong>CPU的执行速度</strong>，两者的差距越来越大，这导致CPU每次操作内存都要耗费很多的等待时间。</p>
 <p>&emsp;&emsp;可是吧，我们总不能因为内存拖后腿就暂停发展CPU，等待内存技术赶上来吧！为了解决CPU和存储器之间速度上的不匹配，就在CPU和内存之间设置了高速缓存存储器；高速缓冲存储器相比较主存而言有以下特点：价格昂贵，容量小，速度快。其工作原理就是将CPU频繁访问的数据保存一份拷贝在高速缓冲存储器中，将大多数的CPU和主存之间的交互转换为CPU与高速缓冲存储器之间的交互，从而在整体上提高系统的性能。由于高速缓存的速度越高价格也越贵，因此目前的计算机系统中多设置两级或多级高速缓存。两级缓存比一级缓存速度慢，但容量更大，主要用作一级缓存和内存之间数据临时交换的地方。</p>
-<p><img src="%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt=""></p>
-<img src="/2019/12/15/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" class="" title="计算机系统存储层次示意图">
+<p><img src="http://cdn1.hikariblog.cn/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="计算机系统存储层次示意图"></p>
+
 
 <p>在多级存储结构中，在储存层次中越往上，存储介质的访问速度越快，价格也越高，相对存储容量也越小。CPU寄存器、主存掉电后其存储的信息不再存在，属于操作系统存储管理的讨论范畴；辅存属于操作系统设备管理的范畴，其存储的信息会长期保存。</p>
 ]]></content>
@@ -403,8 +415,7 @@
     <content><![CDATA[<h2 id="Spring-Security开发安全的REST服务"><a href="#Spring-Security开发安全的REST服务" class="headerlink" title="Spring Security开发安全的REST服务"></a><code>Spring Security</code>开发安全的<code>REST</code>服务</h2><div class="note primary"><p>认证和授权–&gt;最终表现为<span style="color:red">登录</span>功能。 </p></div>
 
 <p>&emsp;&emsp;最初对于登录的理解就是前台的一个登录表单，提交到后台查看数据库是否存在该用户。如果存在，则登录成功；不存在，则登录失败。</p>
-<img src="/2019/11/07/Spring-Security%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83/%E7%AE%80%E9%99%8B%E7%89%88%E7%9A%84%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E7%AE%80%E9%99%8B%E7%89%88%E7%9A%84%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD.png" alt="简陋版的登录功能"></p>
 <p>但是在真正的生产环境中远没有这么简单，会有以下几个方面需要考虑</p>
 <ul>
 <li>同时支持多种认证登录方式：表单登录、手机短信登录、微信登录、QQ登录</li>
@@ -421,13 +432,8 @@
 </li>
 </ul>
 <p>浏览器和服务器之间采用Session保存用户信息，App和服务器之间采用token保存用户信息（没有Session）。</p>
-<img src="/2019/11/07/Spring-Security%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83/%E4%BC%81%E4%B8%9A%E7%BA%A7%E7%9A%84%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83.png" class="">
-
-<hr>
-<img src="/2019/11/07/Spring-Security%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83/%E6%A1%88%E4%BE%8B%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png" class="">
-
-
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%A1%88%E4%BE%8B%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png" alt="案例代码结构"></p>
+<p><img src="http://cdn1.hikariblog.cn/%E4%BC%81%E4%B8%9A%E7%BA%A7%E7%9A%84%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83.png" alt="企业级的认证和授权"></p>
 <h4 id="使用Spring-Security开发基于表单的认证"><a href="#使用Spring-Security开发基于表单的认证" class="headerlink" title="使用Spring Security开发基于表单的认证"></a>使用Spring Security开发基于表单的认证</h4><p>认证（你是谁）</p>
 <p>授权（你能做什么）</p>
 <p>攻击防护（防止伪造身份）</p>
@@ -513,13 +519,9 @@
 
 <h6 id="标准的JSON数据表示"><a href="#标准的JSON数据表示" class="headerlink" title="标准的JSON数据表示"></a>标准的JSON数据表示</h6><p>数据结构</p>
 <p>Object:使用花括号{}包含的<span style="color:blue">键值对</span>结构，Key必须是string类型，value为任何的<span style="color:red">基本类型</span>或<span style="color:red">数据结构</span>。</p>
-<img src="/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E5%AF%B9%E8%B1%A1%E8%A1%A8%E7%A4%BA.png" class="">
-
-<p><img src="JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E5%AF%B9%E8%B1%A1%E8%A1%A8%E7%A4%BA.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/JSON%E5%AF%B9%E8%B1%A1%E8%A1%A8%E7%A4%BA.png" alt="JSON对象表示"></p>
 <p>Array:使用中括号[]来起始，并用逗号，来分割元素</p>
-<img src="/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png" class="">
-
-<p><img src="JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/JSON%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png" alt="JSON数组表示"></p>
 <p>基本类型</p>
 <p>​    string,number,true,false,null</p>
 <h4 id="Java中两种常见的JSON处理方式"><a href="#Java中两种常见的JSON处理方式" class="headerlink" title="Java中两种常见的JSON处理方式"></a>Java中两种常见的JSON处理方式</h4><p>Json中没有日期这样的数据格式，所以要采用字符串或数字的时间戳来表示</p>
@@ -539,9 +541,7 @@
 <p><code>@Responsebody</code>:将对象转换为资源表述(如JSON或XML)。</p>
 <p><code>@RequestBody</code>:将资源表述转换为对象。</p>
 <p>使用<code>@RESTController</code>代替<code>@Controller</code>，Spring将会为该控制器的所有处理方法应用消息转换功能。我们不必再为每个方法都添加 <code>@Responsebody</code> 注解。</p>
-<img src="/2019/09/29/JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85.png" class="">
-
-<p><img src="JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/JSON%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/JSON%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85.png" alt="JSON数据封装"></p>
 </li>
 </ul>
 <ul>
@@ -631,9 +631,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> fibonacci(n-<span class="number">1</span>)+fibonacci(n-<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;但是递归解法并不是最适合这道题目的，它存在很严重的效率问题。例如，想求得f(10)，需要先求得f(9)和f(8)。同样，想求得f(9)，需要先求得f(8)和f(7)……我们可以使用树形结构来表示这种依赖关系，如下图</p>
-<p><img src="%E9%9D%A2%E8%AF%95%E9%A2%9810-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/%E5%9B%BE%E7%89%871.png" alt=""></p>
-<img src="/2019/09/04/%E9%9D%A2%E8%AF%95%E9%A2%9810-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/%E5%9B%BE%E7%89%871.png" class="" title="基于递归求斐波那契数列的第10项的调用过程">
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%9B%BE%E7%89%871.png" alt=""></p>
 <p>&emsp;&emsp;很明显，在这棵树中有很多节点是重复的，而且重复的节点数会随着n的增大而急剧增加，这意味着计算量会随着n的增大而急剧增大。事实上，用递归方法计算的时间复杂度是以n的指数的方式递增的。我们不妨设想到第100项，会有多少重复项，会进行多少重复的运算！！！</p>
 </li>
 <li><p><strong>循环解法</strong></p>
@@ -753,9 +751,7 @@
     <url>/2019/08/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<p>&emsp;&emsp;由于本人大学期间对数据结构的学习都是基于c语言，Java又采用了内存自动分配和垃圾回收技术，远离了内存管理的高墙，所以我很好奇基于Java的链表在少了c语言的指针之后又是如何进行实现的呢？</p>
 <p>&emsp;&emsp;动态数组 和基于动态数组的栈 队列这三种数据结构是靠重新分配内存解决固定容量问题，底层还是依托静态数组，则所谓的动态是从用户的角度来体现的。而链表则是一种<span style="color:red">真正的、最简单的动态数据结构</span>。通过对链表的学习，我们可以更加深刻的理解<span style="color:blue">引用（或者指针）、递归</span>等知识点;辅助组成其他数据结构，栈也可以通过链表来实现。</p>
-<h3 id="Linked-List-链表"><a href="#Linked-List-链表" class="headerlink" title="Linked List(链表)"></a>Linked List(链表)</h3><img src="/2019/08/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8.png" class="">
-
-<p><img src="%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8.png" alt=""></p>
+<h3 id="Linked-List-链表"><a href="#Linked-List-链表" class="headerlink" title="Linked List(链表)"></a>Linked List(链表)</h3><p><img src="http://cdn1.hikariblog.cn/%E9%93%BE%E8%A1%A8.png" alt="链表"></p>
 <ul>
 <li><p>数据存储在“节点”（Node）中</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    <span class="comment">//数据</span></span><br><span class="line">    E e;</span><br><span class="line">    <span class="comment">//通过节点类型的引用--指向下一个节点，相当于c语言中的指针</span></span><br><span class="line">    Node next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -804,7 +800,7 @@
 <ul>
 <li>全文搜索实现原理</li>
 </ul>
-<p><img src="ElasticSearch%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2/%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" alt=""></p>
 <ul>
 <li>全文搜索实现技术（基于Java的开源实现）<ul>
 <li>Lucene</li>
@@ -890,7 +886,7 @@
 <li><p>渐进增强。随着屏幕大小的增加而增加元素。</p>
 </li>
 <li><p>响应式：viewport尺寸的增加，系统会自动分为最多12列，根据屏幕宽度进行响应。</p>
-<p><img src="bootstrap/bootstrap%E7%BD%91%E6%A0%BC%E9%80%89%E9%A1%B9.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/Bootstrap%E7%BD%91%E6%A0%BC%E9%80%89%E9%A1%B9.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -1039,7 +1035,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">"$&#123;name&#125;"</span>&gt;</span></span><br><span class="line">    fskfh</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>运行时，text标签中的内容会覆盖掉p容器标签包含的内容</p>
-<p><img src="JSP%E7%BB%88%E7%BB%93%E8%80%85%E2%80%94%E2%80%94Thymeleaf/%E6%A0%87%E5%87%86%E6%96%B9%E8%A8%80.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E6%A0%87%E5%87%86%E6%96%B9%E8%A8%80.png" alt="标准方言"></p>
 <h5 id="变量表达式"><a href="#变量表达式" class="headerlink" title="变量表达式"></a><em>变量表达式</em></h5><p><strong>语法：${…}</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.author.name&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -1138,9 +1134,9 @@
 <li>零配置（不需要XML配置，遵循“约定大于配置”）</li>
 </ul>
 <p>抛弃了传统JavaEE 项目繁琐的配置、学习过程，让企业级应用开发过程变得so easy！</p>
-<p><img src="SpringBoot/Spring%E5%BA%94%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/Spring%E5%BA%94%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png" alt="Spring应用开发流程"></p>
 <p>让Spring应用开发变得简单粗暴，将之前的框架进行完美整合。</p>
-<p>![](SpringBoot/Spring Boot应用开发流程.png)</p>
+<p><img src="http://cdn1.hikariblog.cn/Spring%20Boot%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png" alt="Spring Boot应用开发流程"></p>
 <p>Spring Boot核心特性</p>
 <ul>
 <li>极低的学习成本</li>
@@ -1219,7 +1215,7 @@
 <li>入口类上增加@SpringBootApplication注解</li>
 <li>利用SpringApplication.run()方法启动应用</li>
 </ul>
-<h3 id="Spring-Boot启动流程"><a href="#Spring-Boot启动流程" class="headerlink" title="Spring Boot启动流程"></a><em>Spring Boot启动流程</em></h3><p><img src="SpringBoot/SpringBoot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B.png" alt=""></p>
+<h3 id="Spring-Boot启动流程"><a href="#Spring-Boot启动流程" class="headerlink" title="Spring Boot启动流程"></a><em>Spring Boot启动流程</em></h3><p><img src="http://cdn1.hikariblog.cn/SpringBoot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B.png" alt="SpringBoot启动流程"></p>
 <h3 id="Spring-Boot内置配置选项"><a href="#Spring-Boot内置配置选项" class="headerlink" title="Spring Boot内置配置选项"></a><em>Spring Boot内置配置选项</em></h3><p>在Application.properties中配置</p>
 <p>日志级别：debug-&gt;info-&gt;warn-&gt;error-&gt;fatal</p>
 <p>Spring boot启动后的默认级别为info</p>
@@ -1290,7 +1286,7 @@
 </li>
 <li><p>只能从一端添加元素，也只能从同一端取出元素</p>
 </li>
-<li><p>这一端称为栈顶<img src="%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E6%A0%88.png" alt="栈"></p>
+<li><p>这一端称为栈顶<img src="http://cdn1.hikariblog.cn/%E6%A0%88.png" alt="栈"></p>
 
 
 </li>
@@ -1348,8 +1344,7 @@
 <li><p><strong>RESTful只是一种风格，并不是强制的标准。</strong></p>
 </li>
 </ol>
-
-
+<p><img src="http://cdn1.hikariblog.cn/REST%E6%88%90%E7%86%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B.PNG" alt="REST成熟度模型"></p>
 <p>RESTful支持处理GET、POST、PUT、DELETE、PATCH</p>
 <p>问题：默认是能处理GET、POST请求的，而PUT和DELETE请求是不能够处理的，通过特殊的方式将POST请求转换为PUT请求或者DELETE请求。</p>
 <p>首先在web.xml中配置一个过滤器</p>
@@ -1417,7 +1412,7 @@
 </ul>
 </li>
 </ul>
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3.PNG" alt="日期格式和时间戳"></p>
 <p><code>@Vaild</code>注解和<code>BindingResult</code>验证请求参数的合法性并处理校验结果</p>
 <ol>
 <li><p>状态码400：请求的格式错误（如参数校验出现错误）</p>
@@ -1439,10 +1434,8 @@
 <li><p>@NotBlank:只能作用在String上，不能为Null，而且调用trim()后，长度必须大于0</p>
 </li>
 <li><p>@NonNull：在方法或构造函数的参数上使用，生成一个空值检查语句</p>
-
-
-
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E6%B3%A8%E8%A7%A3.PNG" alt="参数校验注解"></p>
+<p><img src="http://cdn1.hikariblog.cn/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E6%B3%A8%E8%A7%A31.PNG" alt="参数校验注解"></p>
 </li>
 </ol>
 <p>每一个校验注解都有一个message，可以用于自定义错误消息</p>
@@ -1458,9 +1451,7 @@
 <li><p>Spring Boot 中默认的错误处理机制</p>
 <p>额，默认的异常处理机制也很好用！！</p>
 <p>Spring Boot自定义错误页面的存放位置！好像只有2.0以下的是这个样子，尝试了2.0以上的不可以</p>
-
-
-<p><img src="RESTful%E5%85%A5%E9%97%A8/%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2.PNG" alt="错误页面"></p>
 </li>
 <li><p>自定义异常处理</p>
 </li>
@@ -1907,11 +1898,9 @@
     <content><![CDATA[<p>文章基于Java1.8版本，Java1.8相对于Java1.7版本对 <code>HashMap</code> 进行了一些优化。</p>
 <p>&emsp;&emsp;<code>HashMap</code> 最擅长的事情就是<span style="color:#2E8B57">快速索引</span>。</p>
 <h3 id="数据结构HashMap"><a href="#数据结构HashMap" class="headerlink" title="数据结构HashMap"></a>数据结构HashMap</h3><p>&emsp;&emsp;<code>HashMap</code>是一个存放数据的容器，<code>HashMap</code> 为了达到它快速索引的目的，利用了数组快速定位的特性。建立插入值和数组所在坐标之间的关系，pos=key%size（key为插入的值，size为数组的长度），假设存在以下长度为10的Integer数组，当key的值为21，求模之后为1，就将它存放在下标为1的位置，以此类推。当求模之后的值一样，则出现哈希冲突。</p>
-<img src="/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%871.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%871.png" alt=""></p>
 <p>通过扩展单链表来解决冲突</p>
-<img src="/2019/07/22/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap/%E5%9B%BE%E7%89%872.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90HashMap_%E5%9B%BE%E7%89%872.png" alt=""></p>
 <p>当为解决哈希冲突延伸出来的单链表越来越长时，定位的时候首先还是定位到对应的下标，然后遍历单链表进行对比数值，时间复杂度为O(n)。不能满足快速定位的目的。所以JDK1.8又引入了红黑树(一种特殊的二叉树查询效率依赖的树的深度)的数据结构，当单链表过长的时候，将单链表转换为红黑树以提高查询的性能。</p>
 <ul>
 <li>HashMap的数据结构包括了初始数组、链表、红黑树；</li>
@@ -1940,8 +1929,7 @@
 <li>Model：模型数据，业务逻辑。</li>
 <li>View：呈现模型，与用户进行交互。</li>
 </ul>
-<img src="/2019/07/19/Spring-MVC%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BF%98%E8%AE%B0/MVC%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B8%E5%9E%8B%E5%90%88%E4%BD%9C.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/MVC%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B8%E5%9E%8B%E5%90%88%E4%BD%9C.png" alt="MVC组件之间的典型合作"></p>
 <h3 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h3><h4 id="SpringMVC的概念"><a href="#SpringMVC的概念" class="headerlink" title="SpringMVC的概念"></a>SpringMVC的概念</h4><p>&emsp;&emsp;<code>SpringMVC</code> 是目前最好的实现 <code>MVC</code> 设计模式的框架，是 <code>Spring</code> 框架的一个后续产品/子模块，二者可以很好的结合使用，不需要整合。</p>
 <p><strong>SpringMVC核心组件</strong></p>
 <ol>
@@ -1965,8 +1953,7 @@
 <li>DispatcherServlet通过ViewResolver进行解析。</li>
 <li>返回填充了模型数据的View，响应给客户端。</li>
 </ol>
-<img src="/2019/07/19/Spring-MVC%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BF%98%E8%AE%B0/SpringMVC%E6%B5%81%E7%A8%8B.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/SpringMVC%E6%B5%81%E7%A8%8B.png" alt="SpringMVC流程"></p>
 <h4 id="SpringMVC的使用"><a href="#SpringMVC的使用" class="headerlink" title="SpringMVC的使用"></a>SpringMVC的使用</h4><h5 id="传统意义上的配置："><a href="#传统意义上的配置：" class="headerlink" title="传统意义上的配置："></a>传统意义上的配置：</h5><ol>
 <li><p>大部分组件由框架提供，开发者只需通过配置进行关联。</p>
 </li>
@@ -2017,9 +2004,7 @@
 <!-- JSP是通过创建Servlet(继承于HTTPServlet的类，也是JSPMVC里面的控制器)，重写里面的doGet/doPost方法，由方法的HttpServletRequest类型的参数获得HTTP请求中的参数，从而实现数据的绑定。这种做法有一个缺点，就是传输的数据到最后都是String类型的，需要进行类型的转换 -->
 
 <p>Spring<span style="color:red">自动</span>将信息进行封装,我们可以直接使用封装好的形参完成后续业务方法的逻辑操作。</p>
-<img src="/2019/07/19/Spring-MVC%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BF%98%E8%AE%B0/SpringMVC%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png" class="">
-
-<p><img src="Spring-MVC%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%BF%98%E8%AE%B0/SpringMVC%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/SpringMVC%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png" alt="SpringMVC数据绑定"></p>
 </li>
 </ul>
 <h5 id="SpringMVC数据绑定的使用"><a href="#SpringMVC数据绑定的使用" class="headerlink" title="SpringMVC数据绑定的使用"></a>SpringMVC数据绑定的使用</h5><ul>
@@ -2104,17 +2089,12 @@
     <url>/2019/07/09/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<p>Java多线程之间进行通信是基于共享内存的。下面我们就来了解以下Java中多线程处理共享变量时的内存模型。</p>
 <p>&emsp;&emsp;Java内存模型（Java Memory Model，JMM）和JVM的内存结构完全是两码事，请不要混淆。其实JMM并不像JVM内存结构一样是真实存在的。它只是一个抽象的概念。大多数人一听到JMM，脑海里浮现的就是JVM内存区域的堆、虚拟机栈、本地方法栈、方法区……其实这两者并不是同一层次的内存划分，基本上是没有关系的。唯一的相似点就是都存在共享区域和私有区域</p>
-<img src="/2019/07/09/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg" class="" title="进程和线程的内存结构划分">
-
-<p><img src="Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg" alt=""></p>
 <p><span style="color:#2251a3">可以将“内存模型”理解为在特定的操作协议下，对特定的内存或高速缓存进行读写访问的过程抽象。</span></p>
-<img src="/2019/07/09/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%A4%84%E7%90%86%E5%99%A8%E3%80%81%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E3%80%81%E4%B8%BB%E5%86%85%E5%AD%98%E9%97%B4%E7%9A%84%E4%BA%A4%E4%BA%92%E5%85%B3%E7%B3%BB.png" class="" title="处理器、高速缓存、主内存间的交互关系">
-
-<p><img src="Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%A4%84%E7%90%86%E5%99%A8%E3%80%81%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E3%80%81%E4%B8%BB%E5%86%85%E5%AD%98%E9%97%B4%E7%9A%84%E4%BA%A4%E4%BA%92%E5%85%B3%E7%B3%BB.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E5%A4%84%E7%90%86%E5%99%A8%E3%80%81%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E3%80%81%E4%B8%BB%E5%86%85%E5%AD%98%E9%97%B4%E7%9A%84%E4%BA%A4%E4%BA%92%E5%85%B3%E7%B3%BB.png" alt=""></p>
 <p>但实际上JMM并不是“Java内存区域划分”；JMM是与并发编程相关的，它是一种符合内存模型规范的，屏蔽掉各种硬件和操作系统的内存访问差异，以实现让Java程序在各种平台下都能达到一致的内存效果。目的是解决由于多线程通过共享内存进行通信时，存在的<span style="color:red">原子性、可见性（缓存一致性）以及有序性</span>问题。</p>
 <p>&emsp;&emsp;Java内存模型规定了所有的变量（这里的变量包括了实例字段、静态字段和构成数组对象的元素，但不包括局部变量与方法参数，因为后者是线程私有的）都存放在主存中，当线程使用变量时都是把主存中的变量拷贝到自己的工作内存中，线程读写变量的时候操作的是自己工作内存中的变量。</p>
-<img src="/2019/07/09/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E7%BA%BF%E7%A8%8B%E3%80%81%E4%B8%BB%E5%86%85%E5%AD%98%E3%80%81%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AD%98%E4%B8%89%E8%80%85%E7%9A%84%E4%BA%A4%E4%BA%92%E5%85%B3%E7%B3%BB.png" class="" title="线程、主内存、工作内存三者的交互关系">
-
+<p><img src="http://cdn1.hikariblog.cn/%E7%BA%BF%E7%A8%8B%E3%80%81%E4%B8%BB%E5%86%85%E5%AD%98%E3%80%81%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AD%98%E4%B8%89%E8%80%85%E7%9A%84%E4%BA%A4%E4%BA%92%E5%85%B3%E7%B3%BB.png" alt="线程、主内存、工作内存三者的交互关系"></p>
 <p><strong>主内存</strong></p>
 <ul>
 <li>存储Java实例对象</li>
@@ -2264,7 +2244,7 @@
 <p><strong>JUnit的运行流程：</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXXTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@BeforeClass</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setUpBeforeClass</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Method with @BeforeClass annotation"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterClass</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">tearDownClass</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Method with @AfterClass annotation"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Method with @Before annotation"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@After</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tearDown</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Method with @After annotation"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Test method--test1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Test method--test2"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>运行结果：<img src="/2019/07/06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%B8%A6%E4%BD%A0%E5%85%A5%E9%97%A8JUnit4/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class=""></p>
+<p>运行结果：<img src="http://cdn1.hikariblog.cn/Junit_%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="运行结果"></p>
 <ol>
 <li><code>@BeforeClass</code> 修饰的方法会在所有方法被调用前执行，而且该方法是静态的，所以当测试类被加载后接着就会运行它。而且在内存中它只会存在一份实例，它比较适合加载配置文件。</li>
 <li><code>@AfterClass</code> 所修饰的方法通常用来对资源的清理，如关闭数据库的连接</li>
@@ -2348,8 +2328,7 @@
 
 <h5 id="2-理解IOC控制反转和DI依赖注入"><a href="#2-理解IOC控制反转和DI依赖注入" class="headerlink" title="2. 理解IOC控制反转和DI依赖注入"></a>2. 理解IOC控制反转和DI依赖注入</h5><p>&emsp;&emsp;<code>IOC(Inverse of Control)</code> 反转控制的概念，就是将原本在程序中手动创建对象的控制权，交由 <code>Spring</code> 框架管理；简单说，就是创建对象控制权被反转到了 <code>Spring</code> 框架。我们通过描述(XML或者注解)并通过IoC容器去产生或获取特定对象的方式。</p>
 <p>&emsp;&emsp;<code>DI(Dependency Injection)</code> 依赖注入的概念，就是在 <code>Spring</code> 创建这个对象的过程中，将这个对象所依赖的属性（也可能是自定义<span style="color:#e7a791">引用类型</span>的属性）注入进去，<span style="color:rgb(255, 68, 68)">从而实现应用对象之间协作关系的协调，让相互协作的软件组件保持松散耦合。</span></p>
-<img src="/2019/06/26/Spring%E6%A1%86%E6%9E%B6/Spring.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/Spring.png" alt="Spring"></p>
 <h5 id="3-编写Spring的核心配置文件"><a href="#3-编写Spring的核心配置文件" class="headerlink" title="3. 编写Spring的核心配置文件"></a>3. 编写Spring的核心配置文件</h5><p>&emsp;&emsp;Spring默认的配置文件名字 <code>applicationContext.xml</code>，在配置文件中用 <code>&lt;bean&gt;&lt;/bean&gt;</code> 标签<span style="color:#0000EE">装配Bean</span>。</p>
 <p>注意：Eclipse中可以通过安装sts插件实现自动生成配置文件和Spring相关代码提示的功能。</p>
 <h5 id="4-在程序中读取Spring的配置文件，通过Spring框架获得Bean，完成相应的操作"><a href="#4-在程序中读取Spring的配置文件，通过Spring框架获得Bean，完成相应的操作" class="headerlink" title="4. 在程序中读取Spring的配置文件，通过Spring框架获得Bean，完成相应的操作"></a>4. 在程序中读取Spring的配置文件，通过Spring框架获得Bean，完成相应的操作</h5><p>&emsp;&emsp;在类中通过应用上下文<span style="color:#0000EE">创建和组装对象</span>，如下操作获得类实例。</p>
@@ -2597,9 +2576,7 @@
 </ul>
 <h4 id="JDBC-Template概念"><a href="#JDBC-Template概念" class="headerlink" title="JDBC Template概念"></a>JDBC Template概念</h4><ul>
 <li><p>为了简化持久化操作，Spring在JDBC API之上提供了JDBC Template组件，对JDBC API进行二次封装。</p>
-<img src="/2019/06/26/Spring%E6%A1%86%E6%9E%B6/JDBC.png" class="">
-
-<p><img src="Spring%E6%A1%86%E6%9E%B6/JDBC.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/JDBC.png" alt="JDBC"></p>
 </li>
 <li><p>JDBC Template提供统一的模板方法，在<span style="color:red">保留代码灵活性</span>的基础上，尽量减少持久化代码。（利用模板消除样板式编程）</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//JDBC API</span></span><br><span class="line">Statement statement=conn.createStatement();</span><br><span class="line">ResultSet resultSet=statememt.executeQuery(<span class="string">"select count(*) COUNT from student"</span>);</span><br><span class="line"><span class="keyword">if</span>(resultSet.next())&#123;</span><br><span class="line">    Integer count=resultSet.getInt(<span class="string">"COUNT"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//JDBC Template</span></span><br><span class="line">Integer count=jt.queryForObject(<span class="string">"select count(*) from student"</span>,Integer<span class="class">.<span class="keyword">class</span>)</span>;</span><br></pre></td></tr></table></figure>
@@ -2735,13 +2712,12 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//SuperDemo.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a=<span class="number">5</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"父类中的静态方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//SonDemo.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SonDemo</span> <span class="keyword">extends</span> <span class="title">SuperDemo</span> </span>&#123; &#125;</span><br><span class="line"><span class="comment">//Run.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Run</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SonDemo.print();</span><br><span class="line">        System.out.println(<span class="string">""</span>+SonDemo.a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/06/23/%E9%9D%99%E6%80%81%E5%9F%9F%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%BB%A7%E6%89%BF%EF%BC%9F%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%A2%AB%E9%87%8D%E5%86%99%EF%BC%9F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E5%9B%A0/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C1.png" class="" title="运行结果">
-
+<p><img src="http://cdn1.hikariblog.cn/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C1.png" alt="运行结果"></p>
 <p>可见，静态域和静态方法是可以被继承的。当然前提是非private的。</p>
 <p>利用多态下的方法的动态绑定来说明static域和方法能否被重写。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//SuperDemo.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a=<span class="number">5</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"父类中的静态方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//SonDemo.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SonDemo</span> <span class="keyword">extends</span> <span class="title">SuperDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a=<span class="number">6</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"子类中的静态方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Run.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Run</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SuperDemo one=<span class="keyword">new</span> SonDemo();</span><br><span class="line">        one.print();</span><br><span class="line">        System.out.println(<span class="string">""</span>+one.a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/06/23/%E9%9D%99%E6%80%81%E5%9F%9F%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%BB%A7%E6%89%BF%EF%BC%9F%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%A2%AB%E9%87%8D%E5%86%99%EF%BC%9F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E5%9B%A0/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C1.png" class="" title="运行结果">
+
 
 <p>&emsp;&emsp;重写和隐藏的区别是：”重写”后子类的优先级要高于父类的优先级，但是“隐藏”是没有这个优先级之分的。</p>
 <p>&emsp;&emsp;静态域、静态方法和非静态域都可以被继承和隐藏而不能被重写，因此不能实现多态，不能实现父类的引用可以指向子类的对象时的动态绑定。非静态方法可以被继承和重写，因此可以实现多态。</p>
@@ -2768,8 +2744,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TestDemo.java</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a=<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">float</span> b=<span class="number">6</span>;</span><br><span class="line">        a+=b;</span><br><span class="line">        <span class="comment">//a=a+b;</span></span><br><span class="line">        a= (<span class="keyword">int</span>) (a+b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;在执行<code>a=a+b</code>时，当使用a和b两个数值进行二元操作时（例如上面的<code>a+b</code>，a是整数，b是浮点数），先要将两个操作数转换成同一种类型，然后再进行运算。数值类型之间的合法转换如图所示，可见a会被转换成<code>float</code>类型。</p>
-<img src="/2019/06/23/a=a+b%E4%B8%8Ea+=b%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%88%E6%B3%95%E8%BD%AC%E6%8D%A2.png" class="" title="数值类型之间的合法转换">
-
+<p><img src="http://cdn1.hikariblog.cn/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%88%E6%B3%95%E8%BD%AC%E6%8D%A2.png" alt=""></p>
 <p>&emsp;&emsp;此时，再将<code>a+b</code>的运算结果赋值给a，明显是非法的、编译器会报错。在<code>Java</code>中，允许进行这种数值之间的类型转换。当然，有可能会丢失一些信息。在这种情况下，需要通过强制类型转换（cast）实现这个操作。强制类型转换的语法格式是在圆括号中给出想要转换的目标类型，后面紧跟待转换的变量名。所以我们对<code>(a+b)</code>进行强制类型装换操作。但是为什么<code>a+=b</code>没有报错呢？我们对TestDemo.class进行<span style="color:blue">反编译</span>：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TestDemo.java</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TestDemo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">float</span> b = <span class="number">6.0F</span>;</span><br><span class="line">        <span class="keyword">int</span> a = (<span class="keyword">int</span>)((<span class="keyword">float</span>)a + b);</span><br><span class="line">        <span class="keyword">int</span> a = (<span class="keyword">int</span>)((<span class="keyword">float</span>)a + b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2791,11 +2766,10 @@
 <p>&emsp;&emsp;实际上，请求过程中会有很多状态码快速的发生着变化，且看不出这些状态码是如何变化的，除非像打断点似的操作一步停一下，因此导致在服务器响应过程中，很多状态码我们是看不到的。下面介绍一下如何查看当前页面的状态码。</p>
 <ol>
 <li><p>打开要查看的页面，按F12；然后点击network（或网络），再点击Doc。</p>
-<img src="/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg" class="">
+<p><img src="http://cdn1.hikariblog.cn/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg" alt="开发者工具"></p>
 </li>
 <li><p>按F5刷新，就可以看到“Status”一栏下的页面返回状态码了。</p>
-<img src="/2019/06/21/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%92%8C%E5%8E%9F%E5%9B%A0%E7%9F%AD%E8%AF%AD/%E7%8A%B6%E6%80%81%E7%A0%81%E6%9F%A5%E7%9C%8B.jpg" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E7%8A%B6%E6%80%81%E7%A0%81%E6%9F%A5%E7%9C%8B.jpg" alt="状态码查看"></p>
 </li>
 </ol>
 <p>&emsp;&emsp;HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。状态码的数量多达60余种，下面我们了解一下常见的14种。首先我们对状态码进行简单的分类：</p>
@@ -3051,8 +3025,7 @@
     <title>反射</title>
     <url>/2019/06/16/%E5%8F%8D%E5%B0%84/</url>
     <content><![CDATA[<h3 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h3><p>下面的官方文档对Class类的说明</p>
-<img src="/2019/06/16/%E5%8F%8D%E5%B0%84/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Class%E7%B1%BB%E7%9A%84%E8%AF%B4%E6%98%8E.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Class%E7%B1%BB%E7%9A%84%E8%AF%B4%E6%98%8E.png" alt="官方文档-Class类的说明"></p>
 <ol>
 <li><p>在面向对象的世界里，万事万物皆对象。八种基本类型不是对象，但是Java为他们提供了相对应的包装类。<span style="color:red">类也是对象</span>，是<code>java.lang.Class</code>的实例对象。<span style="color:blue">官网将<code>java.lang.Class</code>的实例对象称为其对应类的类类型。</span><code>java.lang.Class</code>类的构造器是私有，不能通过<code>new</code>关键字创建该类的实例对象，只能由虚拟机进行创建。下面为<code>java.lang.Class</code>类的构造器。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Private constructor. Only the Java Virtual Machine creates Class objects.</span></span><br><span class="line"><span class="comment"> * This constructor is not used and prevents the default constructor being</span></span><br><span class="line"><span class="comment"> * generated.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">Class</span><span class="params">(ClassLoader loader)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Initialize final field for classLoader.  The initialization value of non-null</span></span><br><span class="line">    <span class="comment">// prevents future JIT optimizations from assuming this final field is null.</span></span><br><span class="line">    classLoader = loader;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -3188,8 +3161,7 @@
 <li>进程是代码+数据集合，是代码在数据集合上的运行活动。</li>
 <li>进程是运行中的程序，而线程则是进程中的一个执行路径。</li>
 </ol>
-<h4 id="Java进程和线程的关系"><a href="#Java进程和线程的关系" class="headerlink" title="Java进程和线程的关系"></a>Java进程和线程的关系</h4><img src="/2019/06/15/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg" class="">
-
+<h4 id="Java进程和线程的关系"><a href="#Java进程和线程的关系" class="headerlink" title="Java进程和线程的关系"></a>Java进程和线程的关系</h4><p><img src="http://cdn1.hikariblog.cn/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg" alt="进程和线程的内存结构划分"></p>
 <p>如上图所示，Thread1到ThreadN这N个线程共享进程的堆和方法区资源，但是每个线程有自己的程序计数器（PC）和栈（stack）区域。</p>
 <ul>
 <li><p>其中PC计数器本质上是一块内存区域，用来记录线程当前要执行的指令地址，CPU一般是使用时间片轮转方式让线程轮询占用的，因此当前线程CPU时间片用完后，要让出CPU，这时PC计数器就会记录下当前线程下次要执行的命令的地址，等到下次轮到该线程占有CPU执行时，就从PC计数器获取自己将要执行的命令的地址继续执行。</p>
@@ -3346,16 +3318,12 @@
 <p>数组最好应用于“索引有语义”的情况。</p>
 <p>但并非所有有语义的索引都适用于数组。如身份证号码</p>
 <p><span style="color:red">本章主要处理“索引没有语义”的情况数组的使用。</span></p>
-<img src="/2019/06/14/%E6%95%B0%E7%BB%84/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png" class="">
-
-<p><img src="%E6%95%B0%E7%BB%84/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E7%B4%A2%E5%BC%95%E6%97%A0%E8%AF%AD%E4%B9%89%E6%95%B0%E7%BB%84.png" alt="索引无语义数组"></p>
 <p>&emsp;&emsp;如果索引没有语义，那么数组就是一个暂存数据的空间。此时我们应该如何去表示还没有存放数据的元素呢，因为数组的大小是从一开始就指定的，所以有一些空间在实际应用上是还没有存放数据的，但是它们可以被访问，从用户的角度看来，它们是非法的。</p>
 <p>如何添加元素？如何删除元素？数组越界？</p>
 <p>Java提供的数组没有提供这种实际应用的功能的？</p>
 <p><strong>自定义数组</strong></p>
-<img src="/2019/06/14/%E6%95%B0%E7%BB%84/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png" class="">
-
-<p><img src="%E6%95%B0%E7%BB%84/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84.png" alt="自定义数组"></p>
 <p>自定义数组里面的封装的成员变量，需要维护</p>
 <p>数组data，实际存放元素个数size，数组的大小capacity(可以直接使用data.length获得，没必要声明)。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span>[] data;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> size;</span><br></pre></td></tr></table></figure>
@@ -3465,16 +3433,12 @@
 <p>受查异常必须捕获或者声明抛出。</p>
 <p>允许忽略非受查异常，不进行相关处理编译器也不会报错。</p>
 <p>Java的<strong>异常处理机制</strong>通过五个关键字来实现：<code>try</code>、<code>catch</code>、<code>finally</code>、<code>throws</code>、<code>throws</code>。</p>
-<img src="/2019/06/12/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E5%AD%97.png" class="" title="[异常处理关键字]">
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%85%B3%E9%94%AE%E5%AD%97.png" alt=""></p>
 <p>try必须和finally或者（0或多个）catch一起执行，try、catch、finally不可以单独执行</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UnCheckedExceptionDemo</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> number1;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> number2;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">			System.out.print(<span class="string">"请输入整数1:"</span>);</span><br><span class="line">			number1 = scanner.nextInt();</span><br><span class="line">			System.out.print(<span class="string">"请输入整数2:"</span>);</span><br><span class="line">			number2 = scanner.nextInt();</span><br><span class="line">			System.out.println(<span class="string">"两个数的商为"</span> + (number1 / number2));</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"除数为0，出错"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>如果在控制台输入number2的值为0，就会出现算术异常<code>java.lang.ArithmeticException</code>，该异常类继承于<code>RuntimeException</code>，属于非受查异常。catch捕获到异常，执行语句块输出异常信息，执行finally语句块</p>
-<img src="/2019/06/12/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class="" title="[运行结果]">
-
-
-
+<p><img src="http://cdn1.hikariblog.cn/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86_%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
 <p>多重catch语句</p>
 <p>return关键字在异常处理中的作用（返回值，程序终止）</p>
 <p>注意到一个有趣的地方，当异常处理块中没有return语句时，还会继续执行下面的语句。</p>
@@ -3571,10 +3535,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer b=<span class="keyword">new</span> Integer(<span class="number">4</span>);</span><br><span class="line"><span class="keyword">int</span> t=b.intValue();</span><br></pre></td></tr></table></figure>
 
 <p>对自动装箱和自动拆箱操作进行反编译，得出下图结果：</p>
-<img src="/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/%E5%8F%8D%E7%BC%96%E8%AF%91%E7%BB%93%E6%9E%9C.png" class="">
-
-
-
+<p><img src="http://cdn1.hikariblog.cn/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
 </li>
 </ol>
 <p>   &nbsp;&nbsp;&nbsp;&nbsp;由此可知，<span style="color:red">自动拆箱操作其实是隐式地执行<code>int t=b.intValue()</code>；自动装箱操作其实是隐式地执行<code>Integer t=Integer.valueOf(a)</code>。</span></p>
@@ -3590,8 +3551,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer three=<span class="number">100</span>;</span><br><span class="line">System.out.println(<span class="string">"three==100的结果:"</span>+(three==<span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">Integer four=<span class="number">100</span>;</span><br><span class="line">System.out.println(<span class="string">"three==four的结果:"</span>+(three=four));</span><br></pre></td></tr></table></figure>
 
 <p>运行结果如下：</p>
-<img src="/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C_%E5%8C%85%E8%A3%85%E7%B1%BB.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;第一个结果<code>true</code>是因为包装类对象<code>three</code>进行了自动拆箱，从而变成了两个基本类型数据100和100之间的比较。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;第二个<code>true</code>是因为<code>Java</code>对象常量池的实现，从而使three和four引用了对象常量池中的同一个对象。</p>
 <p>注意：<span style="color:red">八种基本数据类型中，只有<code>float</code>和<code>double</code>对应的包装类没有应用对象常量池这个概念。</span><code>Java</code>的这种实现提高了效率，但是可能会让<code>==</code>得出我们不希望的结果，所以在对于两个包装类对象的比较时应调用<code>equals</code>方法。如果两个或其中一个包装类对象都是通过手动装箱（显式使用<code>new</code>关键字）创建的，那它们的存储地址肯定不一样，<code>==</code>比较的结果也为<code>false</code>；因为引用类型，<code>==</code>比较的是两个变量存储的对象引用是否相等，则实例对象的存储地址是否一致。</p>
@@ -3599,9 +3559,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		String a = <span class="string">"abc"</span>;</span><br><span class="line">		String b = <span class="string">"abc"</span>;</span><br><span class="line">		String c = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br><span class="line">		System.out.println(<span class="string">"a和b的内容是否相同:"</span> + a.equals(b));</span><br><span class="line">		System.out.println(<span class="string">"a和c的内容是否相同:"</span> + b.equals(c));</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"a和b的地址是否相同:"</span> + (a == b));</span><br><span class="line">		System.out.println(<span class="string">"a和c的地址是否相同:"</span> + (b == c));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行结果如下：</p>
-<img src="/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class="">
-
-<p><img src="%E5%8C%85%E8%A3%85%E7%B1%BB/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
 <p>这令我不能不想到包装类的对象常量池概念，但是字符串那么多组合方式感觉又不大可能。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;第一种方式是在常量池中拿对象，如果找不到就在常量池中创建一个字符串；第二种方式是直接在堆内存空间创建一个新的对象。目前获得的信息暂时是这样子，进一步了解之后再来更新。</p>
 <h4 id="基本数据类型和字符串之间的装换"><a href="#基本数据类型和字符串之间的装换" class="headerlink" title="基本数据类型和字符串之间的装换"></a>基本数据类型和字符串之间的装换</h4><ol>
@@ -3703,8 +3661,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Test a = <span class="keyword">new</span> Test() &#123;</span><br><span class="line">			<span class="comment">//重写Thread类的run方法，输出当前线程</span></span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">				<span class="keyword">super</span>.run();</span><br><span class="line">				System.out.println(<span class="string">"current thread is:"</span> + Thread.currentThread().getName());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="comment">//调用run方法</span></span><br><span class="line">		a.run();</span><br><span class="line">		<span class="comment">//中断执行4秒</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">4000</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//调用start方法</span></span><br><span class="line">		a.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>输出结果如下图：</p>
-<img src="/2019/06/10/run%E5%92%8Cstart%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/run%E5%92%8Cstart%E6%96%B9%E6%B3%95.png" class="" title="run和start方法">
-
+<p><img src="http://cdn1.hikariblog.cn/run%E5%92%8Cstart%E6%96%B9%E6%B3%95.png" alt="run和start方法"></p>
 <p><code>run</code>方法在主线程中执行，和普通的方法调用一样；而<code>start</code>方法在非<code>main</code>线程中执行，这中间发生了什么？</p>
 <p>start方法的源码如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * This method is not invoked for the main method thread or "system"</span></span><br><span class="line"><span class="comment">         * group threads created/set up by the VM. Any new functionality added</span></span><br><span class="line"><span class="comment">         * to this method in the future may have to also be added to the VM.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * A zero status value corresponds to state "NEW".</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">if</span> (threadStatus != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalThreadStateException();</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* Notify the group that this thread is about to be started</span></span><br><span class="line"><span class="comment">         * so that it can be added to the group's list of threads</span></span><br><span class="line"><span class="comment">         * and the group's unstarted count can be decremented. */</span></span><br><span class="line">        group.add(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> started = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            start0();</span><br><span class="line">            started = <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!started) &#123;</span><br><span class="line">                    group.threadStartFailed(<span class="keyword">this</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Throwable ignore) &#123;</span><br><span class="line">                <span class="comment">/* do nothing. If start0 threw a Throwable then</span></span><br><span class="line"><span class="comment">                  it will be passed up the call stack */</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -3718,13 +3675,13 @@
 <p><strong><span style="color:red">调用<code>start</code>方法会创建一个新的子线程并启动，在子线程中进行<code>run</code>方法的调用。</span></strong></p>
 <p><strong><span style="color:red"><code>run</code>方法只是<code>Thread</code>的一个普通方法调用，还是在主线程中执行。</span></strong></p>
 <h4 id="关于start方法的拓展"><a href="#关于start方法的拓展" class="headerlink" title="关于start方法的拓展"></a>关于start方法的拓展</h4><p>Java的线程是不允许启动两次的，当线程执行完<code>run</code>方法或主线程执行完<code>main</code>方法进入死亡状态就不能复生了。</p>
-<img src="/2019/06/10/run%E5%92%8Cstart%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/Java%E4%B8%AD%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81.jpg" class="" title="[Java线程状态]">
-
+<p><img src="http://cdn1.hikariblog.cn/Java%E4%B8%AD%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81.jpg" alt="Java线程状态"></p>
 <p>故如果多次调用<code>start</code>方法，则会出现异常<code>Exception in thread &quot;main&quot; java.lang.IllegalThreadStateExceprion</code>。如下</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">				System.out.println(<span class="string">"线程启动"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		thread.start();</span><br><span class="line">		thread.start();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行结果如图</p>
-<img src="/2019/06/10/run%E5%92%8Cstart%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class="">]]></content>
+<p><img src="http://cdn1.hikariblog.cn/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
+]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -3772,10 +3729,12 @@
 <li>当进行比较的对象的数量不多时，则直接使用<code>equals</code>方法进行比较。</li>
 <li>当进行比较的对象的数量较多时，则先使用<code>hashCode</code>方法进行比较，如果散列码不相等，则两个对象肯定不相等，当散列码相等时，再调用<code>equals</code>进行比较，如果<code>equals</code>比较的出两个对象相等，则这两个对象就真的相等了。如不允许重复的集合在添加数据时，则会 执行这一步！！</li>
 </ol>
-<img src="/2019/06/10/Java%E4%B8%AD==%E5%92%8Cequals%E5%92%8ChashCode%E7%9A%84%E5%8C%BA%E5%88%AB/%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E9%9B%86%E5%90%88%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8F%92%E5%85%A5.jpg" class="" title="不可重复集合对象的插入">
 
+
+<p><img src="http://cdn1.hikariblog.cn/%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E9%9B%86%E5%90%88%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8F%92%E5%85%A5.jpg" alt="不可重复集合对象的插入"></p>
 <h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a><span style="color:#CD0000">扩展</span></h4><p>阿里巴巴开发规范中明确规定：</p>
-<img src="/2019/06/10/Java%E4%B8%AD==%E5%92%8Cequals%E5%92%8ChashCode%E7%9A%84%E5%8C%BA%E5%88%AB/%E5%85%B3%E4%BA%8EhashCode%E5%92%8Cequals%E7%9A%84%E5%A4%84%E7%90%86.jpg" class="" title="关于hashCode和equals的处理">]]></content>
+<p><img src="http://cdn1.hikariblog.cn/%E5%85%B3%E4%BA%8EhashCode%E5%92%8Cequals%E7%9A%84%E5%A4%84%E7%90%86.jpg" alt="关于hashCode和equals的处理"></p>
+]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -3799,8 +3758,7 @@
     <title>防止数据库连接池泄露</title>
     <url>/2019/06/10/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%B3%84%E9%9C%B2/</url>
     <content><![CDATA[<p>官方文档：<a href="http://tomcat.apache.org/tomcat-8.5-doc/jndi-datasource-examples-howto.html#Preventing_database_connection_pool_leaks" target="_blank" rel="noopener">JDBC DataSources</a></p>
-<img src="/2019/06/10/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%B3%84%E9%9C%B2/%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%96%87%E6%A1%A3.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%96%87%E6%A1%A3.png" alt="连接池文档"></p>
 <p>Web应用程序必须显式关闭ResultSet、Statement和Connection。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">free</span><span class="params">(ResultSet resultSet,Statement statemen,Connection connection)</span></span>&#123;   </span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(resultSet != <span class="keyword">null</span>)</span><br><span class="line">                resultSet.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(statemen != <span class="keyword">null</span>)</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    statemen.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(connection != <span class="keyword">null</span>)</span><br><span class="line">                        <span class="keyword">try</span> &#123;</span><br><span class="line">                            connection.close();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
@@ -3850,7 +3808,7 @@
 <p>&emsp;&emsp;Git 支持许多数据传输协议。之前的例子使用的是 <code>git://</code> 协议，不过你也可以用 <code>http(s)://</code> 或者 <code>user@server:/path.git</code> 表示的 SSH 传输协议。</p>
 <h4 id="二、记录每次更新到仓库"><a href="#二、记录每次更新到仓库" class="headerlink" title="二、记录每次更新到仓库"></a>二、记录每次更新到仓库</h4><p>&emsp;&emsp;<code>git add</code> 的潜台词就是把目标文件快照放入暂存区域，也就是 add file into staged area，同时未曾跟踪过的文件标记为需要跟踪。</p>
 <p>使用 Git 时的文件状态变化周期:</p>
-<p><img src="Pro-git/Git-%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="File Statue Lifecycle"></p>
+<p><img src="http://cdn1.hikariblog.cn/Git-%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="File Statue Lifecycle"></p>
 <p>相关的英语单词：</p>
 <ol>
 <li>track：跟踪</li>
@@ -3936,8 +3894,7 @@
 </ol>
 <p>参考文档：<a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">资源文件夹</a></p>
 <p>原因：部署以后，图片会自动添加日期相关的文件结构目录</p>
-<img src="/2019/06/04/Blog-questions/image-1.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/image-1.png" alt=""></p>
 <p>解决方案：</p>
 <ul>
 <li><p>将站点配置文件 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 <code>true</code>：开启文章资源文件夹</p>
@@ -4037,13 +3994,11 @@
 <li>test：测试依赖范围，值对于测试classpath有效。</li>
 <li></li>
 </ol>
-<img src="/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png" class="" title="依赖范围和classpath的关系">
-
+<p><img src="http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="依赖范围和classpath的关系"></p>
 <h6 id="传递性依赖"><a href="#传递性依赖" class="headerlink" title="传递性依赖"></a>传递性依赖</h6><p><em>概念</em></p>
 <p>A依赖B，B依赖C，A对于B是第一直接依赖，B对于C是第二直接依赖，A对于C是传递性依赖。这时Maven的传递性依赖机制会解析各个直接依赖的POM，将那些必要的间接依赖，以传递性依赖的形式引入到当前的项目中。</p>
 <p><em>传递性依赖和依赖范围</em></p>
-<img src="/2019/05/29/Maven%E4%B9%8B%E5%9D%90%E6%A0%87%E3%80%81%E4%BE%9D%E8%B5%96/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%BD%B1%E5%93%8D%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96.png" class="" title="依赖范围影响传递性依赖">
-
+<p><img src="http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%BD%B1%E5%93%8D%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96.png" alt="依赖范围影响传递性依赖"></p>
 <p>仔细琢磨该表是有一定规律可循的，不必死记硬背。</p>
 ]]></content>
       <categories>

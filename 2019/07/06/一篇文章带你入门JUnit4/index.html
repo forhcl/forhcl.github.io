@@ -89,15 +89,15 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/07/06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%B8%A6%E4%BD%A0%E5%85%A5%E9%97%A8JUnit4/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="注：文章内容基于 JUnit4.8 额，成为标题党了，以前一直认为写博客要特别严谨:disappointed_relieved:这样子写一遍博客耗费的时间特别长，更新的积极性都没有了，而且太过枯燥大家也是没兴趣看下去。然而又怎样呢？严谨一点总没错😏略略略 &amp;emsp;&amp;emsp;时至今日，JUnit 已成为 Java 中开发单元测试的事实上的标准框架。JUnit官网是这样描述JUnit的：JUn">
-<meta property="og:image" content="http://forhcl.github.io/2019/07/06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%B8%A6%E4%BD%A0%E5%85%A5%E9%97%A8JUnit4/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/Junit_%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
 <meta property="article:published_time" content="2019-07-06T04:33:21.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.567Z">
+<meta property="article:modified_time" content="2020-06-29T02:14:42.982Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="单元测试">
 <meta property="article:tag" content="JUnit">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/07/06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%B8%A6%E4%BD%A0%E5%85%A5%E9%97%A8JUnit4/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/Junit_%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
 
 
 
@@ -450,7 +450,7 @@
 <p><strong>JUnit的运行流程：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXXTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@BeforeClass</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setUpBeforeClass</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Method with @BeforeClass annotation"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterClass</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">tearDownClass</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Method with @AfterClass annotation"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Method with @Before annotation"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@After</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tearDown</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Method with @After annotation"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Test method--test1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Test method--test2"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>运行结果：<img src="/2019/07/06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%B8%A6%E4%BD%A0%E5%85%A5%E9%97%A8JUnit4/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class=""></p>
+<p>运行结果：<img src="http://cdn1.hikariblog.cn/Junit_%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="运行结果"></p>
 <ol>
 <li><code>@BeforeClass</code> 修饰的方法会在所有方法被调用前执行，而且该方法是静态的，所以当测试类被加载后接着就会运行它。而且在内存中它只会存在一份实例，它比较适合加载配置文件。</li>
 <li><code>@AfterClass</code> 所修饰的方法通常用来对资源的清理，如关闭数据库的连接</li>
@@ -674,7 +674,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

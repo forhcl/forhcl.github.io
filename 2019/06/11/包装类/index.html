@@ -89,18 +89,17 @@
 <meta property="og:url" content="http://forhcl.github.io/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/index.html">
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Java是一种面向对象语言，Java中的类把方法与数据连接在一起，构成了自包含式的处理单元。但是Java中不能定义基本类型对象，在对基本类型数据进行操作时便会出现大量重复的自定义方法。为了能将基本类型视为对象进行处理，并连接相关的方法，Java为所有的基本类型都提供一个与之对应的包装类（wrapper）。Java中所有的包装类都存在于java.lan">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/%E5%8F%8D%E7%BC%96%E8%AF%91%E7%BB%93%E6%9E%9C.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
-<meta property="og:image" content="http://forhcl.github.io/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/%E5%8C%85%E8%A3%85%E7%B1%BB/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C_%E5%8C%85%E8%A3%85%E7%B1%BB.png">
+<meta property="og:image" content="http://cdn1.hikariblog.cn/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
 <meta property="article:published_time" content="2019-06-11T05:33:21.000Z">
-<meta property="article:modified_time" content="2020-02-15T00:43:02.567Z">
+<meta property="article:modified_time" content="2020-06-29T03:08:33.417Z">
 <meta property="article:author" content="Hogan Lee">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="包装类">
 <meta property="article:tag" content="Java基础知识">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://forhcl.github.io/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/%E5%8F%8D%E7%BC%96%E8%AF%91%E7%BB%93%E6%9E%9C.png">
+<meta name="twitter:image" content="http://cdn1.hikariblog.cn/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
 
 
 
@@ -447,10 +446,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer b=<span class="keyword">new</span> Integer(<span class="number">4</span>);</span><br><span class="line"><span class="keyword">int</span> t=b.intValue();</span><br></pre></td></tr></table></figure>
 
 <p>对自动装箱和自动拆箱操作进行反编译，得出下图结果：</p>
-<img src="/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/%E5%8F%8D%E7%BC%96%E8%AF%91%E7%BB%93%E6%9E%9C.png" class="">
-
-
-
+<p><img src="http://cdn1.hikariblog.cn/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
 </li>
 </ol>
 <p>   &nbsp;&nbsp;&nbsp;&nbsp;由此可知，<span style="color:red">自动拆箱操作其实是隐式地执行<code>int t=b.intValue()</code>；自动装箱操作其实是隐式地执行<code>Integer t=Integer.valueOf(a)</code>。</span></p>
@@ -466,8 +462,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Integer three=<span class="number">100</span>;</span><br><span class="line">System.out.println(<span class="string">"three==100的结果:"</span>+(three==<span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">Integer four=<span class="number">100</span>;</span><br><span class="line">System.out.println(<span class="string">"three==four的结果:"</span>+(three=four));</span><br></pre></td></tr></table></figure>
 
 <p>运行结果如下：</p>
-<img src="/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class="">
-
+<p><img src="http://cdn1.hikariblog.cn/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C_%E5%8C%85%E8%A3%85%E7%B1%BB.png" alt=""></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;第一个结果<code>true</code>是因为包装类对象<code>three</code>进行了自动拆箱，从而变成了两个基本类型数据100和100之间的比较。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;第二个<code>true</code>是因为<code>Java</code>对象常量池的实现，从而使three和four引用了对象常量池中的同一个对象。</p>
 <p>注意：<span style="color:red">八种基本数据类型中，只有<code>float</code>和<code>double</code>对应的包装类没有应用对象常量池这个概念。</span><code>Java</code>的这种实现提高了效率，但是可能会让<code>==</code>得出我们不希望的结果，所以在对于两个包装类对象的比较时应调用<code>equals</code>方法。如果两个或其中一个包装类对象都是通过手动装箱（显式使用<code>new</code>关键字）创建的，那它们的存储地址肯定不一样，<code>==</code>比较的结果也为<code>false</code>；因为引用类型，<code>==</code>比较的是两个变量存储的对象引用是否相等，则实例对象的存储地址是否一致。</p>
@@ -475,9 +470,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		String a = <span class="string">"abc"</span>;</span><br><span class="line">		String b = <span class="string">"abc"</span>;</span><br><span class="line">		String c = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br><span class="line">		System.out.println(<span class="string">"a和b的内容是否相同:"</span> + a.equals(b));</span><br><span class="line">		System.out.println(<span class="string">"a和c的内容是否相同:"</span> + b.equals(c));</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"a和b的地址是否相同:"</span> + (a == b));</span><br><span class="line">		System.out.println(<span class="string">"a和c的地址是否相同:"</span> + (b == c));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行结果如下：</p>
-<img src="/2019/06/11/%E5%8C%85%E8%A3%85%E7%B1%BB/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" class="">
-
-<p><img src="%E5%8C%85%E8%A3%85%E7%B1%BB/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
+<p><img src="http://cdn1.hikariblog.cn/String%E4%B8%AD%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt=""></p>
 <p>这令我不能不想到包装类的对象常量池概念，但是字符串那么多组合方式感觉又不大可能。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;第一种方式是在常量池中拿对象，如果找不到就在常量池中创建一个字符串；第二种方式是直接在堆内存空间创建一个新的对象。目前获得的信息暂时是这样子，进一步了解之后再来更新。</p>
 <h4 id="基本数据类型和字符串之间的装换"><a href="#基本数据类型和字符串之间的装换" class="headerlink" title="基本数据类型和字符串之间的装换"></a>基本数据类型和字符串之间的装换</h4><ol>
@@ -720,7 +713,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
