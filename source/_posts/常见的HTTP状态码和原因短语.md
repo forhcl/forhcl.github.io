@@ -13,11 +13,11 @@ categories: 计算机网络
 
 1. 打开要查看的页面，按F12；然后点击network（或网络），再点击Doc。
 
-   {% asset_img 开发者工具.jpg %}
+   ![开发者工具](http://cdn1.hikariblog.cn/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7.jpg)
 
 2. 按F5刷新，就可以看到“Status”一栏下的页面返回状态码了。
 
-   {% asset_img 状态码查看.jpg %}
+   ![状态码查看](http://cdn1.hikariblog.cn/%E7%8A%B6%E6%80%81%E7%A0%81%E6%9F%A5%E7%9C%8B.jpg)
 
 &emsp;&emsp;HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。状态码的数量多达60余种，下面我们了解一下常见的14种。首先我们对状态码进行简单的分类：
 

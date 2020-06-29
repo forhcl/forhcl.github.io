@@ -11,7 +11,7 @@ categories: Hexo
 
 原因：部署以后，图片会自动添加日期相关的文件结构目录
 
-{% asset_img image-1.png %}
+![](http://cdn1.hikariblog.cn/image-1.png)
 
 解决方案：
 

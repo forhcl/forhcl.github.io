@@ -1,4 +1,16 @@
-Oracle WebLogic Server：WebLogic应用服务器是整个WebLogic产品的核心
+Oracle WebLogic Server：WebLogic应用服务器是整个WebLogic产品的核心。
+
+&emsp;&emsp;首先，因为weblogic是通过一个jar包进行安装的，所以需要进行java环境的配置；其次，由于是通过可视化java GUI界面进行安装，在远程工具上面需要配置好DISPLAY环境变量，才能让可视化窗口在远程机器上面连接到！！
+
+## DISPLAY环境变量的配置
+
+在Linux/Unix类操作系统上, DISPLAY用来设置将图形显示到何处。
+
+https://blog.csdn.net/qq_39101111/article/details/78729647
+
+这个真的是超级头痛，display设置出现的问题就是，X server也就是我们的机器处于局域网中，没有独立的公网IP地址，且有防火墙阻拦，由于阿里云服务器和我们的主机不是在同一个子网下，配置DISPLAY为ip:0.0的时候找不到我们的主机，没办法把GUI搞到我们的机器上面！！
+
+大多数客户端位于局域网中，IP地址是经过转换的，因此**ipconfig**或**ifconfig**命令返回的IP不一定是客户端的真实公网IP地址。若后续客户端无法登录FTP服务器，请重新确认其公网IP地址。
 
 ## weblogic的安装最后需要去手动添加一个配置文件
 

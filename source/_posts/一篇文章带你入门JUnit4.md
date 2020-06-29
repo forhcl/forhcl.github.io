@@ -155,7 +155,7 @@ public class XXXTest {
 }
 ```
 
-运行结果：{% asset_img 运行结果.png %}
+运行结果：![运行结果](http://cdn1.hikariblog.cn/Junit_%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png)
 
 1.  `@BeforeClass` 修饰的方法会在所有方法被调用前执行，而且该方法是静态的，所以当测试类被加载后接着就会运行它。而且在内存中它只会存在一份实例，它比较适合加载配置文件。
 2.  `@AfterClass` 所修饰的方法通常用来对资源的清理，如关闭数据库的连接

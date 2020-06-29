@@ -93,7 +93,7 @@ $ git clone git://github.com/schacon/grit.git mygrit
 
  
 
-![File Statue Lifecycle](Pro-git/Git-文件状态生命周期.png)
+![File Statue Lifecycle](http://cdn1.hikariblog.cn/Git-%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 
 相关的英语单词：
 

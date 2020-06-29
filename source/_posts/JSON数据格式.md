@@ -39,15 +39,11 @@ categories:
 
 Object:使用花括号{}包含的<span style="color:blue">键值对</span>结构，Key必须是string类型，value为任何的<span style="color:red">基本类型</span>或<span style="color:red">数据结构</span>。
 
-{% asset_img JSON对象表示.png  %}
-
-![](JSON数据格式/JSON对象表示.png)
+![JSON对象表示](http://cdn1.hikariblog.cn/JSON%E5%AF%B9%E8%B1%A1%E8%A1%A8%E7%A4%BA.png)
 
 Array:使用中括号[]来起始，并用逗号，来分割元素
 
-{% asset_img JSON数组表示.png  %}
-
-![](JSON数据格式/JSON数组表示.png)
+![JSON数组表示](http://cdn1.hikariblog.cn/JSON%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA.png)
 
 基本类型
 
@@ -95,9 +91,7 @@ Ctrl+Shift+O : 将没有用到的包去掉
 
   使用`@RESTController`代替`@Controller`，Spring将会为该控制器的所有处理方法应用消息转换功能。我们不必再为每个方法都添加 `@Responsebody` 注解。
 
-  {% asset_img JSON数据封装.png %}
-
-  ![](JSON数据格式/JSON数据封装.png)
+  ![JSON数据封装](http://cdn1.hikariblog.cn/JSON%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85.png)
 
   
 

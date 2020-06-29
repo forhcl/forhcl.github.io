@@ -100,8 +100,10 @@ public boolean equals(Object otherObject){
 
 {% asset_img 不可重复集合对象的插入.jpg 不可重复集合对象的插入 %}
 
+![不可重复集合对象的插入](http://cdn1.hikariblog.cn/%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E9%9B%86%E5%90%88%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8F%92%E5%85%A5.jpg)
+
 #### <span style="color:#CD0000">扩展</span>
 
 阿里巴巴开发规范中明确规定：
 
-{% asset_img 关于hashCode和equals的处理.jpg 关于hashCode和equals的处理 %}
+![关于hashCode和equals的处理](http://cdn1.hikariblog.cn/%E5%85%B3%E4%BA%8EhashCode%E5%92%8Cequals%E7%9A%84%E5%A4%84%E7%90%86.jpg)

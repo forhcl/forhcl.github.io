@@ -71,7 +71,7 @@ Maven有以下几种依赖范围：
 2. test：测试依赖范围，值对于测试classpath有效。
 3. 
 
-{% asset_img 依赖范围和classpath的关系.png 依赖范围和classpath的关系 %}
+![依赖范围和classpath的关系](http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%92%8Cclasspath%E7%9A%84%E5%85%B3%E7%B3%BB.png)
 
 ###### 传递性依赖
 
@@ -83,7 +83,7 @@ A依赖B，B依赖C，A对于B是第一直接依赖，B对于C是第二直接依
 
 _传递性依赖和依赖范围_
 
-{% asset_img 依赖范围影响传递性依赖.png 依赖范围影响传递性依赖 %}
+![依赖范围影响传递性依赖](http://cdn1.hikariblog.cn/%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4%E5%BD%B1%E5%93%8D%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96.png)
 
 仔细琢磨该表是有一定规律可循的，不必死记硬背。
 

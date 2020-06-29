@@ -61,7 +61,7 @@ categories: 框架
 
 &emsp;&emsp;`DI(Dependency Injection)` 依赖注入的概念，就是在 `Spring` 创建这个对象的过程中，将这个对象所依赖的属性（也可能是自定义<span style="color:#e7a791">引用类型</span>的属性）注入进去，<span style="color:rgb(255, 68, 68)">从而实现应用对象之间协作关系的协调，让相互协作的软件组件保持松散耦合。</span>
 
-{% asset_img Spring.png %}
+![Spring](http://cdn1.hikariblog.cn/Spring.png)
 
 ##### 3. 编写Spring的核心配置文件
 
@@ -536,9 +536,7 @@ Spring事务核心接口
 
 + 为了简化持久化操作，Spring在JDBC API之上提供了JDBC Template组件，对JDBC API进行二次封装。
 
-  {% asset_img JDBC.png %}
-
-  ![](Spring框架/JDBC.png)
+  ![JDBC](http://cdn1.hikariblog.cn/JDBC.png)
 
 + JDBC Template提供统一的模板方法，在<span style="color:red">保留代码灵活性</span>的基础上，尽量减少持久化代码。（利用模板消除样板式编程）
 

@@ -49,7 +49,7 @@ REST并不是一种创新技术，它指的是一组架构约束条件和原则
 
 4. __RESTful只是一种风格，并不是强制的标准。__
 
-{% asset_img REST成熟度模型.png %}
+![REST成熟度模型](http://cdn1.hikariblog.cn/REST%E6%88%90%E7%86%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B.PNG)
 
 RESTful支持处理GET、POST、PUT、DELETE、PATCH
 
@@ -258,7 +258,8 @@ RESTful支持处理GET、POST、PUT、DELETE、PATCH
     ```
     
 
-{% asset_img 日期格式和时间戳.png %}
+![日期格式和时间戳](http://cdn1.hikariblog.cn/%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3.PNG)
+
 `@Vaild`注解和`BindingResult`验证请求参数的合法性并处理校验结果
     
 
@@ -293,9 +294,9 @@ RESTful支持处理GET、POST、PUT、DELETE、PATCH
     
     4. @NonNull：在方法或构造函数的参数上使用，生成一个空值检查语句
     
-       {% asset_img 参数校验注解.png %}
+       ![参数校验注解](http://cdn1.hikariblog.cn/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E6%B3%A8%E8%A7%A3.PNG)
     
-       {% asset_img 参数校验注解1.png %}
+       ![参数校验注解](http://cdn1.hikariblog.cn/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E6%B3%A8%E8%A7%A31.PNG)
     
     每一个校验注解都有一个message，可以用于自定义错误消息
     
@@ -352,9 +353,7 @@ RESTful支持处理GET、POST、PUT、DELETE、PATCH
 
   Spring Boot自定义错误页面的存放位置！好像只有2.0以下的是这个样子，尝试了2.0以上的不可以
 
-  {% asset_img 错误页面.png %}
-
-  ![](RESTful入门/错误页面.png)
+  ![错误页面](http://cdn1.hikariblog.cn/%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2.PNG)
 
 - 自定义异常处理
 

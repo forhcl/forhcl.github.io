@@ -14,11 +14,11 @@ categories:
 
    抛弃了传统JavaEE 项目繁琐的配置、学习过程，让企业级应用开发过程变得so easy！
 
-   ![](SpringBoot/Spring应用的开发流程.png)
+   ![Spring应用开发流程](http://cdn1.hikariblog.cn/Spring%E5%BA%94%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png)
 
    让Spring应用开发变得简单粗暴，将之前的框架进行完美整合。
 
-   ![](SpringBoot/Spring Boot应用开发流程.png)
+   ![Spring Boot应用开发流程](http://cdn1.hikariblog.cn/Spring%20Boot%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.png)
 
    Spring Boot核心特性
 
@@ -112,7 +112,7 @@ categories:
 
 ### _Spring Boot启动流程_
 
-![](SpringBoot/SpringBoot启动流程.png)
+![SpringBoot启动流程](http://cdn1.hikariblog.cn/SpringBoot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B.png)
 
 ### _Spring Boot内置配置选项_
 

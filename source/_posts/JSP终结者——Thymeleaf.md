@@ -33,7 +33,7 @@ categories:
 
 运行时，text标签中的内容会覆盖掉p容器标签包含的内容
 
-![](JSP终结者——Thymeleaf/标准方言.png)
+![标准方言](http://cdn1.hikariblog.cn/%E6%A0%87%E5%87%86%E6%96%B9%E8%A8%80.png)
 
 ##### _变量表达式_
 

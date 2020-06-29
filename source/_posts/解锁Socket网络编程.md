@@ -342,7 +342,7 @@ IPv4转换成IPv6一定可行，IPv6转换成IPv4不一定可行
 
 有的电脑可以有n个Ip，n*65535个连接
 
-![](解锁Socket网络编程/数据传输层次.png)
+![数据传输层次](http://cdn1.hikariblog.cn/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1.PNG)
 
 
 
@@ -354,11 +354,11 @@ IPv4转换成IPv6一定可行，IPv6转换成IPv4不一定可行
 
 默认的：我的电脑无法直接链接到你们的电脑
 
-![](解锁Socket网络编程/连接示意图1.png)
+![](http://cdn1.hikariblog.cn/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE1.PNG)
 
 通过一个因特网上的IP地址的服务器才能连接到，不同局域网主机之间不能直接连接，如果可以地址重复了怎么办，地址也不够用呀
 
-![](解锁Socket网络编程/连接示意图2.png)
+![](http://cdn1.hikariblog.cn/%E8%BF%9E%E6%8E%A5%E7%A4%BA%E6%84%8F%E5%9B%BE2.PNG)
 
 HTTP/HTTPS都是使用的TCP
 

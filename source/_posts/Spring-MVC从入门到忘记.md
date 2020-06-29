@@ -13,7 +13,7 @@ categories:
 + Model：模型数据，业务逻辑。
 + View：呈现模型，与用户进行交互。
 
-{% asset_img MVC组件之间的典型合作.png %}
+![MVC组件之间的典型合作](http://cdn1.hikariblog.cn/MVC%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B8%E5%9E%8B%E5%90%88%E4%BD%9C.png)
 
 ### SpringMVC
 
@@ -43,7 +43,7 @@ __SpringMVC实现流程__
 7. DispatcherServlet通过ViewResolver进行解析。
 8. 返回填充了模型数据的View，响应给客户端。
 
-{% asset_img SpringMVC流程.png %}
+![SpringMVC流程](http://cdn1.hikariblog.cn/SpringMVC%E6%B5%81%E7%A8%8B.png)
 
 #### SpringMVC的使用
 
@@ -282,9 +282,7 @@ __总结:__
 
   Spring<span style="color:red">自动</span>将信息进行封装,我们可以直接使用封装好的形参完成后续业务方法的逻辑操作。
 
-  {% asset_img  SpringMVC数据绑定.png %}
-
-  ![](Spring-MVC从入门到忘记/SpringMVC数据绑定.png)
+  ![SpringMVC数据绑定](http://cdn1.hikariblog.cn/SpringMVC%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png)
 
 ##### SpringMVC数据绑定的使用
 

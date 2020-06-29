@@ -20,7 +20,7 @@ categories:
 
   - 全文搜索实现原理
 
-  ![](ElasticSearch全文搜索/全文搜索实现原理.png)
+  ![](http://cdn1.hikariblog.cn/%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png)
 
   - 全文搜索实现技术（基于Java的开源实现）
     + Lucene

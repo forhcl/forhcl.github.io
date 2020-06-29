@@ -12,7 +12,7 @@ categories: "Spring Security"
 
 &emsp;&emsp;最初对于登录的理解就是前台的一个登录表单，提交到后台查看数据库是否存在该用户。如果存在，则登录成功；不存在，则登录失败。
 
-{% asset_img 简陋版的登录功能.png %}
+![简陋版的登录功能](http://cdn1.hikariblog.cn/%E7%AE%80%E9%99%8B%E7%89%88%E7%9A%84%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD.png)
 
 但是在真正的生产环境中远没有这么简单，会有以下几个方面需要考虑
 
@@ -30,11 +30,9 @@ categories: "Spring Security"
 
 浏览器和服务器之间采用Session保存用户信息，App和服务器之间采用token保存用户信息（没有Session）。
 
-{% asset_img 企业级的认证和授权.png %}
+![案例代码结构](http://cdn1.hikariblog.cn/%E6%A1%88%E4%BE%8B%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png)
 
-------
-
-{% asset_img 案例项目代码结构.png %}
+![企业级的认证和授权](http://cdn1.hikariblog.cn/%E4%BC%81%E4%B8%9A%E7%BA%A7%E7%9A%84%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83.png)
 
 
 

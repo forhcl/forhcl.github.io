@@ -42,7 +42,7 @@ public class Test extends Thread {
 
 输出结果如下图：
 
-{% asset_img run和start方法.png run和start方法 %}
+![run和start方法](http://cdn1.hikariblog.cn/run%E5%92%8Cstart%E6%96%B9%E6%B3%95.png)
 
 `run`方法在主线程中执行，和普通的方法调用一样；而`start`方法在非`main`线程中执行，这中间发生了什么？
 
@@ -106,7 +106,7 @@ __<span style="color:red">`run`方法只是`Thread`的一个普通方法调用�
 
 Java的线程是不允许启动两次的，当线程执行完`run`方法或主线程执行完`main`方法进入死亡状态就不能复生了。
 
-{% asset_img Java中线程状态.jpg [Java线程状态] %}
+![Java线程状态](http://cdn1.hikariblog.cn/Java%E4%B8%AD%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81.jpg)
 
 故如果多次调用`start`方法，则会出现异常`Exception in thread "main" java.lang.IllegalThreadStateExceprion`。如下
 
@@ -127,4 +127,4 @@ public static void main(String[] args) {
 
 运行结果如图
 
-{% asset_img 运行结果.png %}
+![](http://cdn1.hikariblog.cn/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png)

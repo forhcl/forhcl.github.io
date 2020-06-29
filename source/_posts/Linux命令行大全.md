@@ -56,9 +56,7 @@ hidden:
 
     绝对路径名是从根目录开始，通向目标目录，而相对路径名则是从工作目录开始的。为了实现这个目的，它通常使用一些特殊符号来表示文件系统树的相对位置，这些特殊符号是“.”(当前工作目录)和“..”（上一级工作目录/父目录）。“.”当前工作目录使用的情况很少，因为它是隐含的，比如你要进入子目录./bin的时候完全不需要cd ./bin而是可以直接cd bin。
 
-{% asset_img cd常用快捷方式.png %}
-
-![](Linux命令行大全/cd常用快捷方式.png)
+![cd常用快捷方式](http://cdn1.hikariblog.cn/cd%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F.png)
 
 + ls
 
@@ -109,7 +107,7 @@ Ctrl+A移动到行首，Ctrl+E移动到行末
 
 ### Linux根目录下各个文件夹的含义
 
-![image-20200604151154299](C:\Users\15016\AppData\Roaming\Typora\typora-user-images\image-20200604151154299.png)
+![Linux根目录](http://cdn1.hikariblog.cn/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95.png)
 
 + bin
 

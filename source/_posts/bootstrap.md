@@ -38,7 +38,7 @@ categories: Bootstrap
 
   - 响应式：viewport尺寸的增加，系统会自动分为最多12列，根据屏幕宽度进行响应。
 
-    ![](bootstrap/bootstrap网格选项.png)
+    ![](http://cdn1.hikariblog.cn/Bootstrap%E7%BD%91%E6%A0%BC%E9%80%89%E9%A1%B9.png)
 
 + Bootstrap网格示例
 

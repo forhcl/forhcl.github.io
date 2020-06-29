@@ -27,11 +27,11 @@ Lombok实现的原理
 编译时解析的两种机制：
 
 + Annotation Processing Tool（注解处理器）已被移除
-+ Pluggable Annotation Processing API（JSR269插入式注解处理器）![](Java高效编程/注解处理器的工作流程.png)
++ Pluggable Annotation Processing API（JSR269插入式注解处理器）![](http://cdn1.hikariblog.cn/%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.PNG)
 
 Lombok的常用注解:
 
-![](Java高效编程/Lombok注解.png)
+![](http://cdn1.hikariblog.cn/Lombok%E6%B3%A8%E8%A7%A3.PNG)
 
 日志这个记住，每次写logger有点烦
 
@@ -355,13 +355,13 @@ public void newHandler(Order order){
 
 + 分层验证模型
 
-![](Java高效编程/分层验证模型.png)
+![](http://cdn1.hikariblog.cn/%E5%88%86%E5%B1%82%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.PNG)
 
 将验证逻辑写在每一层上，由于验证逻辑重复性很大。所以会导致许多重复验证代码分布在不同的层中。
 
 + JavaBean验证模型
 
-![](Java高效编程/JavaBean验证模型.png)
+![](http://cdn1.hikariblog.cn/JavaBean%E9%AA%8C%E8%AF%81%E6%A8%A1%E5%9E%8B.PNG)
 
 将验证逻辑通过注解约束在域模型上，从而使验证模型从每一层中剥离出来。 
 
