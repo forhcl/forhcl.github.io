@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="Hogan&#39;Blog">
 <meta property="og:description" content="Oracle WebLogic Server：WebLogic应用服务器是整个WebLogic产品的核心。 &amp;emsp;&amp;emsp;首先，因为weblogic是通过一个jar包进行安装的，所以需要进行java环境的配置；其次，由于是通过可视化java GUI界面进行安装，在远程工具上面需要配置好DISPLAY环境变量，才能让可视化窗口在远程机器上面连接到！！ DISPLAY环境变量的配置在Linu">
 <meta property="article:published_time" content="2020-06-19T15:32:18.357Z">
-<meta property="article:modified_time" content="2020-06-28T07:23:30.420Z">
+<meta property="article:modified_time" content="2020-07-02T05:39:29.995Z">
 <meta property="article:author" content="Hogan Lee">
 <meta name="twitter:card" content="summary">
 
@@ -362,7 +362,8 @@
 <p><a href="https://blog.csdn.net/qq_39101111/article/details/78729647" target="_blank" rel="noopener">https://blog.csdn.net/qq_39101111/article/details/78729647</a></p>
 <p>这个真的是超级头痛，display设置出现的问题就是，X server也就是我们的机器处于局域网中，没有独立的公网IP地址，且有防火墙阻拦，由于阿里云服务器和我们的主机不是在同一个子网下，配置DISPLAY为ip:0.0的时候找不到我们的主机，没办法把GUI搞到我们的机器上面！！</p>
 <p>大多数客户端位于局域网中，IP地址是经过转换的，因此<strong>ipconfig</strong>或<strong>ifconfig</strong>命令返回的IP不一定是客户端的真实公网IP地址。若后续客户端无法登录FTP服务器，请重新确认其公网IP地址。</p>
-<h2 id="weblogic的安装最后需要去手动添加一个配置文件"><a href="#weblogic的安装最后需要去手动添加一个配置文件" class="headerlink" title="weblogic的安装最后需要去手动添加一个配置文件"></a>weblogic的安装最后需要去手动添加一个配置文件</h2><p>添加配置文件的位置，在启动文件下同一目录下面./servers/AdminServer/下创建一个security文件夹，然后通过vi创建一个boot.properties文件，</p>
+<h6 id="尝试通过命令行安装"><a href="#尝试通过命令行安装" class="headerlink" title="尝试通过命令行安装"></a>尝试通过命令行安装</h6><p>遇到那个java相关的参数出错不知道去哪里配！！</p>
+<h2 id="weblogic-GUI安装需要去手动添加一个配置文件"><a href="#weblogic-GUI安装需要去手动添加一个配置文件" class="headerlink" title="weblogic GUI安装需要去手动添加一个配置文件"></a>weblogic GUI安装需要去手动添加一个配置文件</h2><p>添加配置文件的位置，在启动文件下同一目录下面./servers/AdminServer/下创建一个security文件夹，然后通过vi创建一个boot.properties文件，</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">username</span>=<span class="string"></span></span><br><span class="line"><span class="attr">password</span>=<span class="string"></span></span><br></pre></td></tr></table></figure>
 
 <p>然后在<strong>第一次启动</strong>的时候会编译这个文件，然后把用户名密码编译成看起来像乱码的字符串。</p>
@@ -533,7 +534,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -604,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DISPLAY环境变量的配置"><span class="nav-number">1.</span> <span class="nav-text">DISPLAY环境变量的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weblogic的安装最后需要去手动添加一个配置文件"><span class="nav-number">2.</span> <span class="nav-text">weblogic的安装最后需要去手动添加一个配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动weblogic"><span class="nav-number">3.</span> <span class="nav-text">启动weblogic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weblogic的基本概念学习"><span class="nav-number">4.</span> <span class="nav-text">weblogic的基本概念学习</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#域（Domain）"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">域（Domain）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DISPLAY环境变量的配置"><span class="nav-number">1.</span> <span class="nav-text">DISPLAY环境变量的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#尝试通过命令行安装"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">尝试通过命令行安装</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weblogic-GUI安装需要去手动添加一个配置文件"><span class="nav-number">2.</span> <span class="nav-text">weblogic GUI安装需要去手动添加一个配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动weblogic"><span class="nav-number">3.</span> <span class="nav-text">启动weblogic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weblogic的基本概念学习"><span class="nav-number">4.</span> <span class="nav-text">weblogic的基本概念学习</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#域（Domain）"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">域（Domain）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

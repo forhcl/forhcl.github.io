@@ -288,6 +288,283 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/12/18/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/18/%E7%89%9B%E5%AE%A2%E7%BD%91Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url">牛客网Java专项练习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-18T08:17:50+08:00">
+                2019-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="Java的参数传递是“按值传递”还是“按引用传递”？"><a href="#Java的参数传递是“按值传递”还是“按引用传递”？" class="headerlink" title="Java的参数传递是“按值传递”还是“按引用传递”？"></a>Java的参数传递是“按值传递”还是“按引用传递”？</h5><ul>
+<li>值传递：在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。</li>
+<li>引用传递：在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.sun.org.apache.xerces.internal.dom.PSVIAttrNSImpl;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 以下程序运行的结果是：</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Hogan_Lee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-12-18 10:17</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tester</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer var1=<span class="keyword">new</span> Integer(<span class="number">1</span>);</span><br><span class="line">        Integer var2=var1;</span><br><span class="line">        doSomething(var2);</span><br><span class="line">        System.out.print(var1.intValue());</span><br><span class="line">        System.out.print(var2==var1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">(Integer integer)</span></span>&#123;</span><br><span class="line">        integer=<span class="keyword">new</span> Integer(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A 1true  B 2true  C 1false  D 2false</span></span><br><span class="line"><span class="comment"> * 正确答案为A</span></span><br><span class="line"><span class="comment"> * 如果还是不明白就再去ide中debug一下，看一下运行流程</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>分析上例，可以得出如下图的结果。<span style="color:red">当传入引用类型的变量作为参数时，是将引用类型中存储的实例对象地址复制一份传递给形参，实参和形参指向同一个实例对象。</span>当对对象进行修改时，形参和实参都会发生改变，但是当形参指向一个新的对象的时候，实参并不会发生改变。可见，Java的引用类型和基本类型一样都是值传递，并不存在引用传递。</p>
+<p><img src="http://cdn1.hikariblog.cn/image1.png" alt=""></p>
+<h5 id="import关键字的导入范围？"><a href="#import关键字的导入范围？" class="headerlink" title="import关键字的导入范围？"></a>import关键字的导入范围？</h5><p><code>import java.util.*</code> 只能读取其目录下的类，不能读取其子目录下的类。</p>
+<p>因为其根目录和子目录下可能有同名类，若都能读取，则会混淆。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/12/15/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/15/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" itemprop="url">存储管理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-15T09:11:38+08:00">
+                2019-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;近年来，随着硬件技术和生产水平的提高，存储器的成本迅速下降，容量一直在不断地扩大，但仍然不能满足各种软件对存储空间急剧增长的需求，因此，存储器仍然是一种宝贵而紧俏的资源，如何对其进行有效的管理，不仅直接影响存储器的利用率，而且对系统性能也有重大影响。</p>
+<p>&emsp;&emsp;众所周知，计算机在执行程序的时候，每条指令都是在CPU中执行的，而执行的时候，又免不了要和数据打交道。而计算机上面的程序及其要访问的数据往往是存放在内存中。刚开始，还相安无事的，但是随着CPU技术的发展，CPU的执行速度越来越快。从<strong>内存中读取和写入数据的速度</strong>开始跟不上<strong>CPU的执行速度</strong>，两者的差距越来越大，这导致CPU每次操作内存都要耗费很多的等待时间。</p>
+<p>&emsp;&emsp;可是吧，我们总不能因为内存拖后腿就暂停发展CPU，等待内存技术赶上来吧！为了解决CPU和存储器之间速度上的不匹配，就在CPU和内存之间设置了高速缓存存储器；高速缓冲存储器相比较主存而言有以下特点：价格昂贵，容量小，速度快。其工作原理就是将CPU频繁访问的数据保存一份拷贝在高速缓冲存储器中，将大多数的CPU和主存之间的交互转换为CPU与高速缓冲存储器之间的交互，从而在整体上提高系统的性能。由于高速缓存的速度越高价格也越贵，因此目前的计算机系统中多设置两级或多级高速缓存。两级缓存比一级缓存速度慢，但容量更大，主要用作一级缓存和内存之间数据临时交换的地方。</p>
+<p><img src="http://cdn1.hikariblog.cn/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="计算机系统存储层次示意图"></p>
+
+
+<p>在多级存储结构中，在储存层次中越往上，存储介质的访问速度越快，价格也越高，相对存储容量也越小。CPU寄存器、主存掉电后其存储的信息不再存在，属于操作系统存储管理的讨论范畴；辅存属于操作系统设备管理的范畴，其存储的信息会长期保存。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/11/26/%E6%94%BB%E7%95%A5JDK8%E6%96%B0%E7%89%B9%E6%80%A7-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1530,303 +1807,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/09/13/SpringAOP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/13/SpringAOP/" itemprop="url">SpringAOP</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-13T22:34:53+08:00">
-                2019-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>&emsp;&emsp;日常开发中都是直接使用AOP框架进行开发的，对于基于JDK动态代理的AOP传统开发一知半解，所以花一些时间来整理一下。</p>
-<ul>
-<li><p>AOP的概述</p>
-<p>什么是AOP？</p>
-<ul>
-<li>AOP Aspect Oriented Programing 面向切面编程</li>
-<li>AOP采取<strong>横向抽取机制</strong>，取代了<strong>传统纵向继承体系</strong>来（减少重复性代码（性能监视、事务管理、安全检查、缓存））</li>
-<li>Spring AOP使用纯JAVA实现，不需要专门的编译过程和类加载器，在运行期通过<strong>代理方式</strong>向目标类织入增强代码。</li>
-</ul>
-<p>AOP相关术语</p>
-<ul>
-<li>Jointpoint（连接点）:所谓连接点是指那些可以被拦截到的点。在Spring中，这些点指的是方法，因为spring只支持方法类型的连接点</li>
-<li>Pointcut（切入点）:所谓切入点是指我们要对哪些JoinPoint进行拦截的定义。</li>
-</ul>
-</li>
-<li><p>AOP的底层实现</p>
-</li>
-<li><p>Spring的传统AOP</p>
-<ul>
-<li>不带切入点的切面</li>
-<li>带有切入点的切面</li>
-</ul>
-</li>
-<li><p>Spring的传统AOP的自动代理</p>
-<ul>
-<li>基于Bean名称的自动代理</li>
-<li>基于切面信息的自动代理</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/09/06/%E9%9D%A2%E8%AF%95%E9%A2%983-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/06/%E9%9D%A2%E8%AF%95%E9%A2%983-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/" itemprop="url">面试题3:数组中重复的数字</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T17:10:12+08:00">
-                2019-09-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%91%E6%8C%87Offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指Offer</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote class="blockquote-center"><p>&emsp;&emsp;题目一：找出数组中重复的数字。</p>
-<p>&emsp;&emsp;在一个长度为n的数组里的所有数字都在0~n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2，3，1，0，2，5，3}，那么对应的输出是重复的数字2或者3。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/06/%E9%9D%A2%E8%AF%95%E9%A2%983-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1881,7 +1861,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

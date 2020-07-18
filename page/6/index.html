@@ -288,6 +288,359 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/16/%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/16/%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B/" itemprop="url">守护线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-16T09:44:57+08:00">
+                2019-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">多线程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在Java线程中有两种线程，一种是<span style="color:red">用户线程</span>，另外一种就是<span style="color:blue">守护（Deamon）线程</span>。默认我们创建的线程都是用户线程。</p>
+<h4 id="守护线程"><a href="#守护线程" class="headerlink" title="守护线程"></a>守护线程</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;概念：守护线程是一种特殊的线程，它的特性有陪伴的含义，当进程中不存在用户线程时，则守护线程会自动销毁。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;典型的守护线程就是垃圾回收线程GC，当进程中没有用户线程，则垃圾回收线程GC也没有存在的必要了，自动销毁。</p>
+<p>使用守护线程需要注意什么？</p>
+<ol>
+<li><p>既然默认我们创建的线程都是用户线程，那我们要怎么创建守护线程呢？或者说应该如何把用户线程装换为守护线程？如下代码，调用<code>java.lang.Thread</code>提供的实例方法<code>setDaemon(true)</code>进行用户线程和守护线程的切换，<span style="color:red">这一方法必须在线程启动前进行调用</span>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">   </span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			System.out.println(<span class="string">"启动线程"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">   </span><br><span class="line">	&#125;);</span><br><span class="line">	thread.setDaemon(<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>在Daemon线程中产生的新线程也是Daemon的。</p>
+</li>
+<li><p>守护线程不能用于去访问固有资源，比如读写操作或者计算逻辑。因为它会在任何时候甚至在一个操作的中间发生中断。</p>
+</li>
+<li><p>Java自带的多线程框架，比如ExecutorService，会将守护线程转换为用户线程，所以如果要使用后台线程就不能用Java的线程池。</p>
+</li>
+</ol>
+<p>应用场景：</p>
+<p>如GC等后台线程</p>
+<p>相关面试题目：</p>
+<ul>
+<li>什么是Daemon线程？它有什么意义？</li>
+<li>在java中守护线程和本地线程区别？</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/15/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/15/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B/" itemprop="url">进程、线程和协程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-15T20:46:22+08:00">
+                2019-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">多线程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>相关面试题：</p>
+<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h2><h4 id="进程和线程的由来"><a href="#进程和线程的由来" class="headerlink" title="进程和线程的由来"></a>进程和线程的由来</h4><img  src=http://www.plantuml.com/plantuml/svg/ux9wicFJYuKzJvUqF9_GPit5PVMiSoU2ysB_xEShka6ivxlsWra0>
+
+<ul>
+<li>初期的计算机智能串行执行任务，并且需要长时间等待用户输入。</li>
+<li>预先将用户的指令集中成清单，批量串行处理用户指令，仍然无法并发执行。</li>
+<li>进程独占内存空间，保存各自的运行状态，相互间不干扰且可以互相切换，为并发处理任务提供了可能。</li>
+<li>共享进程的内存资源，相互间切换更快速，支持更细粒度的任务控制，使进程内的子任务得以并发执行。</li>
+</ul>
+<h4 id="进程和线程的区别-1"><a href="#进程和线程的区别-1" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h4><p><strong>进程是系统资源分配和调度的最小单位，线程是CPU调度的最小单位。</strong></p>
+<ol>
+<li>线程不能看做独立的应用，而进程可看做独立应用。</li>
+<li>进程有独立的地址空间，相互不影响（其中一个进程挂了不影响程序），线程只是进程的不同执行路径（其中一个线程挂了，所在进程也就挂了），线程共享进程的内存空间。</li>
+<li>线程没有独立的地址空间，多进程的程序比多线程程序健壮。</li>
+<li>进程的切换比线程的切换开销大。效率低。</li>
+<li>进程是代码+数据集合，是代码在数据集合上的运行活动。</li>
+<li>进程是运行中的程序，而线程则是进程中的一个执行路径。</li>
+</ol>
+<h4 id="Java进程和线程的关系"><a href="#Java进程和线程的关系" class="headerlink" title="Java进程和线程的关系"></a>Java进程和线程的关系</h4><p><img src="http://cdn1.hikariblog.cn/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86.jpg" alt="进程和线程的内存结构划分"></p>
+<p>如上图所示，Thread1到ThreadN这N个线程共享进程的堆和方法区资源，但是每个线程有自己的程序计数器（PC）和栈（stack）区域。</p>
+<ul>
+<li><p>其中PC计数器本质上是一块内存区域，用来记录线程当前要执行的指令地址，CPU一般是使用时间片轮转方式让线程轮询占用的，因此当前线程CPU时间片用完后，要让出CPU，这时PC计数器就会记录下当前线程下次要执行的命令的地址，等到下次轮到该线程占有CPU执行时，就从PC计数器获取自己将要执行的命令的地址继续执行。</p>
+</li>
+<li><p>每个线程有自己的栈资源，用于存储该线程的局部变量，这些局部变量时该线程私有的，其它线程是访问不了的。另外，栈还用来存放线程的调用栈帧，如下代码，当我们调动test()方法时，就会把当前方法的一些信息封装为栈帧压入到栈顶，栈顶的栈帧就是活跃的test方法。当执行到say()方法时就会在栈顶新加一个关于say()方法的栈帧，这时候say()方法所在的栈帧就是活跃栈帧。当say()方法执行完毕后，say()方法所在栈顶帧就会出栈，这时候栈顶活跃帧就是test方法的了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">6</span>;</span><br><span class="line">    say();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>堆（heap）是一个进程中最大的一块内存，是进程创建时候创建的，堆是被进程中的所有线程共享的。堆里面主要存放使用<span style="color:blue">new 操作创建的对象实例和基本类型的成员变量</span>，如下操作就是在堆上创建了一个 ArrayList 对象，这里需要注意的是，<span style="color:red">指向堆对象的 list 变量本身是在线程的栈上保存的</span>，只是 list 指向了堆上的 ArrayList 的地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void test(int x,int y) &#123;</span><br><span class="line">    List&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法区（method area）用来存放 JVM 加载的类信息、常量、静态变量等信息，也是线程共享的。</p>
+</li>
+</ul>
+<ol>
+<li>Java对操作系统提供的功能进行封装，包括进程和线程。</li>
+<li>运行一个程序会产生一个进程，进程至少包括一个线程；线程必须依托进程而存在，线程本身是不会独立存在的。</li>
+<li>每个进程对应一个JVM实例，多个进程共享JVM里的堆。</li>
+<li>Java采用单线程编程模型，程序会自动创建主线程。</li>
+<li>主线程可以创建子线程，原则上要后于子线程完成执行。</li>
+</ol>
+<h2 id="说说进程，线程，协程之间的区别"><a href="#说说进程，线程，协程之间的区别" class="headerlink" title="说说进程，线程，协程之间的区别"></a>说说进程，线程，协程之间的区别</h2><h2 id="为什么要有线程，而不是仅仅用进程？"><a href="#为什么要有线程，而不是仅仅用进程？" class="headerlink" title="为什么要有线程，而不是仅仅用进程？"></a>为什么要有线程，而不是仅仅用进程？</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/14/Cookie%E5%92%8CSession/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1843,291 +2196,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/10/Maven%E4%B9%8B%E4%BB%93%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/10/Maven%E4%B9%8B%E4%BB%93%E5%BA%93/" itemprop="url">Maven之仓库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T16:27:54+08:00">
-                2019-06-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Maven/" itemprop="url" rel="index">
-                    <span itemprop="name">Maven</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://forhcl.github.io/2019/06/10/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%B3%84%E9%9C%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hogan Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hogan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/10/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%B3%84%E9%9C%B2/" itemprop="url">防止数据库连接池泄露</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T08:52:40+08:00">
-                2019-06-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JDBC/" itemprop="url" rel="index">
-                    <span itemprop="name">JDBC</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>官方文档：<a href="http://tomcat.apache.org/tomcat-8.5-doc/jndi-datasource-examples-howto.html#Preventing_database_connection_pool_leaks" target="_blank" rel="noopener">JDBC DataSources</a></p>
-<p><img src="http://cdn1.hikariblog.cn/%E8%BF%9E%E6%8E%A5%E6%B1%A0%E6%96%87%E6%A1%A3.png" alt="连接池文档"></p>
-<p>Web应用程序必须显式关闭ResultSet、Statement和Connection。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">free</span><span class="params">(ResultSet resultSet,Statement statemen,Connection connection)</span></span>&#123;   </span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(resultSet != <span class="keyword">null</span>)</span><br><span class="line">                resultSet.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(statemen != <span class="keyword">null</span>)</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    statemen.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(connection != <span class="keyword">null</span>)</span><br><span class="line">                        <span class="keyword">try</span> &#123;</span><br><span class="line">                            connection.close();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2182,7 +2250,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
